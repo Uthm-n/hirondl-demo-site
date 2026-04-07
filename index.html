@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hirondl & Co — Commercial Transformation Partners</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#101535;
+  --smalt:#1A3099;
+  --sky:#8AC5FF;
+  --grey:#ADADAD;
+  --white:#fff;
+  --surface:#f7f8fc;
+  --border:#e4e7f0;
+  --text:#1a1f3a;
+  --muted:#6b7280;
+}
+body{font-family:'Montserrat','Arial',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden}
+.page{display:none}.page.active{display:block}
+a{text-decoration:none;color:inherit;cursor:pointer}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(16,21,53,0.97);backdrop-filter:blur(12px);height:66px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;border-bottom:1px solid rgba(255,255,255,0.07)}
+nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)}
+.nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer}
+.nav-logo-icon{flex-shrink:0}
+.nav-logo-text{font-size:17px;font-weight:700;color:#fff;letter-spacing:0.12em;text-transform:uppercase}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:color 0.15s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-cta{background:var(--smalt);color:#fff !important;padding:9px 20px;border-radius:3px;font-weight:700 !important}
+.nav-cta:hover{background:#1e3ab5 !important}
+
+/* ═══════════ HOMEPAGE ═══════════ */
+.hero{min-height:100vh;background:var(--navy);display:flex;flex-direction:column;justify-content:center;padding:120px 48px 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)}
+.hero-bg{position:absolute;right:0;top:0;width:50%;height:100%;opacity:0.04;pointer-events:none}
+.hero-eyebrow{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sky);margin-bottom:22px;position:relative;font-weight:600}
+.hero-h{font-size:clamp(46px,7vw,86px);font-weight:900;text-transform:uppercase;color:#fff;line-height:0.95;letter-spacing:-0.03em;margin-bottom:14px;position:relative}
+.hero-h .sky{color:var(--sky)}
+.hero-tagline{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:16px;font-weight:600;position:relative}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.75;max-width:520px;margin-bottom:36px;position:relative;font-weight:300}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;position:relative}
+.btn-primary{background:var(--smalt);color:#fff;padding:13px 28px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border:none;transition:background 0.15s;font-family:'Montserrat','Arial',sans-serif}
+.btn-primary:hover{background:#1e3ab5}
+.btn-secondary{background:transparent;color:#fff;padding:13px 28px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border:1px solid rgba(255,255,255,0.2);transition:border-color 0.15s;font-family:'Montserrat','Arial',sans-serif}
+.btn-secondary:hover{border-color:rgba(255,255,255,0.55)}
+
+/* PROOF BAR */
+.proof-bar{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,0.07);margin-top:64px;position:relative}
+.proof-item{padding:22px 0;border-right:1px solid rgba(255,255,255,0.07)}
+.proof-item:last-child{border-right:none}
+.proof-n{font-size:clamp(26px,4vw,40px);font-weight:300;color:#fff;line-height:1;letter-spacing:-0.02em}
+.proof-n .u{color:var(--sky);font-size:65%}
+.proof-l{font-size:10px;color:rgba(255,255,255,0.4);margin-top:7px;line-height:1.55;max-width:180px;font-weight:400}
+
+/* LOGOS */
+.logos-strip{background:rgba(255,255,255,0.025);border-top:1px solid rgba(255,255,255,0.06);padding:18px 48px;display:flex;align-items:center;gap:0;flex-wrap:wrap}
+.logos-label{font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.22);margin-right:28px;white-space:nowrap;font-weight:600}
+.logo-item{font-size:11px;font-weight:700;color:rgba(255,255,255,0.28);letter-spacing:0.1em;text-transform:uppercase;padding:6px 20px;border-right:1px solid rgba(255,255,255,0.06);cursor:default;transition:color 0.15s}
+.logo-item:hover{color:rgba(255,255,255,0.65)}
+.logo-item:last-child{border-right:none}
+
+/* SERVICES */
+.section{padding:80px 48px}
+.section-tag{font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--smalt);margin-bottom:12px;font-weight:700}
+.section-h{font-size:clamp(26px,4vw,40px);font-weight:800;text-transform:uppercase;color:var(--text);letter-spacing:-0.02em;margin-bottom:8px;line-height:1.05}
+.section-sub{font-size:13px;color:var(--muted);line-height:1.75;max-width:560px;margin-bottom:48px;font-weight:400}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.svc-tile{background:#fff;padding:30px;cursor:pointer;transition:background 0.15s;border-bottom:3px solid transparent}
+.svc-tile:hover{background:var(--surface);border-bottom-color:var(--smalt)}
+.svc-num{font-size:30px;font-weight:300;color:var(--border);margin-bottom:12px;line-height:1;letter-spacing:-0.02em}
+.svc-name{font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px}
+.svc-desc{font-size:12px;color:var(--muted);line-height:1.7;font-weight:400}
+
+/* TEAM PREVIEW */
+.team-preview{background:var(--navy);padding:72px 48px;position:relative;overflow:hidden}
+.team-preview::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)}
+.tp-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px}
+.tp-link{font-size:10px;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-weight:700}
+.tp-link:hover{opacity:0.8}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.team-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:22px}
+.tc-avatar{width:52px;height:52px;border-radius:50%;background:var(--smalt);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:0.05em}
+.tc-name{font-size:14px;font-weight:700;color:#fff;margin-bottom:2px}
+.tc-role{font-size:9px;color:var(--sky);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;font-weight:600}
+.tc-bio{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.65;font-weight:300}
+.fp-row{display:flex;gap:0;margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.07);align-items:center;flex-wrap:wrap;gap:12px}
+.fp-label{font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-right:8px;font-weight:600}
+.fp-city{display:flex;align-items:center;gap:6px;padding-right:16px;border-right:1px solid rgba(255,255,255,0.07)}
+.fp-city:last-child{border-right:none}
+.fp-dot{width:6px;height:6px;border-radius:50%;background:var(--sky);flex-shrink:0}
+.fp-name{font-size:11px;color:rgba(255,255,255,0.55);font-weight:400}
+
+/* HOMEPAGE CTA */
+.home-cta{padding:80px 48px;background:var(--surface);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px}
+.hcta-text h2{font-size:clamp(22px,3vw,34px);font-weight:800;text-transform:uppercase;color:var(--text);letter-spacing:-0.02em;margin-bottom:8px;line-height:1.05}
+.hcta-text p{font-size:13px;color:var(--muted);max-width:480px;line-height:1.75;font-weight:400}
+
+/* ═══════════ WHAT WE DO ═══════════ */
+.page-hero{background:var(--navy);padding:120px 48px 60px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)}
+.page-hero-tag{font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sky);margin-bottom:12px;font-weight:600}
+.page-hero-h{font-size:clamp(34px,5vw,58px);font-weight:800;text-transform:uppercase;color:#fff;letter-spacing:-0.02em;line-height:1.02;margin-bottom:10px}
+.page-hero-sub{font-size:14px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.75;font-weight:300}
+.wwd-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin:0}
+.wwd-card{background:#fff;padding:38px;transition:background 0.15s}
+.wwd-card:hover{background:var(--surface)}
+.wwd-icon-row{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.wwd-num{font-size:38px;font-weight:300;color:var(--border);line-height:1;letter-spacing:-0.02em}
+.wwd-title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:10px}
+.wwd-desc{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:14px;font-weight:400}
+.wwd-items{display:flex;flex-direction:column;gap:5px}
+.wwd-item{font-size:11px;color:var(--smalt);display:flex;align-items:center;gap:7px;font-weight:600}
+.wwd-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--smalt);flex-shrink:0}
+
+/* ═══════════ CASE STUDIES ═══════════ */
+.cs-index{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.cs-card{background:#fff;padding:38px;cursor:pointer;transition:background 0.15s;position:relative;overflow:hidden}
+.cs-card:hover{background:var(--surface)}
+.cs-card::after{content:'→';position:absolute;bottom:28px;right:28px;font-size:18px;color:var(--border);transition:color 0.15s}
+.cs-card:hover::after{color:var(--smalt)}
+.cs-tag{font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--smalt);font-weight:700;margin-bottom:12px}
+.cs-title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:16px;line-height:1.3}
+.cs-stats{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:14px}
+.cs-stat .n{font-size:24px;font-weight:300;color:var(--smalt);line-height:1;letter-spacing:-0.02em}
+.cs-stat .l{font-size:10px;color:var(--muted);margin-top:2px;font-weight:400}
+.cs-desc{font-size:12px;color:var(--muted);line-height:1.7;font-weight:400}
+
+/* INDIVIDUAL CS PAGE */
+.cs-detail{display:none}.cs-detail.active{display:block}
+.cs-hero-block{background:var(--navy);padding:120px 48px 40px;position:relative;overflow:hidden}
+.cs-hero-block::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)}
+.cs-back{font-size:10px;color:var(--sky);cursor:pointer;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:6px}
+.cs-back:hover{opacity:0.8}
+.cs-h-tag{font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:var(--sky);margin-bottom:10px;font-weight:600}
+.cs-h-title{font-size:clamp(22px,3.5vw,34px);font-weight:800;text-transform:uppercase;color:#fff;letter-spacing:-0.02em;line-height:1.1;margin-bottom:24px;max-width:680px}
+.cs-stat-row{display:flex;gap:10px;flex-wrap:wrap}
+.cs-stat-box{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:4px;padding:16px 18px;flex:1;min-width:120px}
+.cs-stat-box .n{font-size:26px;font-weight:300;color:var(--sky);line-height:1;letter-spacing:-0.02em}
+.cs-stat-box .l{font-size:10px;color:rgba(255,255,255,0.45);margin-top:4px;line-height:1.4;font-weight:400}
+.cs-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.cs-col{background:#fff;padding:26px 28px}
+.cs-col-head{font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--smalt);font-weight:700;border-bottom:2px solid var(--smalt);padding-bottom:7px;margin-bottom:12px}
+.cs-col-body{font-size:12px;color:var(--muted);line-height:1.85;font-weight:400}
+.cs-narrative{padding:48px}
+.cs-sec-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:10px}
+.cs-para{font-size:13px;color:var(--muted);line-height:1.9;margin-bottom:18px;font-weight:400}
+.cs-pullquote{border-left:3px solid var(--smalt);background:var(--surface);padding:18px 24px;margin:24px 0;border-radius:0 6px 6px 0}
+.cs-pullquote p{font-size:14px;font-weight:600;color:var(--text);line-height:1.65}
+.cs-cta-block{background:var(--navy);padding:36px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.cs-cta-block h3{font-size:15px;font-weight:700;color:#fff;margin-bottom:4px}
+.cs-cta-block p{font-size:12px;color:rgba(255,255,255,0.45);max-width:460px;line-height:1.6;font-weight:400}
+
+/* ═══════════ TEAM ═══════════ */
+.team-full-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-bottom:0}
+.tf-card{background:#fff;padding:34px;transition:background 0.15s}
+.tf-card:hover{background:var(--surface)}
+.tf-avatar{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:0.05em}
+.tf-name{font-size:15px;font-weight:700;color:var(--text);margin-bottom:2px}
+.tf-role{font-size:9px;color:var(--smalt);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;font-weight:700}
+.tf-bio{font-size:12px;color:var(--muted);line-height:1.75;font-weight:400}
+.tf-loc{display:inline-block;font-size:8px;background:rgba(26,48,153,0.07);color:var(--smalt);padding:4px 9px;border-radius:2px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px}
+.map-section{background:var(--navy);padding:60px 48px;position:relative;overflow:hidden}
+.map-section::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)}
+.map-inner{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:center}
+
+/* ═══════════ INSIGHTS ═══════════ */
+.blog-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.blog-card{background:#fff;padding:38px;cursor:pointer;transition:background 0.15s}
+.blog-card:hover{background:var(--surface)}
+.blog-tag{font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--smalt);font-weight:700;margin-bottom:10px}
+.blog-title{font-size:18px;font-weight:700;color:var(--text);margin-bottom:10px;line-height:1.3}
+.blog-meta{font-size:11px;color:var(--muted);margin-bottom:12px;font-weight:400}
+.blog-excerpt{font-size:13px;color:var(--muted);line-height:1.75;font-weight:400}
+.blog-post{display:none;padding:80px 48px;max-width:760px}.blog-post.active{display:block}
+.bp-back{font-size:10px;color:var(--smalt);cursor:pointer;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin-bottom:32px;display:flex;align-items:center;gap:6px}
+.bp-tag{font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--smalt);font-weight:700;margin-bottom:10px}
+.bp-title{font-size:clamp(26px,4vw,46px);font-weight:800;text-transform:uppercase;color:var(--text);letter-spacing:-0.02em;line-height:1.02;margin-bottom:16px}
+.bp-meta{font-size:12px;color:var(--muted);margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--border);font-weight:400}
+.bp-sec{font-size:14px;font-weight:700;color:var(--text);margin:28px 0 10px}
+.bp-para{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:18px;font-weight:400}
+.bp-quote{border-left:3px solid var(--smalt);background:var(--surface);padding:18px 24px;margin:28px 0;border-radius:0 6px 6px 0}
+.bp-quote p{font-size:15px;font-weight:600;color:var(--text);line-height:1.65}
+
+/* ═══════════ CONTACT / BOOK ═══════════ */
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:0;min-height:600px}
+.contact-left{background:var(--navy);padding:60px 48px;position:relative;overflow:hidden}
+.contact-left::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)}
+.cl-label{font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sky);margin-bottom:12px;font-weight:600}
+.cl-title{font-size:32px;font-weight:800;text-transform:uppercase;color:#fff;letter-spacing:-0.02em;margin-bottom:8px;line-height:1.02}
+.cl-sub{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.75;margin-bottom:32px;font-weight:300}
+.cl-detail{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.cl-icon{font-size:14px;color:var(--sky);width:18px;text-align:center}
+.cl-text{font-size:13px;color:rgba(255,255,255,0.65);font-weight:400}
+.cl-team{margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.07)}
+.clt-label{font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:14px;font-weight:600}
+.clt-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.clt-av{width:36px;height:36px;border-radius:50%;background:var(--smalt);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff}
+.clt-name{font-size:13px;color:#fff;font-weight:500}
+.clt-role{font-size:10px;color:rgba(255,255,255,0.4);font-weight:400}
+.contact-right{background:var(--surface);padding:48px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:0}
+.form-group{margin-bottom:16px}
+.form-label{font-size:10px;font-weight:700;color:var(--text);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:5px;display:block}
+.form-input{width:100%;border:1px solid var(--border);border-radius:4px;padding:11px 14px;font-size:13px;color:var(--text);font-family:'Montserrat','Arial',sans-serif;background:#fff;transition:border-color 0.15s;font-weight:400}
+.form-input:focus{outline:none;border-color:var(--smalt)}
+textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
+.form-submit{width:100%;background:var(--smalt);color:#fff;border:none;padding:14px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;font-family:'Montserrat','Arial',sans-serif;transition:background 0.15s;margin-top:4px}
+.form-submit:hover{background:#1e3ab5}
+
+/* FOOTER */
+footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid rgba(255,255,255,0.06)}
+.footer-logo{display:flex;align-items:center;gap:9px}
+.footer-logo-text{font-size:15px;font-weight:700;color:#fff;letter-spacing:0.12em;text-transform:uppercase}
+.footer-est{font-size:9px;color:rgba(255,255,255,0.28);margin-top:3px;font-weight:400;letter-spacing:0.04em}
+.footer-links{display:flex;gap:22px}
+.footer-links a{font-size:10px;color:rgba(255,255,255,0.32);text-transform:uppercase;letter-spacing:0.08em;cursor:pointer;font-weight:600;transition:color 0.15s}
+.footer-links a:hover{color:#fff}
+.footer-contact{font-size:11px;color:rgba(255,255,255,0.32);text-align:right;line-height:1.7;font-weight:400}
+
+/* DIVIDER STRIPE */
+.divider-stripe{height:3px;background:linear-gradient(90deg,var(--smalt) 0%,var(--sky) 60%,transparent 100%)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:0 20px}.nav-links{display:none}
+  .hero,.section,.page-hero,.cs-narrative,.contact-left,.contact-right,.map-section{padding-left:24px;padding-right:24px}
+  .proof-bar{grid-template-columns:1fr 1fr}
+  .services-grid,.wwd-grid,.cs-index,.cs-cols,.team-full-grid,.blog-grid,.contact-grid{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
+  .logos-strip{padding:16px 24px}
+  footer{padding:24px}
+  .map-inner{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- BRAND ICON SVG — reusable inline def -->
+<!-- Square-base + upward-arrow icon representing Hirondl's growth concept -->
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" onclick="showPage('home')">
+    <!-- Brand icon: square foundation + upward arrow -->
+    <svg class="nav-logo-icon" width="22" height="24" viewBox="0 0 22 24" fill="none" aria-hidden="true">
+      <rect x="2" y="14" width="18" height="10" fill="#8AC5FF"/>
+      <polygon points="11,2 21,15 1,15" fill="#fff"/>
+    </svg>
+    <span class="nav-logo-text">Hirondl</span>
+  </div>
+  <div class="nav-links">
+    <a onclick="showPage('home')" id="nav-home" class="active">Home</a>
+    <a onclick="showPage('wwd')" id="nav-wwd">What we do</a>
+    <a onclick="showPage('cases')" id="nav-cases">Case studies</a>
+    <a onclick="showPage('team')" id="nav-team">Team</a>
+    <a onclick="showPage('insights')" id="nav-insights">Insights</a>
+    <a onclick="showPage('contact')" id="nav-contact" class="nav-cta">Book a call</a>
+  </div>
+</nav>
+
+<!-- ═══════════════ HOME PAGE ═══════════════ -->
+<div class="page active" id="page-home">
+
+  <section class="hero">
+    <svg class="hero-bg" viewBox="0 0 600 900" fill="none" preserveAspectRatio="xMaxYMid slice">
+      <path d="M600 0 Q420 300 300 450 Q180 600 220 900" stroke="white" stroke-width="1.5" fill="none"/>
+      <path d="M660 60 Q480 360 360 510 Q240 660 280 960" stroke="white" stroke-width="1" fill="none"/>
+      <path d="M540 -60 Q360 240 240 390 Q120 540 160 840" stroke="white" stroke-width="0.5" fill="none"/>
+    </svg>
+    <div class="hero-eyebrow">Value Creation · Growth · Transformation</div>
+    <h1 class="hero-h">We stay<br><span class="sky">until impact.</span><br>Not until<br>the deck is done.</h1>
+    <div class="hero-tagline">Your Partner in Ambitious Growth</div>
+    <p class="hero-sub">Hirondl designs and executes commercial transformations for PE-backed and industrial businesses. We partner from diagnosis through to measurable outcome capture.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="showPage('cases')">See our work</button>
+      <button class="btn-secondary" onclick="showPage('contact')">Get in touch</button>
+    </div>
+    <div class="proof-bar">
+      <div class="proof-item">
+        <div class="proof-n">2<span class="u">–3pp</span></div>
+        <div class="proof-l">Gross margin recovered for a PE owned manufacturer</div>
+      </div>
+      <div class="proof-item" style="padding-left:24px">
+        <div class="proof-n">50<span class="u">%</span></div>
+        <div class="proof-l">More visits on high potential accounts after segmentation</div>
+      </div>
+      <div class="proof-item" style="padding-left:24px">
+        <div class="proof-n">2</div>
+        <div class="proof-l">New Asian subsidiaries opened for a PE owned paper producer</div>
+      </div>
+      <div class="proof-item" style="padding-left:24px">
+        <div class="proof-n">150<span class="u">+</span></div>
+        <div class="proof-l">Engagements delivered across Europe since 2014</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider-stripe"></div>
+
+  <div class="logos-strip" style="background:#0d1228">
+    <span class="logos-label">Trusted by</span>
+    <div class="logo-item">KKR</div>
+    <div class="logo-item">BainCapital</div>
+    <div class="logo-item">FountainVest</div>
+    <div class="logo-item">LDC</div>
+    <div class="logo-item">Paragon Partners</div>
+    <div class="logo-item">Normec</div>
+  </div>
+
+  <section class="section" style="background:#fff">
+    <div class="section-tag">What we do</div>
+    <div class="section-h">Six ways we create<br>commercial value</div>
+    <p class="section-sub">We design, implement, and stay until the results are visible. Each capability area is built around delivery, not advice.</p>
+    <div class="services-grid">
+      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">01</div><div class="svc-name">Sales and Value Creation Strategy</div><div class="svc-desc">Maturity assessments, growth lever diagnostics, value creation plan development, go-to-market model design.</div></div>
+      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">02</div><div class="svc-name">Sales Acceleration</div><div class="svc-desc">Lead generation, customer segmentation and account planning, pipeline set-up, digital channel development.</div></div>
+      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">03</div><div class="svc-name">Sustainable Pricing Optimisation</div><div class="svc-desc">Pricing opportunity capture, price setting tools, value pricing and value selling, price communication.</div></div>
+      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">04</div><div class="svc-name">Organisational Set-up for Growth</div><div class="svc-desc">Salesforce size and structure, capability building, field force incentive systems, KPI embedding.</div></div>
+      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">05</div><div class="svc-name">Sales Operations Set-up</div><div class="svc-desc">Management information systems, sales analytics and dashboards, CRM implementation.</div></div>
+      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">06</div><div class="svc-name">Pragmatic Custom Tooling</div><div class="svc-desc">Custom pricing tools, CRM builds, Power BI dashboards, prospect data scraping and longlists.</div></div>
+    </div>
+  </section>
+
+  <section class="team-preview">
+    <div class="tp-header">
+      <div>
+        <div class="section-tag" style="color:var(--sky)">Our team</div>
+        <div class="section-h" style="color:#fff">Operators, not advisors</div>
+      </div>
+      <span class="tp-link" onclick="showPage('team')">Meet the full team →</span>
+    </div>
+    <div class="team-grid">
+      <div class="team-card"><div class="tc-avatar" style="background:var(--smalt)">CG</div><div class="tc-name">Cécile George</div><div class="tc-role">Managing Director · London</div><div class="tc-bio">20+ years delivering rapid revenue and margin growth. Former Operating Partner. Ex McKinsey, INSEAD.</div></div>
+      <div class="team-card"><div class="tc-avatar" style="background:#0f6e56">GC</div><div class="tc-name">Gregor Cohnen</div><div class="tc-role">Partner · Germany</div><div class="tc-bio">20+ years PE value creation leadership. Complex B2B commercial transformations at Aurelius and Paragon.</div></div>
+      <div class="team-card"><div class="tc-avatar" style="background:#6b3a8a">RV</div><div class="tc-name">Renata Vancini</div><div class="tc-role">Partner · Italy</div><div class="tc-bio">15+ years business building from Fortune 500s to startups. Sales and pricing transformation specialist.</div></div>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Physical presence</span>
+      <div class="fp-city"><div class="fp-dot"></div><span class="fp-name">London HQ</span></div>
+      <div class="fp-city"><div class="fp-dot"></div><span class="fp-name">Berlin</span></div>
+      <div class="fp-city"><div class="fp-dot"></div><span class="fp-name">Milan</span></div>
+      <div class="fp-city"><div class="fp-dot"></div><span class="fp-name">Copenhagen</span></div>
+    </div>
+  </section>
+
+  <div class="home-cta">
+    <div class="hcta-text">
+      <h2>Ready to talk about<br>your portfolio?</h2>
+      <p>A 30-minute call with a Hirondl partner. No pitch, no slides — just an honest conversation about where value is being left on the table.</p>
+    </div>
+    <button class="btn-primary" onclick="showPage('contact')">Book a 30-minute call</button>
+  </div>
+
+  <footer>
+    <div>
+      <div class="footer-logo">
+        <svg width="16" height="18" viewBox="0 0 22 24" fill="none" aria-hidden="true">
+          <rect x="2" y="14" width="18" height="10" fill="#8AC5FF"/>
+          <polygon points="11,2 21,15 1,15" fill="#fff"/>
+        </svg>
+        <div>
+          <div class="footer-logo-text">Hirondl</div>
+          <div class="footer-est">Est. 2014 · Commercial Transformation Partners</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a onclick="showPage('wwd')">What we do</a>
+      <a onclick="showPage('cases')">Case studies</a>
+      <a onclick="showPage('team')">Team</a>
+      <a onclick="showPage('insights')">Insights</a>
+    </div>
+    <div class="footer-contact">office@hirondl.com<br>+44 7583 165409<br>hirondl.com</div>
+  </footer>
+</div>
+
+<!-- ═══════════════ WHAT WE DO ═══════════════ -->
+<div class="page" id="page-wwd">
+  <div class="page-hero">
+    <svg style="position:absolute;right:0;top:0;width:40%;height:100%;opacity:0.04;pointer-events:none" viewBox="0 0 480 600" fill="none" preserveAspectRatio="xMaxYMid slice"><path d="M480 0 Q340 180 260 300 Q180 420 200 600" stroke="white" stroke-width="1.5" fill="none"/><path d="M540 40 Q400 220 320 340 Q240 460 260 640" stroke="white" stroke-width="1" fill="none"/></svg>
+    <div class="page-hero-tag">Our capabilities</div>
+    <div class="page-hero-h">What we do</div>
+    <p class="page-hero-sub">Six service lines designed for speed to impact. We are implementation-focused — capability building and culture change are embedded in every engagement.</p>
+  </div>
+  <div class="wwd-grid">
+    <div class="wwd-card"><div class="wwd-icon-row"><div class="wwd-num">01</div></div><div class="wwd-title">Sales and Value Creation Strategy</div><div class="wwd-desc">We diagnose the commercial maturity of your business, identify the highest-value growth levers, and build a sales strategy grounded in what is actually achievable in your context.</div><div class="wwd-items"><div class="wwd-item">Maturity assessments</div><div class="wwd-item">Growth levers diagnostics</div><div class="wwd-item">Value creation plan development</div><div class="wwd-item">Go-to-market model design</div></div></div>
+    <div class="wwd-card"><div class="wwd-icon-row"><div class="wwd-num">02</div></div><div class="wwd-title">Sales Acceleration</div><div class="wwd-desc">We rebuild the commercial engine — from prospect targeting and customer segmentation through to pipeline discipline and digital channel activation.</div><div class="wwd-items"><div class="wwd-item">Lead generation and scoring</div><div class="wwd-item">Customer segmentation and account planning</div><div class="wwd-item">Pipeline set-up and tracking</div><div class="wwd-item">Digital channel set-up</div></div></div>
+    <div class="wwd-card"><div class="wwd-icon-row"><div class="wwd-num">03</div></div><div class="wwd-title">Sustainable Pricing Optimisation</div><div class="wwd-desc">We identify where margin is being left on the table, build the tools to capture it, and coach teams to hold price under commercial pressure.</div><div class="wwd-items"><div class="wwd-item">Pricing opportunity capture</div><div class="wwd-item">Price setting tool implementation</div><div class="wwd-item">Value pricing and value selling</div><div class="wwd-item">Price communication and negotiation</div></div></div>
+    <div class="wwd-card"><div class="wwd-icon-row"><div class="wwd-num">04</div></div><div class="wwd-title">Organisational Set-up for Growth</div><div class="wwd-desc">We design and implement the commercial organisation structure needed to sustain growth after the engagement closes — including incentives, KPIs, and capability building.</div><div class="wwd-items"><div class="wwd-item">Salesforce size and structure</div><div class="wwd-item">Capability building</div><div class="wwd-item">Field force incentive systems</div><div class="wwd-item">KPI set-up and embedding</div></div></div>
+    <div class="wwd-card"><div class="wwd-icon-row"><div class="wwd-num">05</div></div><div class="wwd-title">Sales Operations Set-up</div><div class="wwd-desc">We build the operational backbone that makes commercial change sustainable — management information, dashboards, and CRM systems that actually get used.</div><div class="wwd-items"><div class="wwd-item">Management information system set-up</div><div class="wwd-item">Sales analytics and dashboards</div><div class="wwd-item">CRM implementation</div></div></div>
+    <div class="wwd-card"><div class="wwd-icon-row"><div class="wwd-num">06</div></div><div class="wwd-title">Pragmatic Custom Tooling</div><div class="wwd-desc">We build or implement the tooling required to embed change quickly — from custom pricing tools to prospect longlists to Power BI dashboards connected to your CRM.</div><div class="wwd-items"><div class="wwd-item">Custom pricing and CPQ tools</div><div class="wwd-item">CRM builds (HubSpot, Pipedrive)</div><div class="wwd-item">Power BI dashboards</div><div class="wwd-item">Prospect data and longlists</div></div></div>
+  </div>
+  <div class="home-cta">
+    <div class="hcta-text"><h2>See these capabilities<br>in practice</h2><p>Our case studies show exactly how each service line has been applied inside PE-backed and industrial businesses across Europe.</p></div>
+    <button class="btn-primary" onclick="showPage('cases')">View case studies</button>
+  </div>
+  <footer>
+    <div>
+      <div class="footer-logo">
+        <svg width="16" height="18" viewBox="0 0 22 24" fill="none" aria-hidden="true"><rect x="2" y="14" width="18" height="10" fill="#8AC5FF"/><polygon points="11,2 21,15 1,15" fill="#fff"/></svg>
+        <div><div class="footer-logo-text">Hirondl</div><div class="footer-est">Est. 2014</div></div>
+      </div>
+    </div>
+    <div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('cases')">Case studies</a><a onclick="showPage('team')">Team</a></div>
+    <div class="footer-contact">office@hirondl.com · hirondl.com</div>
+  </footer>
+</div>
+
+<!-- ═══════════════ CASE STUDIES ═══════════════ -->
+<div class="page" id="page-cases">
+  <div id="cs-index-view">
+    <div class="page-hero">
+      <div class="page-hero-tag">Proof of delivery</div>
+      <div class="page-hero-h">Case studies</div>
+      <p class="page-hero-sub">Four engagements across pricing, segmentation, and go-to-market strategy. Every number below is from a real project.</p>
+    </div>
+    <div class="cs-index">
+      <div class="cs-card" onclick="showCS(0)"><div class="cs-tag">Pricing · PE Portfolio · Industrial</div><div class="cs-title">Pricing Improvement Program — PE Owned Welding Supply Manufacturer</div><div class="cs-stats"><div class="cs-stat"><div class="n">2–3pp</div><div class="l">Gross margin improvement</div></div><div class="cs-stat"><div class="n">4</div><div class="l">Rollout waves, 12 months</div></div></div><div class="cs-desc">Rebuilt pricing discipline across six European markets. Recovered structural margin erosion caused by autonomous rep discounting.</div></div>
+      <div class="cs-card" onclick="showCS(1)"><div class="cs-tag">Segmentation · PE Portfolio · Industrial</div><div class="cs-title">Potential-Based Customer Segmentation — PE Owned Welding Supply Manufacturer</div><div class="cs-stats"><div class="cs-stat"><div class="n">50%</div><div class="l">Fewer low potential visits</div></div><div class="cs-stat"><div class="n">3–5%</div><div class="l">SOW increase per market</div></div></div><div class="cs-desc">Rebuilt commercial targeting from sales-volume logic to potential and share of wallet. Unlocked 25% rep capacity for hunting.</div></div>
+      <div class="cs-card" onclick="showCS(2)"><div class="cs-tag">Segmentation · PE Portfolio · Specialty Materials</div><div class="cs-title">Potential-Based Customer Segmentation — PE Owned Premium Paper Supplier</div><div class="cs-stats"><div class="cs-stat"><div class="n">40–50%</div><div class="l">More high potential visits</div></div><div class="cs-stat"><div class="n">30–40</div><div class="l">New hires justified by data</div></div></div><div class="cs-desc">Global segmentation rollout justified 30 to 40 new sales hires through market potential analysis rather than headcount intuition.</div></div>
+      <div class="cs-card" onclick="showCS(3)"><div class="cs-tag">Go-to-Market · PE Portfolio · Specialty Materials</div><div class="cs-title">Asian GTM Strategy — PE Owned Premium Paper Supplier</div><div class="cs-stats"><div class="cs-stat"><div class="n">2</div><div class="l">New subsidiaries opened</div></div><div class="cs-stat"><div class="n">DD%</div><div class="l">Regional sales growth</div></div></div><div class="cs-desc">Designed and executed a market entry strategy across 50 Asian markets, leading to two new subsidiaries and sustained double-digit growth.</div></div>
+    </div>
+    <footer style="margin-top:0">
+      <div>
+        <div class="footer-logo">
+          <svg width="16" height="18" viewBox="0 0 22 24" fill="none" aria-hidden="true"><rect x="2" y="14" width="18" height="10" fill="#8AC5FF"/><polygon points="11,2 21,15 1,15" fill="#fff"/></svg>
+          <div><div class="footer-logo-text">Hirondl</div><div class="footer-est">Est. 2014</div></div>
+        </div>
+      </div>
+      <div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('wwd')">What we do</a><a onclick="showPage('team')">Team</a></div>
+      <div class="footer-contact">office@hirondl.com · hirondl.com</div>
+    </footer>
+  </div>
+
+  <!-- INDIVIDUAL CS PAGES -->
+  <div id="cs-detail-view" style="display:none">
+    <div id="cs-0" class="cs-detail">
+      <div class="cs-hero-block">
+        <div class="cs-back" onclick="backToCS()">← All case studies</div>
+        <div class="cs-h-tag">Case Study · PE Portfolio · Industrial Manufacturing</div>
+        <div class="cs-h-title">Pricing Improvement Program — PE Owned Welding Supply Manufacturer</div>
+        <div class="cs-stat-row">
+          <div class="cs-stat-box"><div class="n">2–3pp</div><div class="l">Gross margin improvement per market</div></div>
+          <div class="cs-stat-box"><div class="n">4</div><div class="l">Rollout waves over 12 months</div></div>
+          <div class="cs-stat-box"><div class="n">35%</div><div class="l">Max price variation found for same product</div></div>
+          <div class="cs-stat-box"><div class="n">100%</div><div class="l">Sales team adoption by program close</div></div>
+        </div>
+      </div>
+      <div class="cs-cols">
+        <div class="cs-col"><div class="cs-col-head">Challenge</div><div class="cs-col-body">Raw material costs had risen sharply but prices had not kept pace. High variation in profitability across comparable accounts. Cost leakages from freight, returns, and payment terms invisible in reported margins.</div></div>
+        <div class="cs-col"><div class="cs-col-head">Approach</div><div class="cs-col-body">Built rep-level price opportunity capture sheets. Set rep-specific improvement targets. Wave-based rollout with individual coaching. Power BI impact tracking dashboard. Revised distribution price book.</div></div>
+        <div class="cs-col"><div class="cs-col-head">Impact</div><div class="cs-col-body">2 to 3 percentage point gross margin improvement sustained after engagement close. Sales teams began using the tool voluntarily in client meetings. Resistant markets became the strongest advocates.</div></div>
+      </div>
+      <div class="cs-narrative">
+        <div class="cs-sec-title">The situation</div>
+        <div class="cs-para">Three years of transaction data showed the same product being sold to comparable customers at prices varying by up to thirty-five percent. The variation was structural, consistent across geographies, and entirely the result of autonomous rep decisions made without any shared pricing framework.</div>
+        <div class="cs-pullquote"><p>The recoverable opportunity was larger than the original investment thesis assumed. But recovering it required changing how the entire sales organisation thought about pricing, not just correcting a spreadsheet.</p></div>
+        <div class="cs-sec-title">How we adapted mid-program</div>
+        <div class="cs-para">Initial group workshops met significant resistance in two markets. We shifted to individual coaching sessions working through each rep's own account data. Personal data proved far harder to dismiss than aggregate patterns. The wave-based rollout let early adopter markets serve as proof of concept for resistant ones.</div>
+      </div>
+      <div class="cs-cta-block"><div><h3>Facing a pricing challenge in a portfolio company?</h3><p>We have delivered pricing transformations across manufacturing, distribution, and B2B services. References available on request.</p></div><button class="btn-primary" onclick="showPage('contact')">Get in touch</button></div>
+      <footer>
+        <div>
+          <div class="footer-logo">
+            <svg width="16" height="18" viewBox="0 0 22 24" fill="none" aria-hidden="true"><rect x="2" y="14" width="18" height="10" fill="#8AC5FF"/><polygon points="11,2 21,15 1,15" fill="#fff"/></svg>
+            <div><div class="footer-logo-text">Hirondl</div><div class="footer-est">Est. 2014</div></div>
+          </div>
+        </div>
+        <div class="footer-links"><a onclick="backToCS()">All case studies</a><a onclick="showPage('team')">Team</a></div>
+        <div class="footer-contact">office@hirondl.com · hirondl.com</div>
+      </footer>
+    </div>
+
+    <div id="cs-1" class="cs-detail">
+      <div class="cs-hero-block">
+        <div class="cs-back" onclick="backToCS()">← All case studies</div>
+        <div class="cs-h-tag">Case Study · PE Portfolio · Industrial Distribution</div>
+        <div class="cs-h-title">Potential-Based Customer Segmentation — PE Owned Welding Supply Manufacturer</div>
+        <div class="cs-stat-row">
+          <div class="cs-stat-box"><div class="n">50%</div><div class="l">Fewer visits on low potential accounts</div></div>
+          <div class="cs-stat-box"><div class="n">20–30%</div><div class="l">More visits on high potential accounts</div></div>
+          <div class="cs-stat-box"><div class="n">3–5%</div><div class="l">SOW increase across markets</div></div>
+          <div class="cs-stat-box"><div class="n">25%</div><div class="l">New capacity freed for hunting</div></div>
+        </div>
+      </div>
+      <div class="cs-cols">
+        <div class="cs-col"><div class="cs-col-head">Challenge</div><div class="cs-col-body">Some market centres had no segmentation model. Others used sales-volume-based segmentation that rewarded historic activity rather than future potential. Reps spent time where relationships were comfortable, not where opportunity was largest.</div></div>
+        <div class="cs-col"><div class="cs-col-head">Approach</div><div class="cs-col-body">Built a potential and SOW segmentation framework. Developed account plans and visit targets per rep per client. Identified high-potential low-SOW regions. Defined 10 to 20 must-win accounts per market centre.</div></div>
+        <div class="cs-col"><div class="cs-col-head">Impact</div><div class="cs-col-body">Visits to low potential accounts fell 50 percent. Visits to high potential accounts rose 20 to 30 percent. SOW improved 3 to 5 percent per market. A new hunting capacity of 25 percent of rep time was unlocked for the first time.</div></div>
+      </div>
+      <div class="cs-narrative">
+        <div class="cs-sec-title">The situation</div>
+        <div class="cs-para">Sales reps were working hard. The problem was not effort — it was direction. When we mapped where time was actually being spent against where potential was highest, the mismatch was significant. Accounts receiving the most attention were ones reps had strong relationships with, not the ones with the largest untapped share of wallet.</div>
+        <div class="cs-pullquote"><p>The most common objection was that reps would lose C customer relationships. In practice, A customers — previously under-served — benefited most from the reallocation, and SOW gains followed within the first two quarters.</p></div>
+      </div>
+      <div class="cs-cta-block"><div><h3>Are your reps focused on the right customers?</h3><p>We map potential and share of wallet to redirect commercial effort where it generates the highest return.</p></div><button class="btn-primary" onclick="showPage('contact')">Get in touch</button></div>
+      <footer>
+        <div>
+          <div class="footer-logo">
+            <svg width="16" height="18" viewBox="0 0 22 24" fill="none" aria-hidden="true"><rect x="2" y="14" width="18" height="10" fill="#8AC5FF"/><polygon points="11,2 21,15 1,15" fill="#fff"/></svg>
+            <div><div class="footer-logo-text">Hirondl</div><div class="footer-est">Est. 2014</div></div>
+          </div>
+        </div>
+        <div class="footer-links"><a onclick="backToCS()">All case studies</a></div>
+        <div class="footer-contact">office@hirondl.com · hirondl.com</div>
+      </footer>
+    </div>
+
+    <div id="cs-2" class="cs-detail">
+      <div class="cs-hero-block">
+        <div class="cs-back" onclick="backToCS()">← All case studies</div>
+        <div class="cs-h-tag">Case Study · PE Portfolio · Specialty Materials</div>
+        <div class="cs-h-title">Potential-Based Customer Segmentation — PE Owned Premium Paper Supplier</div>
+        <div class="cs-stat-row">
+          <div class="cs-stat-box"><div class="n">40–50%</div><div class="l">More visits on high potential accounts</div></div>
+          <div class="cs-stat-box"><div class="n">25%</div><div class="l">Rep capacity freed for hunting</div></div>
+          <div class="cs-stat-box"><div class="n">30–40</div><div class="l">New sales hires justified</div></div>
+          <div class="cs-stat-box"><div class="n">5+</div><div class="l">Markets moved to full framework</div></div>
+        </div>
+      </div>
+      <div class="cs-cols">
+        <div class="cs-col"><div class="cs-col-head">Challenge</div><div class="cs-col-body">Sales-based segmentation existed in European affiliates only. No framework outside Europe. No visibility into customer potential globally. Some high-potential regions were significantly under-resourced.</div></div>
+        <div class="cs-col"><div class="cs-col-head">Approach</div><div class="cs-col-body">Built a gross margin potential and SOW segmentation framework globally. Developed account plans and visit targets per rep. Identified high-potential low-SOW regions for new resource investment.</div></div>
+        <div class="cs-col"><div class="cs-col-head">Impact</div><div class="cs-col-body">40 to 50 percent more visits on high potential customers. Geographic analysis directly justified 30 to 40 new sales hires grounded in market potential data rather than headcount intuition.</div></div>
+      </div>
+      <div class="cs-narrative">
+        <div class="cs-sec-title">The situation</div>
+        <div class="cs-para">The premium paper supplier had built its commercial organisation incrementally. The same model had been replicated into new geographies without testing whether underlying customer potential and competitive dynamics warranted it. Outside Europe, no framework existed at all.</div>
+        <div class="cs-pullquote"><p>The geographic coverage analysis revealed something the business had not previously quantified. Several regions with among the highest potential in the portfolio were being covered by a single rep with no dedicated resource. That finding directly justified 30 to 40 new hires.</p></div>
+      </div>
+      <div class="cs-cta-block"><div><h3>Unsure where your sales resource is actually needed?</h3><p>We build potential and SOW frameworks that tell you exactly where to invest, where to maintain, and where to pull back.</p></div><button class="btn-primary" onclick="showPage('contact')">Get in touch</button></div>
+      <footer>
+        <div>
+          <div class="footer-logo">
+            <svg width="16" height="18" viewBox="0 0 22 24" fill="none" aria-hidden="true"><rect x="2" y="14" width="18" height="10" fill="#8AC5FF"/><polygon points="11,2 21,15 1,15" fill="#fff"/></svg>
+            <div><div class="footer-logo-text">Hirondl</div><div class="footer-est">Est. 2014</div></div>
+          </div>
+        </div>
+        <div class="footer-links"><a onclick="backToCS()">All case studies</a></div>
+        <div class="footer-contact">office@hirondl.com · hirondl.com</div>
+      </footer>
+    </div>
+
+    <div id="cs-3" class="cs-detail">
+      <div class="cs-hero-block">
+        <div class="cs-back" onclick="backToCS()">← All case studies</div>
+        <div class="cs-h-tag">Case Study · PE Portfolio · Specialty Materials</div>
+        <div class="cs-h-title">Asian Go-to-Market Strategy — PE Owned Premium Paper Supplier</div>
+        <div class="cs-stat-row">
+          <div class="cs-stat-box"><div class="n">2</div><div class="l">New subsidiaries opened in Asia</div></div>
+          <div class="cs-stat-box"><div class="n">DD%</div><div class="l">Sales growth sustained across the region</div></div>
+          <div class="cs-stat-box"><div class="n">50</div><div class="l">Asian markets assessed bottom-up</div></div>
+          <div class="cs-stat-box"><div class="n">3</div><div class="l">Distinct GTM archetypes deployed</div></div>
+        </div>
+      </div>
+      <div class="cs-cols">
+        <div class="cs-col"><div class="cs-col-head">Challenge</div><div class="cs-col-body">As-is GTM strategy not in line with growth ambition in Asia. No rigorous view of potential by market. Insufficient resource available in priority markets. Existing distributor network built on relationships, not strategy.</div></div>
+        <div class="cs-col"><div class="cs-col-head">Approach</div><div class="cs-col-body">Bottom-up potential mapping for every Asian market. Market clustering into three strategic archetypes. Tailored GTM recommendation per cluster. Resource plan and subsidiary launch support for priority markets.</div></div>
+        <div class="cs-col"><div class="cs-col-head">Impact</div><div class="cs-col-body">Two new subsidiaries opened within eighteen months. Double-digit regional sales growth achieved and sustained. Commercial team left with a repeatable framework for assessing new markets independently.</div></div>
+      </div>
+      <div class="cs-narrative">
+        <div class="cs-sec-title">The situation</div>
+        <div class="cs-para">The business had operated across Asia for years through a distributor network that had grown incrementally. Each relationship had made sense in isolation. Collectively, they had created a commercial structure that bore almost no relationship to where the actual market opportunity sat.</div>
+        <div class="cs-pullquote"><p>The most common mistake in Asian market strategy is optimising for the markets you understand rather than the markets where the real potential sits. Getting to the right answer requires separating familiarity from opportunity.</p></div>
+        <div class="cs-sec-title">How we adapted mid-engagement</div>
+        <div class="cs-para">Our initial brief was to recommend a single updated go-to-market model for the region. As the potential data came in, it became clear that a single model was the wrong answer. We shifted to a clustering methodology — markets were grouped into archetypes based on potential, distributor reliability, competitive dynamics, and barriers to direct entry. Each archetype received a distinct GTM recommendation.</div>
+      </div>
+      <div class="cs-cta-block"><div><h3>Facing a similar challenge in a portfolio company?</h3><p>We work directly with PE teams and portfolio companies to turn value creation plans into measurable outcomes.</p></div><button class="btn-primary" onclick="showPage('contact')">Get in touch</button></div>
+      <footer>
+        <div>
+          <div class="footer-logo">
+            <svg width="16" height="18" viewBox="0 0 22 24" fill="none" aria-hidden="true"><rect x="2" y="14" width="18" height="10" fill="#8AC5FF"/><polygon points="11,2 21,15 1,15" fill="#fff"/></svg>
+            <div><div class="footer-logo-text">Hirondl</div><div class="footer-est">Est. 2014</div></div>
+          </div>
+        </div>
+        <div class="footer-links"><a onclick="backToCS()">All case studies</a></div>
+        <div class="footer-contact">office@hirondl.com · hirondl.com</div>
+      </footer>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ TEAM ═══════════════ -->
+<div class="page" id="page-team">
+  <div class="page-hero">
+    <div class="page-hero-tag">The team</div>
+    <div class="page-hero-h">Operators, not advisors</div>
+    <p class="page-hero-sub">We combine PE operating partner experience with top-tier management consulting backgrounds. In-country partners across four European capitals.</p>
+  </div>
+  <div class="team-full-grid">
+    <div class="tf-card"><div class="tf-avatar" style="background:var(--smalt)">CG</div><div class="tf-loc">London · Managing Director</div><div class="tf-name">Cécile George</div><div class="tf-role">Founder</div><div class="tf-bio">20+ years delivering rapid revenue and margin growth. Former Operating Partner at a PE house. Held both generalist consulting and independent expert roles for McKinsey and Company. Built and led global sales teams in B2B chemicals. Extensive experience operating businesses directly.</div></div>
+    <div class="tf-card"><div class="tf-avatar" style="background:#0f6e56">GC</div><div class="tf-loc">Berlin · Partner</div><div class="tf-name">Gregor Cohnen</div><div class="tf-role">Partner Germany</div><div class="tf-bio">20+ years value creation leadership in private equity and industry. Focus on design and execution of complex commercial transformations in B2B. Held both in-house consulting and operational roles at Aurelius, Paragon, and PE portfolio companies across Europe.</div></div>
+    <div class="tf-card"><div class="tf-avatar" style="background:#6b3a8a">RV</div><div class="tf-loc">Milan · Partner</div><div class="tf-name">Renata Vancini</div><div class="tf-role">Partner Italy</div><div class="tf-bio">15+ years of hands-on business building experience from Fortune 500s down to startups. Top-tier sales and marketing boutique consultancy background. Deep expertise in sales and pricing transformations across FMCG, industrial goods, and luxury.</div></div>
+    <div class="tf-card"><div class="tf-avatar" style="background:#0f6e56">YW</div><div class="tf-loc">London · Principal</div><div class="tf-name">Yabing Wu</div><div class="tf-role">Principal</div><div class="tf-bio">13+ years international B2B SaaS experience spanning commercial leadership, partnerships, and GTM strategy across the UK, Europe, and China. Former senior commercial roles at Deel (pre-IPO Decacorn) and Thomas International (PE-backed). Specialises in ecosystem-led growth for PE-backed software businesses.</div></div>
+    <div class="tf-card"><div class="tf-avatar" style="background:#854F0B">LP</div><div class="tf-loc">Europe · Senior Expert</div><div class="tf-name">Luca Pelamatti</div><div class="tf-role">Senior Expert</div><div class="tf-bio">Former Bain consultant. 10+ years driving top-line growth for multinationals and SMEs. Focus on commercial excellence and Revenue Growth Management in B2B2C environments across Europe.</div></div>
+    <div class="tf-card"><div class="tf-avatar" style="background:#444">IM</div><div class="tf-loc">Europe · Senior Expert</div><div class="tf-name">Igor Milat</div><div class="tf-role">Senior Expert</div><div class="tf-bio">Former McKinsey and Company consultant. 20+ years of experience in business building, commercial transformation, and consulting. Passionate about delivering impact from next generation technology across industrial and B2B markets.</div></div>
+  </div>
+  <div class="map-section">
+    <div style="margin-bottom:20px"><div class="section-tag" style="color:var(--sky)">Physical presence</div><div class="section-h" style="color:#fff;margin-bottom:4px">Pan-European</div><p style="font-size:13px;color:rgba(255,255,255,0.45);font-weight:300;line-height:1.75">In-country partners operating in local language across four European capitals. Engagements delivered across UK, Germany, Italy, France, Scandinavia, Eastern Europe, and Asia Pacific.</p></div>
+    <div class="map-inner">
+      <svg viewBox="0 0 120 158" width="160" height="200" fill="none" style="overflow:visible">
+        <path d="M26 22 L32 17 L37 20 L39 28 L35 35 L28 38 L23 33 L21 26 Z" fill="#1e3166" stroke="#2d4a9a" stroke-width="0.6"/><path d="M26 15 L30 11 L35 13 L36 20 L32 22 L26 22 L24 18 Z" fill="#1e3166" stroke="#2d4a9a" stroke-width="0.6"/><path d="M62 18 L67 15 L70 19 L69 26 L64 28 L61 24 Z" fill="#1e3166" stroke="#2d4a9a" stroke-width="0.6"/><path d="M28 52 L42 48 L54 51 L59 58 L57 68 L51 75 L40 77 L30 72 L26 63 L24 55 Z" fill="#1e3166" stroke="#2d4a9a" stroke-width="0.6"/><path d="M56 40 L70 38 L80 42 L82 52 L78 60 L67 63 L56 58 L53 49 Z" fill="#1e3166" stroke="#2d4a9a" stroke-width="0.6"/><path d="M57 64 L70 62 L80 64 L81 70 L73 74 L59 72 Z" fill="#182a58" stroke="#2d4a9a" stroke-width="0.5"/><path d="M54 74 L63 72 L73 74 L77 83 L75 94 L69 107 L65 118 L59 120 L55 110 L52 95 L50 83 Z" fill="#1e3166" stroke="#2d4a9a" stroke-width="0.6"/><path d="M56 8 L66 3 L76 7 L78 17 L72 26 L64 28 L57 23 L53 14 Z" fill="#182a58" stroke="#2d4a9a" stroke-width="0.5"/><path d="M78 5 L88 3 L93 9 L91 20 L83 24 L76 18 L76 9 Z" fill="#182a58" stroke="#2d4a9a" stroke-width="0.5"/>
+        <circle cx="29" cy="42" r="4" fill="#fff"/><circle cx="29" cy="42" r="8" fill="#fff" opacity="0.1"/>
+        <circle cx="67" cy="24" r="4" fill="#fff"/><circle cx="67" cy="24" r="8" fill="#fff" opacity="0.1"/>
+        <circle cx="68" cy="58" r="4" fill="#fff"/><circle cx="68" cy="58" r="8" fill="#fff" opacity="0.1"/>
+        <circle cx="60" cy="82" r="4" fill="#fff"/><circle cx="60" cy="82" r="8" fill="#fff" opacity="0.1"/>
+        <text x="34" y="46" fill="white" font-size="7" font-family="Montserrat,Arial,sans-serif">London</text>
+        <text x="72" y="28" fill="white" font-size="7" font-family="Montserrat,Arial,sans-serif">Copenhagen</text>
+        <text x="72" y="62" fill="white" font-size="7" font-family="Montserrat,Arial,sans-serif">Berlin</text>
+        <text x="64" y="86" fill="white" font-size="7" font-family="Montserrat,Arial,sans-serif">Rome</text>
+        <line x1="29" y1="42" x2="67" y2="24" stroke="rgba(255,255,255,0.2)" stroke-width="0.6" stroke-dasharray="3 2"/>
+        <line x1="29" y1="42" x2="68" y2="58" stroke="rgba(255,255,255,0.2)" stroke-width="0.6" stroke-dasharray="3 2"/>
+        <line x1="68" y1="58" x2="60" y2="82" stroke="rgba(255,255,255,0.2)" stroke-width="0.6" stroke-dasharray="3 2"/>
+        <line x1="67" y1="24" x2="68" y2="58" stroke="rgba(255,255,255,0.2)" stroke-width="0.6" stroke-dasharray="3 2"/>
+      </svg>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:14px"><div style="font-size:9px;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:4px">HQ</div><div style="font-size:13px;color:#fff;font-weight:400">London, England</div></div>
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:14px"><div style="font-size:9px;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:4px">Partner</div><div style="font-size:13px;color:#fff;font-weight:400">Berlin, Germany</div></div>
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:14px"><div style="font-size:9px;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:4px">Partner</div><div style="font-size:13px;color:#fff;font-weight:400">Rome, Italy</div></div>
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:14px"><div style="font-size:9px;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:4px">Partner</div><div style="font-size:13px;color:#fff;font-weight:400">Copenhagen, Denmark</div></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div>
+      <div class="footer-logo">
+        <svg width="16" height="18" viewBox="0 0 22 24" fill="none" aria-hidden="true"><rect x="2" y="14" width="18" height="10" fill="#8AC5FF"/><polygon points="11,2 21,15 1,15" fill="#fff"/></svg>
+        <div><div class="footer-logo-text">Hirondl</div><div class="footer-est">Est. 2014</div></div>
+      </div>
+    </div>
+    <div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('cases')">Case studies</a><a onclick="showPage('contact')">Contact</a></div>
+    <div class="footer-contact">office@hirondl.com · hirondl.com</div>
+  </footer>
+</div>
+
+<!-- ═══════════════ INSIGHTS ═══════════════ -->
+<div class="page" id="page-insights">
+  <div id="blog-index-view">
+    <div class="page-hero">
+      <div class="page-hero-tag">Insights</div>
+      <div class="page-hero-h">From the field</div>
+      <p class="page-hero-sub">Short pieces from our partners on commercial transformation, pricing, and value creation in PE-backed businesses.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card" onclick="showBlog(0)"><div class="blog-tag">Pricing · 3 min read</div><div class="blog-title">When the Margin Wasn't Where the Model Said It Was</div><div class="blog-meta">By Cécile George · Hirondl</div><div class="blog-excerpt">A PE backed welding manufacturer. Three years of transaction data. A structural pricing problem nobody had looked for. Here is what we found and how we fixed it.</div></div>
+      <div class="blog-card" onclick="showPage('contact')" style="background:var(--navy);cursor:pointer"><div style="height:100%;display:flex;flex-direction:column;justify-content:center"><div class="blog-tag" style="color:var(--sky)">Get in touch</div><div class="blog-title" style="color:#fff">Have a commercial challenge we should write about?</div><div class="blog-excerpt" style="color:rgba(255,255,255,0.45)">We share what we learn from every engagement. If you are working through a similar situation, we would like to hear about it.</div></div></div>
+    </div>
+    <footer style="margin-top:0">
+      <div>
+        <div class="footer-logo">
+          <svg width="16" height="18" viewBox="0 0 22 24" fill="none" aria-hidden="true"><rect x="2" y="14" width="18" height="10" fill="#8AC5FF"/><polygon points="11,2 21,15 1,15" fill="#fff"/></svg>
+          <div><div class="footer-logo-text">Hirondl</div><div class="footer-est">Est. 2014</div></div>
+        </div>
+      </div>
+      <div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('cases')">Case studies</a></div>
+      <div class="footer-contact">office@hirondl.com · hirondl.com</div>
+    </footer>
+  </div>
+  <div id="blog-post-view" style="display:none">
+    <div class="blog-post active">
+      <div class="bp-back" onclick="backToBlog()">← All insights</div>
+      <div class="bp-tag">Pricing · 3 min read</div>
+      <div class="bp-title">When the margin wasn't where the model said it was</div>
+      <div class="bp-meta">By Cécile George · Hirondl · Published 2025</div>
+      <div class="bp-sec">Context</div>
+      <div class="bp-para">The welding supply industry is built on volume, relationships, and tight margins. When a private equity firm acquires a business in this space, the value creation thesis almost always includes a pricing improvement component. Not because the business is badly managed, but because pricing discipline tends to erode quietly over time — one discount at a time — until the gap between what the business could charge and what it actually charges becomes structural rather than tactical.</div>
+      <div class="bp-sec">The problem</div>
+      <div class="bp-para">When we pulled three years of transaction history, we found something more significant than a pricing gap. For the same product, sold to comparable customers, prices varied by up to thirty-five percent. The variation had nothing to do with volume, strategic value, or competitive pressure. It was the result of individual sales reps making discount decisions autonomously, without shared guidelines, over many years.</div>
+      <div class="bp-para">Then we built the pocket margin waterfall. Freight costs were being silently absorbed on low-volume routes. Extended payment terms were being offered as relationship courtesies with no adjustment to the effective price. Return credits were sitting against accounts that looked profitable on gross revenue alone.</div>
+      <div class="bp-quote"><p>The recoverable opportunity was larger than the original investment thesis had assumed. But recovering it required changing how the entire sales organisation thought about pricing, not just correcting a spreadsheet.</p></div>
+      <div class="bp-sec">The solution</div>
+      <div class="bp-para">We built each sales rep a price opportunity capture tool tailored to their own book of business. Each rep could see their own discount patterns, the suggested target price, and the revenue impact of correcting specific accounts. We ran the program across four waves over twelve months, starting in markets where alignment was strongest and using those results to bring resistant markets along progressively.</div>
+      <div class="bp-para">The outcome was a two to three percentage point improvement in gross margin depending on the market, sustained after the engagement closed. The more meaningful signal was behavioural. The teams that had been most resistant at the start became the most vocal advocates for the tool.</div>
+      <div class="bp-sec">What this means</div>
+      <div class="bp-para">A pricing intervention changes what people charge today. A pricing transformation changes how a commercial organisation thinks about pricing permanently. The gap between those two outcomes is almost never a data problem. It is a capability and change management problem.</div>
+      <div style="margin-top:32px;padding:22px 26px;background:var(--surface);border-radius:6px;border:1px solid var(--border)">
+        <div style="font-size:13px;color:var(--text);font-weight:700;margin-bottom:4px">Working through a similar situation?</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:14px;font-weight:400">office@hirondl.com</div>
+        <button class="btn-primary" onclick="showPage('contact')" style="width:auto">Book a 30-minute call</button>
+      </div>
+    </div>
+    <footer>
+      <div>
+        <div class="footer-logo">
+          <svg width="16" height="18" viewBox="0 0 22 24" fill="none" aria-hidden="true"><rect x="2" y="14" width="18" height="10" fill="#8AC5FF"/><polygon points="11,2 21,15 1,15" fill="#fff"/></svg>
+          <div><div class="footer-logo-text">Hirondl</div><div class="footer-est">Est. 2014</div></div>
+        </div>
+      </div>
+      <div class="footer-links"><a onclick="backToBlog()">All insights</a><a onclick="showPage('cases')">Case studies</a></div>
+      <div class="footer-contact">office@hirondl.com · hirondl.com</div>
+    </footer>
+  </div>
+</div>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<div class="page" id="page-contact">
+  <div style="padding-top:66px">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <div class="cl-label">Book a conversation</div>
+        <div class="cl-title">Let's talk about your portfolio</div>
+        <p class="cl-sub">A 30-minute introductory call with a Hirondl partner. No slides, no pitch — just an honest conversation about where value is being left on the table.</p>
+        <div class="cl-detail"><div class="cl-icon">◷</div><div class="cl-text">30 minutes · Video call</div></div>
+        <div class="cl-detail"><div class="cl-icon">✉</div><div class="cl-text">office@hirondl.com</div></div>
+        <div class="cl-detail"><div class="cl-icon">☏</div><div class="cl-text">+44 7583 165409</div></div>
+        <div class="cl-detail"><div class="cl-icon">◎</div><div class="cl-text">405 Kings Road, London SW10 0BB</div></div>
+        <div class="cl-team">
+          <div class="clt-label">You will be speaking with</div>
+          <div class="clt-row"><div class="clt-av">CG</div><div><div class="clt-name">Cécile George</div><div class="clt-role">Managing Director · ex McKinsey · PE Operating Partner</div></div></div>
+          <div class="clt-row"><div class="clt-av" style="background:#0f6e56">GC</div><div><div class="clt-name">Gregor Cohnen</div><div class="clt-role">Partner · 20+ years PE value creation</div></div></div>
+        </div>
+      </div>
+      <div class="contact-right">
+        <div style="margin-bottom:24px"><div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px">Send us a message</div><div style="font-size:12px;color:var(--muted);font-weight:400">We respond within one business day.</div></div>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label">Your name</label><input class="form-input" type="text" placeholder="James Whitfield"></div>
+          <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" placeholder="james@fund.com"></div>
+        </div>
+        <div class="form-group"><label class="form-label">Fund or company</label><input class="form-input" type="text" placeholder="Paragon Partners"></div>
+        <div class="form-group"><label class="form-label">What would you like to discuss?</label><textarea class="form-input" placeholder="Brief context on the portfolio company or commercial challenge — anything that helps us make the most of 30 minutes."></textarea></div>
+        <button class="form-submit" onclick="submitForm()">Send message</button>
+        <div id="form-confirm" style="display:none;margin-top:16px;padding:14px;background:rgba(26,48,153,0.06);border:1px solid rgba(26,48,153,0.18);border-radius:4px;font-size:13px;color:var(--smalt);font-weight:500">Thank you. We will be in touch within one business day.</div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div>
+      <div class="footer-logo">
+        <svg width="16" height="18" viewBox="0 0 22 24" fill="none" aria-hidden="true"><rect x="2" y="14" width="18" height="10" fill="#8AC5FF"/><polygon points="11,2 21,15 1,15" fill="#fff"/></svg>
+        <div><div class="footer-logo-text">Hirondl</div><div class="footer-est">Est. 2014 · Commercial Transformation Partners</div></div>
+      </div>
+    </div>
+    <div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('cases')">Case studies</a><a onclick="showPage('team')">Team</a></div>
+    <div class="footer-contact">office@hirondl.com<br>+44 7583 165409</div>
+  </footer>
+</div>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  const navEl=document.getElementById('nav-'+id);
+  if(navEl)navEl.classList.add('active');
+  window.scrollTo(0,0);
+  if(id==='cases'){document.getElementById('cs-index-view').style.display='block';document.getElementById('cs-detail-view').style.display='none';document.querySelectorAll('.cs-detail').forEach(d=>d.classList.remove('active'))}
+  if(id==='insights'){document.getElementById('blog-index-view').style.display='block';document.getElementById('blog-post-view').style.display='none';}
+}
+function showCS(i){
+  document.getElementById('cs-index-view').style.display='none';
+  document.getElementById('cs-detail-view').style.display='block';
+  document.querySelectorAll('.cs-detail').forEach(d=>d.classList.remove('active'));
+  document.getElementById('cs-'+i).classList.add('active');
+  window.scrollTo(0,0);
+}
+function backToCS(){
+  document.getElementById('cs-index-view').style.display='block';
+  document.getElementById('cs-detail-view').style.display='none';
+  window.scrollTo(0,0);
+}
+function showBlog(i){
+  document.getElementById('blog-index-view').style.display='none';
+  document.getElementById('blog-post-view').style.display='block';
+  window.scrollTo(0,0);
+}
+function backToBlog(){
+  document.getElementById('blog-index-view').style.display='block';
+  document.getElementById('blog-post-view').style.display='none';
+  window.scrollTo(0,0);
+}
+function submitForm(){
+  document.getElementById('form-confirm').style.display='block';
+  document.querySelector('.form-submit').textContent='Sent';
+  document.querySelector('.form-submit').disabled=true;
+}
+</script>
+</body>
+</html>
