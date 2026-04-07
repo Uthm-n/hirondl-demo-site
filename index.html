@@ -807,6 +807,7 @@ function showCS(i){
   document.querySelectorAll('.cs-detail').forEach(d=>d.classList.remove('active'));
   document.getElementById('cs-'+i).classList.add('active');
   window.scrollTo(0,0);
+  initChart(i);
 }
 function backToCS(){
   document.getElementById('cs-index-view').style.display='block';
@@ -832,144 +833,146 @@ function submitForm(){
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded',function(){
-  const smalt='#1A3099', sky='#8AC5FF', grey='#ADADAD';
+/* Charts are initialised lazily — only when a case study is opened,
+   so Chart.js can measure the canvas dimensions correctly. */
+const _chartDone={};
+const smalt='#1A3099',sky='#8AC5FF',grey='#ADADAD';
+
+function initChart(i){
+  if(_chartDone[i]) return;
+  _chartDone[i]=true;
   Chart.defaults.font.family="'Montserrat','Arial',sans-serif";
   Chart.defaults.font.size=11;
   Chart.defaults.color='#6b7280';
 
-  /* ── CS-0: Gross margin recovery — line chart ── */
-  const c0=document.getElementById('chart-0');
-  if(c0) new Chart(c0,{
-    type:'line',
-    data:{
-      labels:['Baseline','Wave 1','Wave 2','Wave 3','Wave 4'],
-      datasets:[{
-        label:'Gross margin %',
-        data:[28.0,28.4,29.0,29.8,30.5],
-        borderColor:smalt,
-        backgroundColor:'rgba(26,48,153,0.07)',
-        tension:0.35,fill:true,
-        pointRadius:5,pointBackgroundColor:smalt,
-        pointBorderColor:'#fff',pointBorderWidth:2,borderWidth:2.5
-      }]
-    },
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      plugins:{
-        legend:{display:false},
-        tooltip:{callbacks:{label:c=>' Gross margin: '+c.parsed.y+'%'}}
+  if(i===0){
+    new Chart(document.getElementById('chart-0'),{
+      type:'line',
+      data:{
+        labels:['Baseline','Wave 1','Wave 2','Wave 3','Wave 4'],
+        datasets:[{
+          label:'Gross margin %',
+          data:[28.0,28.4,29.0,29.8,30.5],
+          borderColor:smalt,backgroundColor:'rgba(26,48,153,0.07)',
+          tension:0.35,fill:true,
+          pointRadius:5,pointBackgroundColor:smalt,
+          pointBorderColor:'#fff',pointBorderWidth:2,borderWidth:2.5
+        }]
       },
-      scales:{
-        y:{min:27,max:32,ticks:{callback:v=>v+'%',stepSize:1},grid:{color:'rgba(0,0,0,0.05)'}},
-        x:{grid:{display:false}}
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        plugins:{
+          legend:{display:false},
+          tooltip:{callbacks:{label:c=>' Gross margin: '+c.parsed.y+'%'}}
+        },
+        scales:{
+          y:{min:27,max:32,ticks:{callback:v=>v+'%',stepSize:1},grid:{color:'rgba(0,0,0,0.05)'}},
+          x:{grid:{display:false}}
+        }
       }
-    }
-  });
+    });
+  }
 
-  /* ── CS-1: Visit reallocation — horizontal grouped bar ── */
-  const c1=document.getElementById('chart-1');
-  if(c1) new Chart(c1,{
-    type:'bar',
-    data:{
-      labels:['High Potential (A)','Medium Potential (B)','Low Potential (C)'],
-      datasets:[
-        {label:'Before',data:[30,35,35],backgroundColor:'rgba(173,173,173,0.45)',borderColor:grey,borderWidth:1},
-        {label:'After', data:[52,32,16],backgroundColor:'rgba(26,48,153,0.75)',borderColor:smalt,borderWidth:1}
-      ]
-    },
-    options:{
-      indexAxis:'y',responsive:true,maintainAspectRatio:false,
-      plugins:{
-        legend:{position:'top',labels:{boxWidth:12,padding:16}},
-        tooltip:{callbacks:{label:c=>' '+c.dataset.label+': '+c.parsed.x+' visits / week'}}
+  if(i===1){
+    new Chart(document.getElementById('chart-1'),{
+      type:'bar',
+      data:{
+        labels:['High Potential (A)','Medium Potential (B)','Low Potential (C)'],
+        datasets:[
+          {label:'Before',data:[30,35,35],backgroundColor:'rgba(173,173,173,0.45)',borderColor:grey,borderWidth:1},
+          {label:'After', data:[52,32,16],backgroundColor:'rgba(26,48,153,0.75)',borderColor:smalt,borderWidth:1}
+        ]
       },
-      scales:{
-        x:{max:65,ticks:{callback:v=>v+' visits'},grid:{color:'rgba(0,0,0,0.05)'}},
-        y:{grid:{display:false}}
+      options:{
+        indexAxis:'y',responsive:true,maintainAspectRatio:false,
+        plugins:{
+          legend:{position:'top',labels:{boxWidth:12,padding:16}},
+          tooltip:{callbacks:{label:c=>' '+c.dataset.label+': '+c.parsed.x+' visits / week'}}
+        },
+        scales:{
+          x:{max:65,ticks:{callback:v=>v+' visits'},grid:{color:'rgba(0,0,0,0.05)'}},
+          y:{grid:{display:false}}
+        }
       }
-    }
-  });
+    });
+  }
 
-  /* ── CS-2a: Paper — visit distribution ── */
-  const c2a=document.getElementById('chart-2a');
-  if(c2a) new Chart(c2a,{
-    type:'bar',
-    data:{
-      labels:['High (A)','Medium (B)','Low (C)'],
-      datasets:[
-        {label:'Before',data:[25,40,35],backgroundColor:'rgba(173,173,173,0.45)',borderColor:grey,borderWidth:1},
-        {label:'After', data:[52,33,15],backgroundColor:'rgba(26,48,153,0.75)',borderColor:smalt,borderWidth:1}
-      ]
-    },
-    options:{
-      indexAxis:'y',responsive:true,maintainAspectRatio:false,
-      plugins:{
-        legend:{position:'top',labels:{boxWidth:12,padding:12}},
-        tooltip:{callbacks:{label:c=>' '+c.dataset.label+': '+c.parsed.x+'%'}}
+  if(i===2){
+    new Chart(document.getElementById('chart-2a'),{
+      type:'bar',
+      data:{
+        labels:['High (A)','Medium (B)','Low (C)'],
+        datasets:[
+          {label:'Before',data:[25,40,35],backgroundColor:'rgba(173,173,173,0.45)',borderColor:grey,borderWidth:1},
+          {label:'After', data:[52,33,15],backgroundColor:'rgba(26,48,153,0.75)',borderColor:smalt,borderWidth:1}
+        ]
       },
-      scales:{
-        x:{max:65,ticks:{callback:v=>v+'%'},grid:{color:'rgba(0,0,0,0.05)'}},
-        y:{grid:{display:false}}
+      options:{
+        indexAxis:'y',responsive:true,maintainAspectRatio:false,
+        plugins:{
+          legend:{position:'top',labels:{boxWidth:12,padding:12}},
+          tooltip:{callbacks:{label:c=>' '+c.dataset.label+': '+c.parsed.x+'%'}}
+        },
+        scales:{
+          x:{max:65,ticks:{callback:v=>v+'%'},grid:{color:'rgba(0,0,0,0.05)'}},
+          y:{grid:{display:false}}
+        }
       }
-    }
-  });
+    });
+    new Chart(document.getElementById('chart-2b'),{
+      type:'bar',
+      data:{
+        labels:['W. Europe','N. Europe','S. Europe','APAC','Americas'],
+        datasets:[{
+          label:'New hires justified',
+          data:[8,6,7,12,5],
+          backgroundColor:[
+            'rgba(26,48,153,0.8)','rgba(26,48,153,0.65)',
+            'rgba(26,48,153,0.7)','rgba(138,197,255,0.85)',
+            'rgba(26,48,153,0.55)'
+          ],
+          borderColor:smalt,borderWidth:1
+        }]
+      },
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        plugins:{
+          legend:{display:false},
+          tooltip:{callbacks:{label:c=>' '+c.parsed.y+' new hires'}}
+        },
+        scales:{
+          y:{beginAtZero:true,max:16,ticks:{stepSize:4},grid:{color:'rgba(0,0,0,0.05)'}},
+          x:{grid:{display:false}}
+        }
+      }
+    });
+  }
 
-  /* ── CS-2b: Paper — headcount justified per region ── */
-  const c2b=document.getElementById('chart-2b');
-  if(c2b) new Chart(c2b,{
-    type:'bar',
-    data:{
-      labels:['W. Europe','N. Europe','S. Europe','APAC','Americas'],
-      datasets:[{
-        label:'New hires justified',
-        data:[8,6,7,12,5],
-        backgroundColor:[
-          'rgba(26,48,153,0.8)','rgba(26,48,153,0.65)',
-          'rgba(26,48,153,0.7)','rgba(138,197,255,0.85)',
-          'rgba(26,48,153,0.55)'
-        ],
-        borderColor:smalt,borderWidth:1
-      }]
-    },
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      plugins:{
-        legend:{display:false},
-        tooltip:{callbacks:{label:c=>' '+c.parsed.y+' new hires'}}
+  if(i===3){
+    new Chart(document.getElementById('chart-3'),{
+      type:'bar',
+      data:{
+        labels:['Archetype A\n(Direct Entry)','Archetype B\n(Distributor Upgrade)','Archetype C\n(Monitor)'],
+        datasets:[
+          {label:'Market potential (indexed)',data:[85,55,25],backgroundColor:'rgba(138,197,255,0.55)',borderColor:sky,borderWidth:1.5},
+          {label:'Resource coverage — before',data:[12,40,30],backgroundColor:'rgba(173,173,173,0.45)',borderColor:grey,borderWidth:1},
+          {label:'Resource coverage — after', data:[75,50,20],backgroundColor:'rgba(26,48,153,0.75)',borderColor:smalt,borderWidth:1}
+        ]
       },
-      scales:{
-        y:{beginAtZero:true,max:16,ticks:{stepSize:4},grid:{color:'rgba(0,0,0,0.05)'}},
-        x:{grid:{display:false}}
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        plugins:{
+          legend:{position:'top',labels:{boxWidth:12,padding:16}},
+          tooltip:{callbacks:{label:c=>' '+c.dataset.label+': '+c.parsed.y}}
+        },
+        scales:{
+          y:{beginAtZero:true,max:100,grid:{color:'rgba(0,0,0,0.05)'}},
+          x:{grid:{display:false}}
+        }
       }
-    }
-  });
-
-  /* ── CS-3: Asian GTM — potential vs coverage ── */
-  const c3=document.getElementById('chart-3');
-  if(c3) new Chart(c3,{
-    type:'bar',
-    data:{
-      labels:['Archetype A\n(Direct Entry)','Archetype B\n(Distributor Upgrade)','Archetype C\n(Monitor)'],
-      datasets:[
-        {label:'Market potential (indexed)',data:[85,55,25],backgroundColor:'rgba(138,197,255,0.55)',borderColor:sky,borderWidth:1.5},
-        {label:'Resource coverage — before', data:[12,40,30],backgroundColor:'rgba(173,173,173,0.45)',borderColor:grey,borderWidth:1},
-        {label:'Resource coverage — after',  data:[75,50,20],backgroundColor:'rgba(26,48,153,0.75)',borderColor:smalt,borderWidth:1}
-      ]
-    },
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      plugins:{
-        legend:{position:'top',labels:{boxWidth:12,padding:16}},
-        tooltip:{callbacks:{label:c=>' '+c.dataset.label+': '+c.parsed.y}}
-      },
-      scales:{
-        y:{beginAtZero:true,max:100,grid:{color:'rgba(0,0,0,0.05)'}},
-        x:{grid:{display:false}}
-      }
-    }
-  });
-});
+    });
+  }
+}
 </script>
 </body>
 </html>
