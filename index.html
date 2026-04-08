@@ -148,25 +148,35 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .page-hero-sub{font-size:14px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.75;font-weight:300}
 
 /* WWD redesign */
-.wwd-hero{background:var(--navy);padding:130px 48px 72px;position:relative;overflow:hidden}
-.wwd-hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)}
-.wwd-hero-eyebrow{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sky);margin-bottom:20px;font-weight:600;position:relative}
-.wwd-hero-h{font-size:clamp(36px,5.5vw,68px);font-weight:900;color:#fff;line-height:1.03;letter-spacing:-0.03em;margin-bottom:20px;max-width:820px;text-transform:uppercase;position:relative}
+.wwd-hero{background:var(--navy);background-size:cover;background-position:center;padding:160px 48px 100px;position:relative;overflow:hidden;min-height:65vh;display:flex;flex-direction:column;justify-content:flex-end}
+.wwd-hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt);z-index:3}
+.wwd-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,15,48,0.88) 0%,rgba(16,21,53,0.78) 100%);z-index:1;pointer-events:none}
+.wwd-hero > *{position:relative;z-index:2}
+.wwd-hero-eyebrow{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sky);margin-bottom:20px;font-weight:600}
+.wwd-hero-h{font-size:clamp(36px,5.5vw,68px);font-weight:900;color:#fff;line-height:1.03;letter-spacing:-0.03em;margin-bottom:20px;max-width:820px;text-transform:uppercase}
 .wwd-hero-h .sky{color:var(--sky)}
-.wwd-hero-sub{font-size:15px;color:rgba(255,255,255,0.5);line-height:1.8;max-width:520px;font-weight:300;position:relative}
+.wwd-hero-sub{font-size:15px;color:rgba(255,255,255,0.88);line-height:1.8;max-width:520px;font-weight:300}
 .wwd-pe-strip{background:var(--smalt);padding:16px 48px;text-align:center}
-.wwd-pe-strip p{font-size:12px;color:rgba(255,255,255,0.92);letter-spacing:0.05em;font-weight:600;line-height:1.6}
+.wwd-pe-strip p{font-size:12px;color:#fff;letter-spacing:0.05em;font-weight:600;line-height:1.6}
 .wwd-services-section{background:#fff;padding:72px 48px}
-.wwd-services-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:44px;flex-wrap:wrap;gap:12px}
-.wwd-services-top .section-tag{margin-bottom:0}
-.wwd-services-top .section-h{margin-bottom:0}
 .wwd-services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
 .wwd-svc-card{background:#fff;padding:36px 30px;border-left:3px solid transparent;transition:background 0.15s,border-left-color 0.2s;display:flex;flex-direction:column}
 .wwd-svc-card:hover{background:var(--surface);border-left-color:var(--smalt)}
-.wwd-svc-num{font-size:10px;font-weight:700;color:var(--sky);letter-spacing:0.14em;margin-bottom:10px}
+.wwd-svc-num{font-size:32px;font-weight:300;color:var(--border);letter-spacing:-0.02em;line-height:1;margin-bottom:12px}
 .wwd-svc-name{font-size:15px;font-weight:800;color:var(--text);letter-spacing:-0.01em;line-height:1.2;margin-bottom:12px}
 .wwd-svc-problem{font-size:12px;color:var(--muted);line-height:1.75;font-style:italic;margin-bottom:10px;font-weight:400}
-.wwd-svc-outcome{font-size:12px;color:var(--smalt);font-weight:700;line-height:1.6;padding-top:10px;border-top:1px solid var(--border)}
+.wwd-svc-outcome{font-size:12px;color:var(--smalt);font-weight:700;line-height:1.6;padding-top:10px;border-top:1px solid var(--border);margin-top:auto}
+/* WWD proof/visual break section */
+.wwd-proof-section{background:var(--navy);background-size:cover;background-position:center;position:relative;overflow:hidden;padding:88px 48px}
+.wwd-proof-section::after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(10,15,48,0.86),rgba(10,15,48,0.93));z-index:1;pointer-events:none}
+.wwd-proof-section > *{position:relative;z-index:2}
+.wwd-proof-eyebrow{font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sky);font-weight:700;margin-bottom:10px;text-align:center}
+.wwd-proof-h{font-size:clamp(22px,3vw,34px);font-weight:800;color:#fff;text-align:center;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:52px;line-height:1.05}
+.wwd-proof-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.1)}
+.wwd-proof-tile{background:rgba(255,255,255,0.04);padding:44px 32px;text-align:center}
+.wwd-proof-n{font-size:clamp(44px,6vw,72px);font-weight:300;color:#fff;letter-spacing:-0.03em;line-height:1;margin-bottom:12px}
+.wwd-proof-n .u{color:var(--sky);font-size:60%}
+.wwd-proof-desc{font-size:12px;color:rgba(255,255,255,0.75);line-height:1.75;font-weight:400;max-width:220px;margin:0 auto}
 
 /* Legacy wwd classes (kept for any reference) */
 .wwd-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin:0}
@@ -309,9 +319,9 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
 /* RESPONSIVE */
 @media(max-width:768px){
   nav{padding:0 20px}.nav-links{display:none}.nav-hamburger{display:flex}
-  .hero,.section,.page-hero,.wwd-hero,.wwd-pe-strip,.wwd-services-section,.cs-narrative,.contact-left,.contact-right,.map-section{padding-left:24px;padding-right:24px}
+  .hero,.section,.page-hero,.wwd-hero,.wwd-pe-strip,.wwd-services-section,.wwd-proof-section,.cs-narrative,.contact-left,.contact-right,.map-section{padding-left:24px;padding-right:24px}
   .proof-bar{grid-template-columns:1fr 1fr}
-  .services-grid,.wwd-grid,.wwd-services-grid,.cs-index,.cs-cols,.team-full-grid,.blog-grid,.contact-grid{grid-template-columns:1fr}
+  .services-grid,.wwd-grid,.wwd-services-grid,.wwd-proof-tiles,.cs-index,.cs-cols,.team-full-grid,.blog-grid,.contact-grid{grid-template-columns:1fr}
   .team-grid{grid-template-columns:1fr 1fr}
   .form-row{grid-template-columns:1fr}
   .logos-label{padding:0 16px 0 20px}
@@ -486,9 +496,8 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
 <!-- ═══════════════ WHAT WE DO ═══════════════ -->
 <div class="page" id="page-wwd">
 
-  <!-- HERO: outcome-first -->
-  <div class="wwd-hero">
-    <svg style="position:absolute;right:0;top:0;width:45%;height:100%;opacity:0.04;pointer-events:none" viewBox="0 0 480 600" fill="none" preserveAspectRatio="xMaxYMid slice"><path d="M480 0 Q340 180 260 300 Q180 420 200 600" stroke="white" stroke-width="1.5" fill="none"/><path d="M540 40 Q400 220 320 340 Q240 460 260 640" stroke="white" stroke-width="1" fill="none"/><path d="M420 -40 Q280 140 200 260 Q120 380 140 580" stroke="white" stroke-width="0.6" fill="none"/></svg>
+  <!-- HERO: outcome-first, photo background -->
+  <div class="wwd-hero" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80')">
     <div class="wwd-hero-eyebrow">Our capabilities</div>
     <h1 class="wwd-hero-h">We build the commercial engines<br>that <span class="sky">Private Equity-backed</span><br>businesses run on.</h1>
     <p class="wwd-hero-sub">Six specialist service lines. One focus: measurable revenue and margin improvement within your hold period — not after it.</p>
@@ -546,6 +555,26 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         <div class="wwd-svc-outcome">We build pricing tools, Power BI dashboards, and CRM configurations that embed change permanently.</div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- PROOF / VISUAL BREAK SECTION -->
+  <div class="wwd-proof-section" style="background-image:url('https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?auto=format&fit=crop&w=1600&q=80')">
+    <div class="wwd-proof-eyebrow">What this looks like in practice</div>
+    <div class="wwd-proof-h">Results we hold ourselves to</div>
+    <div class="wwd-proof-tiles">
+      <div class="wwd-proof-tile">
+        <div class="wwd-proof-n">2–3<span class="u">pp</span></div>
+        <div class="wwd-proof-desc">gross margin improvement for a PE-backed manufacturer, sustained after engagement close</div>
+      </div>
+      <div class="wwd-proof-tile">
+        <div class="wwd-proof-n">50<span class="u">%</span></div>
+        <div class="wwd-proof-desc">increase in high-potential account visits after potential-based segmentation</div>
+      </div>
+      <div class="wwd-proof-tile">
+        <div class="wwd-proof-n">150<span class="u">+</span></div>
+        <div class="wwd-proof-desc">commercial engagements delivered across Europe since 2014</div>
+      </div>
     </div>
   </div>
 
