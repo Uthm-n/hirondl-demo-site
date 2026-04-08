@@ -146,6 +146,29 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .page-hero-tag{font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sky);margin-bottom:12px;font-weight:600}
 .page-hero-h{font-size:clamp(40px,6vw,70px);font-weight:800;text-transform:uppercase;color:#fff;letter-spacing:-0.03em;line-height:0.97;margin-bottom:12px}
 .page-hero-sub{font-size:14px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.75;font-weight:300}
+
+/* WWD redesign */
+.wwd-hero{background:var(--navy);padding:130px 48px 72px;position:relative;overflow:hidden}
+.wwd-hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)}
+.wwd-hero-eyebrow{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sky);margin-bottom:20px;font-weight:600;position:relative}
+.wwd-hero-h{font-size:clamp(36px,5.5vw,68px);font-weight:900;color:#fff;line-height:1.03;letter-spacing:-0.03em;margin-bottom:20px;max-width:820px;text-transform:uppercase;position:relative}
+.wwd-hero-h .sky{color:var(--sky)}
+.wwd-hero-sub{font-size:15px;color:rgba(255,255,255,0.5);line-height:1.8;max-width:520px;font-weight:300;position:relative}
+.wwd-pe-strip{background:var(--smalt);padding:16px 48px;text-align:center}
+.wwd-pe-strip p{font-size:12px;color:rgba(255,255,255,0.92);letter-spacing:0.05em;font-weight:600;line-height:1.6}
+.wwd-services-section{background:#fff;padding:72px 48px}
+.wwd-services-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:44px;flex-wrap:wrap;gap:12px}
+.wwd-services-top .section-tag{margin-bottom:0}
+.wwd-services-top .section-h{margin-bottom:0}
+.wwd-services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.wwd-svc-card{background:#fff;padding:36px 30px;border-left:3px solid transparent;transition:background 0.15s,border-left-color 0.2s;display:flex;flex-direction:column}
+.wwd-svc-card:hover{background:var(--surface);border-left-color:var(--smalt)}
+.wwd-svc-num{font-size:10px;font-weight:700;color:var(--sky);letter-spacing:0.14em;margin-bottom:10px}
+.wwd-svc-name{font-size:15px;font-weight:800;color:var(--text);letter-spacing:-0.01em;line-height:1.2;margin-bottom:12px}
+.wwd-svc-problem{font-size:12px;color:var(--muted);line-height:1.75;font-style:italic;margin-bottom:10px;font-weight:400}
+.wwd-svc-outcome{font-size:12px;color:var(--smalt);font-weight:700;line-height:1.6;padding-top:10px;border-top:1px solid var(--border)}
+
+/* Legacy wwd classes (kept for any reference) */
 .wwd-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin:0}
 .wwd-card{background:#fff;padding:38px;transition:background 0.15s}
 .wwd-card:hover{background:var(--surface)}
@@ -286,9 +309,9 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
 /* RESPONSIVE */
 @media(max-width:768px){
   nav{padding:0 20px}.nav-links{display:none}.nav-hamburger{display:flex}
-  .hero,.section,.page-hero,.cs-narrative,.contact-left,.contact-right,.map-section{padding-left:24px;padding-right:24px}
+  .hero,.section,.page-hero,.wwd-hero,.wwd-pe-strip,.wwd-services-section,.cs-narrative,.contact-left,.contact-right,.map-section{padding-left:24px;padding-right:24px}
   .proof-bar{grid-template-columns:1fr 1fr}
-  .services-grid,.wwd-grid,.cs-index,.cs-cols,.team-full-grid,.blog-grid,.contact-grid{grid-template-columns:1fr}
+  .services-grid,.wwd-grid,.wwd-services-grid,.cs-index,.cs-cols,.team-full-grid,.blog-grid,.contact-grid{grid-template-columns:1fr}
   .team-grid{grid-template-columns:1fr 1fr}
   .form-row{grid-template-columns:1fr}
   .logos-label{padding:0 16px 0 20px}
@@ -462,24 +485,76 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
 
 <!-- ═══════════════ WHAT WE DO ═══════════════ -->
 <div class="page" id="page-wwd">
-  <div class="page-hero">
-    <svg style="position:absolute;right:0;top:0;width:40%;height:100%;opacity:0.04;pointer-events:none" viewBox="0 0 480 600" fill="none" preserveAspectRatio="xMaxYMid slice"><path d="M480 0 Q340 180 260 300 Q180 420 200 600" stroke="white" stroke-width="1.5" fill="none"/><path d="M540 40 Q400 220 320 340 Q240 460 260 640" stroke="white" stroke-width="1" fill="none"/></svg>
-    <div class="page-hero-tag">Our capabilities</div>
-    <div class="page-hero-h">What we do</div>
-    <p class="page-hero-sub">Six service lines designed for speed to impact. We are implementation-focused — capability building and culture change are embedded in every engagement.</p>
+
+  <!-- HERO: outcome-first -->
+  <div class="wwd-hero">
+    <svg style="position:absolute;right:0;top:0;width:45%;height:100%;opacity:0.04;pointer-events:none" viewBox="0 0 480 600" fill="none" preserveAspectRatio="xMaxYMid slice"><path d="M480 0 Q340 180 260 300 Q180 420 200 600" stroke="white" stroke-width="1.5" fill="none"/><path d="M540 40 Q400 220 320 340 Q240 460 260 640" stroke="white" stroke-width="1" fill="none"/><path d="M420 -40 Q280 140 200 260 Q120 380 140 580" stroke="white" stroke-width="0.6" fill="none"/></svg>
+    <div class="wwd-hero-eyebrow">Our capabilities</div>
+    <h1 class="wwd-hero-h">We build the commercial engines<br>that <span class="sky">Private Equity-backed</span><br>businesses run on.</h1>
+    <p class="wwd-hero-sub">Six specialist service lines. One focus: measurable revenue and margin improvement within your hold period — not after it.</p>
   </div>
-  <div class="wwd-grid">
-    <div class="wwd-card"><div class="wwd-icon-row"><div class="wwd-num">01</div></div><div class="wwd-title">Sales and Value Creation Strategy</div><div class="wwd-desc">We diagnose the commercial maturity of your business, identify the highest-value growth levers, and build a sales strategy grounded in what is actually achievable in your context.</div><div class="wwd-items"><div class="wwd-item">Maturity assessments</div><div class="wwd-item">Growth levers diagnostics</div><div class="wwd-item">Value creation plan development</div><div class="wwd-item">Go-to-market model design</div></div></div>
-    <div class="wwd-card"><div class="wwd-icon-row"><div class="wwd-num">02</div></div><div class="wwd-title">Sales Acceleration</div><div class="wwd-desc">We rebuild the commercial engine — from prospect targeting and customer segmentation through to pipeline discipline and digital channel activation.</div><div class="wwd-items"><div class="wwd-item">Lead generation and scoring</div><div class="wwd-item">Customer segmentation and account planning</div><div class="wwd-item">Pipeline set-up and tracking</div><div class="wwd-item">Digital channel set-up</div></div></div>
-    <div class="wwd-card"><div class="wwd-icon-row"><div class="wwd-num">03</div></div><div class="wwd-title">Sustainable Pricing Optimisation</div><div class="wwd-desc">We identify where margin is being left on the table, build the tools to capture it, and coach teams to hold price under commercial pressure.</div><div class="wwd-items"><div class="wwd-item">Pricing opportunity capture</div><div class="wwd-item">Price setting tool implementation</div><div class="wwd-item">Value pricing and value selling</div><div class="wwd-item">Price communication and negotiation</div></div></div>
-    <div class="wwd-card"><div class="wwd-icon-row"><div class="wwd-num">04</div></div><div class="wwd-title">Organisational Set-up for Growth</div><div class="wwd-desc">We design and implement the commercial organisation structure needed to sustain growth after the engagement closes — including incentives, KPIs, and capability building.</div><div class="wwd-items"><div class="wwd-item">Salesforce size and structure</div><div class="wwd-item">Capability building</div><div class="wwd-item">Field force incentive systems</div><div class="wwd-item">KPI set-up and embedding</div></div></div>
-    <div class="wwd-card"><div class="wwd-icon-row"><div class="wwd-num">05</div></div><div class="wwd-title">Sales Operations Set-up</div><div class="wwd-desc">We build the operational backbone that makes commercial change sustainable — management information, dashboards, and CRM systems that actually get used.</div><div class="wwd-items"><div class="wwd-item">Management information system set-up</div><div class="wwd-item">Sales analytics and dashboards</div><div class="wwd-item">CRM implementation</div></div></div>
-    <div class="wwd-card"><div class="wwd-icon-row"><div class="wwd-num">06</div></div><div class="wwd-title">Pragmatic Custom Tooling</div><div class="wwd-desc">We build or implement the tooling required to embed change quickly — from custom pricing tools to prospect longlists to Power BI dashboards connected to your CRM.</div><div class="wwd-items"><div class="wwd-item">Custom pricing and CPQ tools</div><div class="wwd-item">CRM builds (HubSpot, Pipedrive)</div><div class="wwd-item">Power BI dashboards</div><div class="wwd-item">Prospect data and longlists</div></div></div>
+
+  <!-- PE DIFFERENTIATOR STRIP -->
+  <div class="wwd-pe-strip">
+    <p>Exclusively serving Private Equity funds and their portfolio companies — not banks, not corporates, not one-off projects.</p>
   </div>
+
+  <!-- 6 SERVICE CARDS -->
+  <div class="wwd-services-section">
+    <div class="section-tag" style="margin-bottom:44px">Six ways we create commercial value</div>
+    <div class="wwd-services-grid">
+
+      <div class="wwd-svc-card">
+        <div class="wwd-svc-num">01</div>
+        <div class="wwd-svc-name">Sales &amp; Value Creation Strategy</div>
+        <div class="wwd-svc-problem">Most portcos start a hold period without a clear picture of where the commercial value actually sits — or in what order to go after it.</div>
+        <div class="wwd-svc-outcome">We map it, prioritise it, and build the plan. Typical time-to-insight: 4–6 weeks.</div>
+      </div>
+
+      <div class="wwd-svc-card">
+        <div class="wwd-svc-num">02</div>
+        <div class="wwd-svc-name">Sales Acceleration</div>
+        <div class="wwd-svc-problem">Reps are busy — but often on the wrong accounts, in the wrong channels, with no pipeline discipline to show for it.</div>
+        <div class="wwd-svc-outcome">We rebuild the commercial engine. Average 50% increase in high-potential account visits after segmentation.</div>
+      </div>
+
+      <div class="wwd-svc-card">
+        <div class="wwd-svc-num">03</div>
+        <div class="wwd-svc-name">Pricing Optimisation</div>
+        <div class="wwd-svc-problem">Most portcos are under-pricing by 8–12% without knowing it. Autonomous rep discounting erodes margin no one can see on a P&amp;L.</div>
+        <div class="wwd-svc-outcome">We close the gap. Typical gross margin uplift: 2–3 percentage points, sustained after engagement close.</div>
+      </div>
+
+      <div class="wwd-svc-card">
+        <div class="wwd-svc-num">04</div>
+        <div class="wwd-svc-name">Organisational Set-up for Growth</div>
+        <div class="wwd-svc-problem">Commercial improvements stall when the team structure, incentives, and KPIs aren't built to sustain them beyond the engagement.</div>
+        <div class="wwd-svc-outcome">We design the organisation and embed the mechanics that hold the gains long after we leave.</div>
+      </div>
+
+      <div class="wwd-svc-card">
+        <div class="wwd-svc-num">05</div>
+        <div class="wwd-svc-name">Sales Operations Set-up</div>
+        <div class="wwd-svc-problem">Leaders can't manage what they can't see. Most portcos lack the management information infrastructure to track commercial performance in real time.</div>
+        <div class="wwd-svc-outcome">We build the dashboards, CRM, and MIS that get used — not shelved after the consultant leaves.</div>
+      </div>
+
+      <div class="wwd-svc-card">
+        <div class="wwd-svc-num">06</div>
+        <div class="wwd-svc-name">Pragmatic Custom Tooling</div>
+        <div class="wwd-svc-problem">Off-the-shelf solutions create workarounds. Commercial change needs tools designed around the specific business — not retrofitted from a template.</div>
+        <div class="wwd-svc-outcome">We build pricing tools, Power BI dashboards, and CRM configurations that embed change permanently.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BOTTOM CTA -->
   <div class="home-cta">
-    <div class="hcta-text"><h2>See these capabilities<br>in practice</h2><p>Our case studies show exactly how each service line has been applied inside PE-backed and industrial businesses across Europe.</p></div>
+    <div class="hcta-text"><h2>See these capabilities<br>in practice</h2><p>Our case studies show exactly how each service line has been applied inside Private Equity-backed and industrial businesses across Europe.</p></div>
     <button class="btn-primary" onclick="showPage('cases')">View case studies</button>
   </div>
+
   <footer>
     <div>
       <div class="footer-logo">
@@ -490,6 +565,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('cases')">Case studies</a><a onclick="showPage('team')">Team</a></div>
     <div class="footer-contact">office@hirondl.com · hirondl.com</div>
   </footer>
+
 </div>
 
 <!-- ═══════════════ CASE STUDIES ═══════════════ -->
