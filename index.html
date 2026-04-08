@@ -88,12 +88,18 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .proof-n .u{color:var(--sky);font-size:65%}
 .proof-l{font-size:10px;color:rgba(255,255,255,0.4);margin-top:7px;line-height:1.55;max-width:180px;font-weight:400}
 
-/* LOGOS */
-.logos-strip{background:rgba(255,255,255,0.025);border-top:1px solid rgba(255,255,255,0.06);padding:18px 48px;display:flex;align-items:center;gap:0;flex-wrap:wrap}
-.logos-label{font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.22);margin-right:28px;white-space:nowrap;font-weight:600}
-.logo-item{font-size:11px;font-weight:700;color:rgba(255,255,255,0.28);letter-spacing:0.1em;text-transform:uppercase;padding:6px 20px;border-right:1px solid rgba(255,255,255,0.06);cursor:default;transition:color 0.15s}
-.logo-item:hover{color:rgba(255,255,255,0.65)}
-.logo-item:last-child{border-right:none}
+/* LOGOS — infinite marquee */
+.logos-strip{background:#0d1228;border-top:1px solid rgba(255,255,255,0.06);overflow:hidden;display:flex;align-items:center;height:52px}
+.logos-label{font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.22);padding:0 28px 0 48px;white-space:nowrap;font-weight:600;flex-shrink:0;border-right:1px solid rgba(255,255,255,0.06);height:100%;display:flex;align-items:center}
+.logo-track-wrap{overflow:hidden;flex:1;height:100%;mask-image:linear-gradient(to right,transparent,black 48px,black calc(100% - 48px),transparent)}
+.logo-track{display:flex;align-items:center;width:max-content;animation:marquee 30s linear infinite;height:100%}
+.logo-track:hover{animation-play-state:paused}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.logo-item{font-size:11px;font-weight:700;color:rgba(255,255,255,0.32);letter-spacing:0.12em;text-transform:uppercase;padding:0 32px;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;cursor:default;transition:color 0.2s;height:100%;display:flex;align-items:center}
+.logo-item:hover{color:rgba(255,255,255,0.75)}
+/* LinkedIn links on team cards */
+.tf-linkedin{display:inline-flex;align-items:center;gap:5px;margin-top:14px;font-size:10px;font-weight:700;color:var(--smalt);letter-spacing:0.05em;text-decoration:none;transition:opacity 0.15s}
+.tf-linkedin:hover{opacity:0.65}
 
 /* SERVICES */
 .section{padding:80px 48px}
@@ -274,7 +280,8 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
   .services-grid,.wwd-grid,.cs-index,.cs-cols,.team-full-grid,.blog-grid,.contact-grid{grid-template-columns:1fr}
   .team-grid{grid-template-columns:1fr 1fr}
   .form-row{grid-template-columns:1fr}
-  .logos-strip{padding:16px 24px}
+  .logos-label{padding:0 16px 0 20px}
+  .logos-strip{height:48px}
   footer{padding:24px}
   .map-inner{grid-template-columns:1fr}
 }
@@ -296,6 +303,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <a onclick="showPage('cases')" id="nav-cases">Case studies</a>
     <a onclick="showPage('team')" id="nav-team">Team</a>
     <a onclick="showPage('insights')" id="nav-insights">Insights</a>
+    <a onclick="showPage('pe')" id="nav-pe" style="color:var(--sky)">For PE</a>
     <a onclick="showPage('contact')" id="nav-contact" class="nav-cta">Book a call</a>
   </div>
   <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" onclick="toggleMobileMenu()">
@@ -310,6 +318,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
   <a onclick="showPage('cases');toggleMobileMenu()" id="mob-cases">Case studies</a>
   <a onclick="showPage('team');toggleMobileMenu()" id="mob-team">Team</a>
   <a onclick="showPage('insights');toggleMobileMenu()" id="mob-insights">Insights</a>
+  <a onclick="showPage('pe');toggleMobileMenu()" id="mob-pe" style="color:var(--sky)">For PE</a>
   <a onclick="showPage('contact');toggleMobileMenu()" class="mob-cta">Book a call</a>
 </div>
 
@@ -352,14 +361,27 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
 
   <div class="divider-stripe"></div>
 
-  <div class="logos-strip" style="background:#0d1228">
+  <div class="logos-strip">
     <span class="logos-label">Trusted by</span>
-    <div class="logo-item">KKR</div>
-    <div class="logo-item">BainCapital</div>
-    <div class="logo-item">FountainVest</div>
-    <div class="logo-item">LDC</div>
-    <div class="logo-item">Paragon Partners</div>
-    <div class="logo-item">Normec</div>
+    <div class="logo-track-wrap">
+      <div class="logo-track">
+        <div class="logo-item">KKR</div>
+        <div class="logo-item">BainCapital</div>
+        <div class="logo-item">FountainVest</div>
+        <div class="logo-item">LDC</div>
+        <div class="logo-item">Paragon Partners</div>
+        <div class="logo-item">Normec</div>
+        <div class="logo-item">Aurelius</div>
+        <!-- duplicate for seamless loop -->
+        <div class="logo-item">KKR</div>
+        <div class="logo-item">BainCapital</div>
+        <div class="logo-item">FountainVest</div>
+        <div class="logo-item">LDC</div>
+        <div class="logo-item">Paragon Partners</div>
+        <div class="logo-item">Normec</div>
+        <div class="logo-item">Aurelius</div>
+      </div>
+    </div>
   </div>
 
   <section class="section" style="background:#fff">
@@ -682,12 +704,13 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <p class="page-hero-sub">We combine PE operating partner experience with top-tier management consulting backgrounds. In-country partners across four European capitals.</p>
   </div>
   <div class="team-full-grid">
-    <div class="tf-card"><div class="tf-avatar" style="background:var(--smalt)">CG</div><div class="tf-loc">London · Managing Director</div><div class="tf-name">Cécile George</div><div class="tf-role">Founder</div><div class="tf-bio">20+ years delivering rapid revenue and margin growth. Former Operating Partner at a PE house. Held both generalist consulting and independent expert roles for McKinsey and Company. Built and led global sales teams in B2B chemicals. Extensive experience operating businesses directly.</div></div>
-    <div class="tf-card"><div class="tf-avatar" style="background:#0f6e56">GC</div><div class="tf-loc">Berlin · Partner</div><div class="tf-name">Gregor Cohnen</div><div class="tf-role">Partner Germany</div><div class="tf-bio">20+ years value creation leadership in private equity and industry. Focus on design and execution of complex commercial transformations in B2B. Held both in-house consulting and operational roles at Aurelius, Paragon, and PE portfolio companies across Europe.</div></div>
-    <div class="tf-card"><div class="tf-avatar" style="background:#6b3a8a">RV</div><div class="tf-loc">Milan · Partner</div><div class="tf-name">Renata Vancini</div><div class="tf-role">Partner Italy</div><div class="tf-bio">15+ years of hands-on business building experience from Fortune 500s down to startups. Top-tier sales and marketing boutique consultancy background. Deep expertise in sales and pricing transformations across FMCG, industrial goods, and luxury.</div></div>
-    <div class="tf-card"><div class="tf-avatar" style="background:#0f6e56">YW</div><div class="tf-loc">London · Principal</div><div class="tf-name">Yabing Wu</div><div class="tf-role">Principal</div><div class="tf-bio">13+ years international B2B SaaS experience spanning commercial leadership, partnerships, and GTM strategy across the UK, Europe, and China. Former senior commercial roles at Deel (pre-IPO Decacorn) and Thomas International (PE-backed). Specialises in ecosystem-led growth for PE-backed software businesses.</div></div>
-    <div class="tf-card"><div class="tf-avatar" style="background:#854F0B">LP</div><div class="tf-loc">Europe · Senior Expert</div><div class="tf-name">Luca Pelamatti</div><div class="tf-role">Senior Expert</div><div class="tf-bio">Former Bain consultant. 10+ years driving top-line growth for multinationals and SMEs. Focus on commercial excellence and Revenue Growth Management in B2B2C environments across Europe.</div></div>
-    <div class="tf-card"><div class="tf-avatar" style="background:#444">IM</div><div class="tf-loc">Europe · Senior Expert</div><div class="tf-name">Igor Milat</div><div class="tf-role">Senior Expert</div><div class="tf-bio">Former McKinsey and Company consultant. 20+ years of experience in business building, commercial transformation, and consulting. Passionate about delivering impact from next generation technology across industrial and B2B markets.</div></div>
+    <div class="tf-card"><div class="tf-avatar" style="background:var(--smalt)">CG</div><div class="tf-loc">London · Managing Director</div><div class="tf-name">Cécile George</div><div class="tf-role">Founder</div><div class="tf-bio">20+ years delivering rapid revenue and margin growth. Former Operating Partner at a PE house. Held both generalist consulting and independent expert roles for McKinsey and Company. Built and led global sales teams in B2B chemicals. Extensive experience operating businesses directly.</div><a class="tf-linkedin" href="https://www.linkedin.com/in/c%C3%A9cile-tanmaya-george/" target="_blank" rel="noopener noreferrer"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
+    <div class="tf-card"><div class="tf-avatar" style="background:#0f6e56">GC</div><div class="tf-loc">Berlin · Partner</div><div class="tf-name">Gregor Cohnen</div><div class="tf-role">Partner Germany</div><div class="tf-bio">20+ years value creation leadership in private equity and industry. Focus on design and execution of complex commercial transformations in B2B. Held both in-house consulting and operational roles at Aurelius, Paragon, and PE portfolio companies across Europe.</div><a class="tf-linkedin" href="https://www.linkedin.com/in/gregor-c-50bb8b296/" target="_blank" rel="noopener noreferrer"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
+    <div class="tf-card"><div class="tf-avatar" style="background:#6b3a8a">RV</div><div class="tf-loc">Milan · Partner</div><div class="tf-name">Renata Vancini</div><div class="tf-role">Partner Italy</div><div class="tf-bio">15+ years of hands-on business building experience from Fortune 500s down to startups. Top-tier sales and marketing boutique consultancy background. Deep expertise in sales and pricing transformations across FMCG, industrial goods, and luxury.</div><a class="tf-linkedin" href="https://www.linkedin.com/in/rvancini/" target="_blank" rel="noopener noreferrer"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
+    <div class="tf-card"><div class="tf-avatar" style="background:#0f6e56">YW</div><div class="tf-loc">London · Principal</div><div class="tf-name">Yabing Wu</div><div class="tf-role">Principal</div><div class="tf-bio">13+ years international B2B SaaS experience spanning commercial leadership, partnerships, and GTM strategy across the UK, Europe, and China. Former senior commercial roles at Deel (pre-IPO Decacorn) and Thomas International (PE-backed). Specialises in ecosystem-led growth for PE-backed software businesses.</div><a class="tf-linkedin" href="https://www.linkedin.com/in/yabingwu90/" target="_blank" rel="noopener noreferrer"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
+    <div class="tf-card"><div class="tf-avatar" style="background:#854F0B">LP</div><div class="tf-loc">Europe · Senior Expert</div><div class="tf-name">Luca Pelamatti</div><div class="tf-role">Senior Expert</div><div class="tf-bio">Former Bain consultant. 10+ years driving top-line growth for multinationals and SMEs. Focus on commercial excellence and Revenue Growth Management in B2B2C environments across Europe.</div><a class="tf-linkedin" href="https://www.linkedin.com/in/luca-pelamatti-08276182/" target="_blank" rel="noopener noreferrer"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
+    <div class="tf-card"><div class="tf-avatar" style="background:#444">IM</div><div class="tf-loc">Europe · Senior Expert</div><div class="tf-name">Igor Milat</div><div class="tf-role">Senior Expert</div><div class="tf-bio">Former McKinsey and Company consultant. 20+ years of experience in business building, commercial transformation, and consulting. Passionate about delivering impact from next generation technology across industrial and B2B markets.</div><a class="tf-linkedin" href="https://www.linkedin.com/in/igormilat/" target="_blank" rel="noopener noreferrer"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
+    <div class="tf-card"><div class="tf-avatar" style="background:#1a3099">UM</div><div class="tf-loc">London · Junior Consultant</div><div class="tf-name">Uthman Mahmood</div><div class="tf-role">Junior Consultant</div><div class="tf-bio">Description coming soon.</div><a class="tf-linkedin" href="https://www.linkedin.com/in/uthman-mahmood" target="_blank" rel="noopener noreferrer"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
   </div>
   <div class="map-section">
     <div style="margin-bottom:20px"><div class="section-tag" style="color:var(--sky)">Physical presence</div><div class="section-h" style="color:#fff;margin-bottom:4px">Pan-European</div><p style="font-size:13px;color:rgba(255,255,255,0.45);font-weight:300;line-height:1.75">In-country partners operating in local language across four European capitals. Engagements delivered across UK, Germany, Italy, France, Scandinavia, Eastern Europe, and Asia Pacific.</p></div>
@@ -784,6 +807,141 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       <div class="footer-contact">office@hirondl.com · hirondl.com</div>
     </footer>
   </div>
+</div>
+
+<!-- ═══════════════ FOR PE ═══════════════ -->
+<div class="page" id="page-pe">
+  <div class="page-hero" style="padding-bottom:80px">
+    <div class="page-hero-tag">Private Equity</div>
+    <div class="page-hero-h">Built for the hold period.<br>Not the pitch deck.</div>
+    <p class="page-hero-sub" style="max-width:600px">Hirondl embeds into your portfolio companies and drives commercial value from entry through to exit — measurable in EBITDA, not slide count.</p>
+    <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap">
+      <button class="btn-primary" onclick="showPage('contact')">Book a 30-minute call</button>
+      <button class="btn-secondary" onclick="showPage('cases')">See case studies →</button>
+    </div>
+  </div>
+
+  <!-- Why PE chooses Hirondl -->
+  <section class="section" style="background:#fff">
+    <div class="section-tag">Why PE funds choose Hirondl</div>
+    <div class="section-h">We work the way PE works</div>
+    <p class="section-sub">Most consultants hand over a report. We stay in the business, manage the programme, and leave only once the numbers move.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)">
+      <div style="background:#fff;padding:32px">
+        <div style="font-size:28px;font-weight:300;color:var(--border);margin-bottom:12px;letter-spacing:-0.02em">01</div>
+        <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px">Entry & 100-day plan</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.75">We map the commercial value creation opportunity in the first 90 days. Quick wins identified, VCP agreed, programme structured around your hold period.</p>
+      </div>
+      <div style="background:#fff;padding:32px">
+        <div style="font-size:28px;font-weight:300;color:var(--border);margin-bottom:12px;letter-spacing:-0.02em">02</div>
+        <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px">Embedded transformation</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.75">Our partners work inside the business — not from a client service centre. We design and run the programme alongside management, removing blockers in real time.</p>
+      </div>
+      <div style="background:#fff;padding:32px">
+        <div style="font-size:28px;font-weight:300;color:var(--border);margin-bottom:12px;letter-spacing:-0.02em">03</div>
+        <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px">Exit-ready capability</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.75">We build the capability into the organisation so the EBITDA improvement is defensible at exit. The team continues to perform after we leave.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Typical mandates -->
+  <section class="section" style="background:var(--surface)">
+    <div class="section-tag">Typical mandates</div>
+    <div class="section-h">What we get called in for</div>
+    <p class="section-sub">We run six core service lines, all built around measurable commercial impact in PE-backed businesses.</p>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px">
+      <div style="background:#fff;border:1px solid var(--border);border-radius:4px;padding:24px 28px;display:flex;gap:16px;align-items:flex-start">
+        <div style="width:6px;height:6px;border-radius:50%;background:var(--smalt);flex-shrink:0;margin-top:6px"></div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px">Commercial Due Diligence support</div><p style="font-size:12px;color:var(--muted);line-height:1.7">Independent commercial assessment to validate the investment thesis and size the value creation opportunity before close.</p></div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:4px;padding:24px 28px;display:flex;gap:16px;align-items:flex-start">
+        <div style="width:6px;height:6px;border-radius:50%;background:var(--smalt);flex-shrink:0;margin-top:6px"></div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px">Pricing transformation</div><p style="font-size:12px;color:var(--muted);line-height:1.7">Identifying and recovering structural margin leakage. Typically 2–4pp gross margin improvement in the first twelve months.</p></div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:4px;padding:24px 28px;display:flex;gap:16px;align-items:flex-start">
+        <div style="width:6px;height:6px;border-radius:50%;background:var(--smalt);flex-shrink:0;margin-top:6px"></div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px">Sales force effectiveness</div><p style="font-size:12px;color:var(--muted);line-height:1.7">Redeploying rep time from admin to selling. Building performance management systems that surface outliers and drive accountability.</p></div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:4px;padding:24px 28px;display:flex;gap:16px;align-items:flex-start">
+        <div style="width:6px;height:6px;border-radius:50%;background:var(--smalt);flex-shrink:0;margin-top:6px"></div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px">Go-to-market strategy</div><p style="font-size:12px;color:var(--muted);line-height:1.7">Opening new geographies or channels. From market assessment through to hiring plan, distributor selection, and first-year P&L.</p></div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:4px;padding:24px 28px;display:flex;gap:16px;align-items:flex-start">
+        <div style="width:6px;height:6px;border-radius:50%;background:var(--smalt);flex-shrink:0;margin-top:6px"></div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px">Revenue growth management</div><p style="font-size:12px;color:var(--muted);line-height:1.7">Designing and embedding RGM frameworks across B2B2C businesses — category, pack, and price architecture built for long-term margin.</p></div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:4px;padding:24px 28px;display:flex;gap:16px;align-items:flex-start">
+        <div style="width:6px;height:6px;border-radius:50%;background:var(--smalt);flex-shrink:0;margin-top:6px"></div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px">Commercial leadership hiring</div><p style="font-size:12px;color:var(--muted);line-height:1.7">Defining and justifying the commercial headcount plan. Role profiling, market benchmarking, and candidate assessment for senior hires.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Track record -->
+  <section class="section" style="background:var(--navy);position:relative;overflow:hidden">
+    <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)"></div>
+    <div class="section-tag" style="color:var(--sky)">Track record</div>
+    <div class="section-h" style="color:#fff">Numbers that matter to PE</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,0.07);margin-top:36px">
+      <div style="padding:24px 0;border-right:1px solid rgba(255,255,255,0.07)"><div style="font-size:38px;font-weight:300;color:#fff;line-height:1;letter-spacing:-0.02em">150<span style="color:var(--sky);font-size:65%">+</span></div><div style="font-size:10px;color:rgba(255,255,255,0.4);margin-top:7px;line-height:1.55">Engagements since 2014</div></div>
+      <div style="padding:24px 0;border-right:1px solid rgba(255,255,255,0.07);padding-left:24px"><div style="font-size:38px;font-weight:300;color:#fff;line-height:1;letter-spacing:-0.02em">2–4<span style="color:var(--sky);font-size:65%">pp</span></div><div style="font-size:10px;color:rgba(255,255,255,0.4);margin-top:7px;line-height:1.55">Typical gross margin improvement in pricing engagements</div></div>
+      <div style="padding:24px 0;border-right:1px solid rgba(255,255,255,0.07);padding-left:24px"><div style="font-size:38px;font-weight:300;color:#fff;line-height:1;letter-spacing:-0.02em">12<span style="color:var(--sky);font-size:65%">mo</span></div><div style="font-size:10px;color:rgba(255,255,255,0.4);margin-top:7px;line-height:1.55">Typical time-to-impact for embedded programmes</div></div>
+      <div style="padding:24px 0;padding-left:24px"><div style="font-size:38px;font-weight:300;color:#fff;line-height:1;letter-spacing:-0.02em">4<span style="color:var(--sky);font-size:65%"> markets</span></div><div style="font-size:10px;color:rgba(255,255,255,0.4);margin-top:7px;line-height:1.55">European capitals with in-country PE-experienced partners</div></div>
+    </div>
+  </section>
+
+  <!-- PE team -->
+  <section class="section" style="background:#fff">
+    <div class="section-tag">The partners</div>
+    <div class="section-h">PE experience in the room</div>
+    <p class="section-sub">Our partners have held Operating Partner, portfolio company MD, and in-house PE consulting roles — not just advisory mandates.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)">
+      <div style="background:#fff;padding:32px">
+        <div style="width:56px;height:56px;border-radius:50%;background:var(--smalt);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:0.05em">CG</div>
+        <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:2px">Cécile George</div>
+        <div style="font-size:9px;color:var(--smalt);text-transform:uppercase;letter-spacing:0.1em;font-weight:700;margin-bottom:10px">Founder · Managing Director</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.75">Former Operating Partner at a PE house. McKinsey independent expert. Built and led global sales teams in B2B chemicals. 20+ years of commercial transformation delivery.</p>
+        <a class="tf-linkedin" href="https://www.linkedin.com/in/c%C3%A9cile-tanmaya-george/" target="_blank" rel="noopener noreferrer" style="color:var(--smalt)"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+      </div>
+      <div style="background:#fff;padding:32px">
+        <div style="width:56px;height:56px;border-radius:50%;background:#0f6e56;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:0.05em">GC</div>
+        <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:2px">Gregor Cohnen</div>
+        <div style="font-size:9px;color:var(--smalt);text-transform:uppercase;letter-spacing:0.1em;font-weight:700;margin-bottom:10px">Partner Germany</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.75">20+ years value creation leadership. In-house consulting and operational roles at Aurelius and Paragon. Designed and executed complex B2B commercial transformations across PE-backed portfolio companies.</p>
+        <a class="tf-linkedin" href="https://www.linkedin.com/in/gregor-c-50bb8b296/" target="_blank" rel="noopener noreferrer" style="color:var(--smalt)"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+      </div>
+      <div style="background:#fff;padding:32px">
+        <div style="width:56px;height:56px;border-radius:50%;background:#854F0B;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:0.05em">LP</div>
+        <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:2px">Luca Pelamatti</div>
+        <div style="font-size:9px;color:var(--smalt);text-transform:uppercase;letter-spacing:0.1em;font-weight:700;margin-bottom:10px">Senior Expert</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.75">Former Bain consultant. 10+ years driving top-line growth for PE-backed multinationals and SMEs. Commercial excellence and Revenue Growth Management across B2B2C in Europe.</p>
+        <a class="tf-linkedin" href="https://www.linkedin.com/in/luca-pelamatti-08276182/" target="_blank" rel="noopener noreferrer" style="color:var(--smalt)"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div style="background:var(--smalt);padding:72px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;position:relative;overflow:hidden">
+    <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:rgba(255,255,255,0.3)"></div>
+    <div>
+      <div style="font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:10px;font-weight:600">Get in touch</div>
+      <h2 style="font-size:clamp(22px,3vw,34px);font-weight:800;text-transform:uppercase;color:#fff;letter-spacing:-0.02em;margin-bottom:8px;line-height:1.05">30 minutes. No slides. No pitch.</h2>
+      <p style="font-size:13px;color:rgba(255,255,255,0.65);max-width:460px;line-height:1.75">Tell us about the portfolio company and the commercial challenge. We'll tell you whether we're the right fit and what we'd do first.</p>
+    </div>
+    <button class="btn-primary" onclick="showPage('contact')" style="background:#fff;color:var(--smalt);white-space:nowrap">Book a call with Cécile →</button>
+  </div>
+
+  <footer>
+    <div>
+      <div class="footer-logo">
+        <svg width="20" height="18" viewBox="0 0 100 90" fill="none" aria-hidden="true"><path fill="white" fill-rule="evenodd" d="M25,0 L75,0 L100,45 L75,90 L25,90 L0,45 Z M50,22 L72,45 L50,68 L28,45 Z"/></svg>
+        <div><div class="footer-logo-text">Hirondl</div><div class="footer-est">Est. 2014</div></div>
+      </div>
+    </div>
+    <div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('cases')">Case studies</a><a onclick="showPage('contact')">Contact</a></div>
+    <div class="footer-contact">office@hirondl.com · hirondl.com</div>
+  </footer>
 </div>
 
 <!-- ═══════════════ CONTACT ═══════════════ -->
