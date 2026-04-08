@@ -124,7 +124,8 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .tp-link:hover{opacity:0.8}
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .team-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:22px}
-.tc-avatar{width:52px;height:52px;border-radius:50%;background:var(--smalt);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:0.05em}
+.tc-avatar{width:52px;height:52px;border-radius:50%;background:var(--smalt);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:0.05em;overflow:hidden;flex-shrink:0}
+.tc-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%;display:block}
 .tc-name{font-size:14px;font-weight:700;color:#fff;margin-bottom:2px}
 .tc-role{font-size:9px;color:var(--sky);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;font-weight:600}
 .tc-bio{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.65;font-weight:300}
@@ -280,7 +281,8 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .cl-team{margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.07)}
 .clt-label{font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:14px;font-weight:600}
 .clt-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.clt-av{width:36px;height:36px;border-radius:50%;background:var(--smalt);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff}
+.clt-av{width:36px;height:36px;border-radius:50%;background:var(--smalt);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;overflow:hidden;flex-shrink:0}
+.clt-av img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%;display:block}
 .clt-name{font-size:13px;color:#fff;font-weight:500}
 .clt-role{font-size:10px;color:rgba(255,255,255,0.4);font-weight:400}
 .contact-right{background:var(--surface);padding:48px}
@@ -453,9 +455,9 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       <span class="tp-link" onclick="showPage('team')">Meet the full team →</span>
     </div>
     <div class="team-grid">
-      <div class="team-card"><div class="tc-avatar" style="background:var(--smalt)">CG</div><div class="tc-name">Cécile George</div><div class="tc-role">Managing Director · London</div><div class="tc-bio">20+ years delivering rapid revenue and margin growth. Former Operating Partner. Ex McKinsey, INSEAD.</div></div>
-      <div class="team-card"><div class="tc-avatar" style="background:#0f6e56">GC</div><div class="tc-name">Gregor Cohnen</div><div class="tc-role">Partner · Germany</div><div class="tc-bio">20+ years PE value creation leadership. Complex B2B commercial transformations at Aurelius and Paragon.</div></div>
-      <div class="team-card"><div class="tc-avatar" style="background:#6b3a8a">RV</div><div class="tc-name">Renata Vancini</div><div class="tc-role">Partner · Italy</div><div class="tc-bio">15+ years business building from Fortune 500s to startups. Sales and pricing transformation specialist.</div></div>
+      <div class="team-card"><div class="tc-avatar" style="background:var(--smalt)"><img src="Cecile.jpg" alt="Cécile George"></div><div class="tc-name">Cécile George</div><div class="tc-role">Managing Director · London</div><div class="tc-bio">20+ years delivering rapid revenue and margin growth. Former Operating Partner. Ex McKinsey, INSEAD.</div></div>
+      <div class="team-card"><div class="tc-avatar" style="background:#0f6e56"><img src="Gregor.png" alt="Gregor Cohnen"></div><div class="tc-name">Gregor Cohnen</div><div class="tc-role">Partner · Germany</div><div class="tc-bio">20+ years PE value creation leadership. Complex B2B commercial transformations at Aurelius and Paragon.</div></div>
+      <div class="team-card"><div class="tc-avatar" style="background:#6b3a8a"><img src="Renata.png" alt="Renata Vancini"></div><div class="tc-name">Renata Vancini</div><div class="tc-role">Partner · Italy</div><div class="tc-bio">15+ years business building from Fortune 500s to startups. Sales and pricing transformation specialist.</div></div>
     </div>
     <div class="fp-row">
       <span class="fp-label">Physical presence</span>
@@ -1113,8 +1115,8 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         <div class="cl-detail"><div class="cl-icon">◎</div><div class="cl-text">405 Kings Road, London SW10 0BB</div></div>
         <div class="cl-team">
           <div class="clt-label">You will be speaking with</div>
-          <div class="clt-row"><div class="clt-av">CG</div><div><div class="clt-name">Cécile George</div><div class="clt-role">Managing Director · ex McKinsey · PE Operating Partner</div></div></div>
-          <div class="clt-row"><div class="clt-av" style="background:#0f6e56">GC</div><div><div class="clt-name">Gregor Cohnen</div><div class="clt-role">Partner · 20+ years PE value creation</div></div></div>
+          <div class="clt-row"><div class="clt-av"><img src="Cecile.jpg" alt="Cécile George"></div><div><div class="clt-name">Cécile George</div><div class="clt-role">Managing Director · ex McKinsey · PE Operating Partner</div></div></div>
+          <div class="clt-row"><div class="clt-av" style="background:#0f6e56"><img src="Gregor.png" alt="Gregor Cohnen"></div><div><div class="clt-name">Gregor Cohnen</div><div class="clt-role">Partner · 20+ years PE value creation</div></div></div>
         </div>
       </div>
       <div class="contact-right">
