@@ -4,6 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hirondl & Co — Commercial Transformation Partners</title>
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<!-- SEO -->
+<meta name="description" content="Hirondl designs and executes commercial transformations for PE-backed and industrial businesses. We partner from diagnosis through to measurable outcome capture.">
+
+<!-- Open Graph — LinkedIn, WhatsApp, Slack previews -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://strong-druid-a2534b.netlify.app">
+<meta property="og:title" content="Hirondl & Co — Commercial Transformation Partners">
+<meta property="og:description" content="We stay until impact. Not until the deck is done. PE-backed commercial transformation across Europe.">
+<meta property="og:image" content="https://strong-druid-a2534b.netlify.app/og-image.png">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hirondl & Co — Commercial Transformation Partners">
+<meta name="twitter:description" content="We stay until impact. Not until the deck is done.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
@@ -33,6 +51,19 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .nav-links a:hover,.nav-links a.active{color:#fff}
 .nav-cta{background:var(--smalt);color:#fff !important;padding:9px 20px;border-radius:3px;font-weight:700 !important}
 .nav-cta:hover{background:#1e3ab5 !important}
+
+/* HAMBURGER + MOBILE MENU */
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;cursor:pointer;padding:4px;background:none;border:none;z-index:200}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform 0.25s,opacity 0.25s}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:66px;left:0;right:0;bottom:0;background:var(--navy);z-index:99;flex-direction:column;padding:32px 24px;border-top:1px solid rgba(255,255,255,0.08)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:18px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:0.06em;text-transform:uppercase;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.07);cursor:pointer;transition:color 0.15s}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:#fff}
+.mobile-menu .mob-cta{margin-top:24px;background:var(--smalt);color:#fff !important;padding:14px 24px;border-radius:3px;text-align:center;border-bottom:none !important}
 
 /* ═══════════ HOMEPAGE ═══════════ */
 .hero{min-height:100vh;background:var(--navy);display:flex;flex-direction:column;justify-content:center;padding:120px 48px 80px;position:relative;overflow:hidden}
@@ -237,7 +268,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  nav{padding:0 20px}.nav-links{display:none}
+  nav{padding:0 20px}.nav-links{display:none}.nav-hamburger{display:flex}
   .hero,.section,.page-hero,.cs-narrative,.contact-left,.contact-right,.map-section{padding-left:24px;padding-right:24px}
   .proof-bar{grid-template-columns:1fr 1fr}
   .services-grid,.wwd-grid,.cs-index,.cs-cols,.team-full-grid,.blog-grid,.contact-grid{grid-template-columns:1fr}
@@ -272,7 +303,20 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <a onclick="showPage('insights')" id="nav-insights">Insights</a>
     <a onclick="showPage('contact')" id="nav-contact" class="nav-cta">Book a call</a>
   </div>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a onclick="showPage('home');toggleMobileMenu()" id="mob-home">Home</a>
+  <a onclick="showPage('wwd');toggleMobileMenu()" id="mob-wwd">What we do</a>
+  <a onclick="showPage('cases');toggleMobileMenu()" id="mob-cases">Case studies</a>
+  <a onclick="showPage('team');toggleMobileMenu()" id="mob-team">Team</a>
+  <a onclick="showPage('insights');toggleMobileMenu()" id="mob-insights">Insights</a>
+  <a onclick="showPage('contact');toggleMobileMenu()" class="mob-cta">Book a call</a>
+</div>
 
 <!-- ═══════════════ HOME PAGE ═══════════════ -->
 <div class="page active" id="page-home">
@@ -791,6 +835,12 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
 </div>
 
 <script>
+function toggleMobileMenu(){
+  const menu=document.getElementById('mobile-menu');
+  const btn=document.getElementById('nav-hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
