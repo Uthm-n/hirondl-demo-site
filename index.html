@@ -116,6 +116,15 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .svc-name{font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px}
 .svc-desc{font-size:12px;color:var(--muted);line-height:1.7;font-weight:400}
 
+/* HOMEPAGE SERVICES CITYSCAPE TEASER */
+.svc-cityscape{position:relative;min-height:440px;background:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;display:flex;align-items:center;padding:80px 88px}
+.svc-city-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(16,21,53,0.88) 0%,rgba(26,48,153,0.60) 100%)}
+.svc-city-content{position:relative;z-index:2;max-width:720px}
+.svc-city-h{font-size:clamp(36px,4.5vw,56px);font-weight:900;text-transform:uppercase;color:#fff;letter-spacing:-0.03em;line-height:0.97;margin-bottom:20px}
+.svc-city-sub{font-size:14px;color:#fff;line-height:1.75;margin-bottom:28px;font-weight:400;max-width:560px}
+.svc-city-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.svc-city-pills span{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.3);padding:7px 14px;border-radius:2px;background:rgba(255,255,255,0.06)}
+
 /* TEAM PREVIEW */
 .team-preview{background:var(--navy);padding:72px 48px;position:relative;overflow:hidden}
 .team-preview::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)}
@@ -348,6 +357,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
 @media(max-width:768px){
   nav{padding:0 20px}.nav-links{display:none}.nav-hamburger{display:flex}
   .hero,.section,.page-hero,.wwd-hero,.wwd-pe-strip,.wwd-services-section,.wwd-proof-section,.cs-narrative,.contact-left,.contact-right,.map-section{padding-left:24px;padding-right:24px}
+  .svc-cityscape{padding:60px 24px}
   .proof-bar{grid-template-columns:1fr 1fr}
   .services-grid,.svc-dark-grid,.wwd-grid,.wwd-services-grid,.wwd-proof-tiles,.cs-index,.cs-cols,.cs-extras,.team-full-grid,.blog-grid,.contact-grid{grid-template-columns:1fr}
   .team-grid{grid-template-columns:1fr 1fr}
@@ -457,17 +467,22 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     </div>
   </div>
 
-  <section class="section" style="background:#fff">
-    <div class="section-tag">What we do</div>
-    <div class="section-h">Six ways we create<br>commercial value</div>
-    <p class="section-sub">We design, implement, and stay until the results are visible. Each capability area is built around delivery, not advice.</p>
-    <div class="services-grid">
-      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">01</div><div class="svc-name">Sales and Value Creation Strategy</div><div class="svc-desc">Maturity assessments, growth lever diagnostics, value creation plan development, go-to-market model design.</div></div>
-      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">02</div><div class="svc-name">Sales Acceleration</div><div class="svc-desc">Lead generation, customer segmentation and account planning, pipeline set-up, digital channel development.</div></div>
-      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">03</div><div class="svc-name">Sustainable Pricing Optimisation</div><div class="svc-desc">Pricing opportunity capture, price setting tools, value pricing and value selling, price communication.</div></div>
-      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">04</div><div class="svc-name">Organisational Set-up for Growth</div><div class="svc-desc">Salesforce size and structure, capability building, field force incentive systems, KPI embedding.</div></div>
-      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">05</div><div class="svc-name">Sales Operations Set-up</div><div class="svc-desc">Management information systems, sales analytics and dashboards, CRM implementation.</div></div>
-      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">06</div><div class="svc-name">Pragmatic Custom Tooling</div><div class="svc-desc">Custom pricing tools, CRM builds, Power BI dashboards, prospect data scraping and longlists.</div></div>
+  <!-- SERVICES CITYSCAPE TEASER -->
+  <section class="svc-cityscape" onclick="showPage('wwd')" style="cursor:pointer">
+    <div class="svc-city-overlay"></div>
+    <div class="svc-city-content">
+      <div class="section-tag" style="color:var(--sky);margin-bottom:14px">What we do</div>
+      <h2 class="svc-city-h">Six ways we create<br>commercial value</h2>
+      <p class="svc-city-sub">Sales strategy, pricing, sales acceleration, organisational design, sales operations, and custom tooling. Each built around delivery inside Private Equity-backed businesses.</p>
+      <div class="svc-city-pills">
+        <span>Sales Strategy</span>
+        <span>Sales Acceleration</span>
+        <span>Pricing</span>
+        <span>Org Design</span>
+        <span>Sales Operations</span>
+        <span>Custom Tooling</span>
+      </div>
+      <button class="btn-primary" onclick="event.stopPropagation();showPage('wwd')" style="pointer-events:auto">Explore what we do &rarr;</button>
     </div>
   </section>
 
@@ -536,64 +551,63 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <p>Exclusively serving Private Equity funds and their portfolio companies. No banks, no corporates, no one-off projects. AI-assisted diagnostics accelerate insight; our partners drive implementation.</p>
   </div>
 
-  <!-- 6 SERVICE CARDS — dark navy redesign -->
-  <section class="svc-dark-section" style="position:relative">
-    <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)"></div>
-    <div class="svc-dark-header">
+  <!-- 6 SERVICE CARDS — white background -->
+  <div class="wwd-services-section">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:52px;flex-wrap:wrap;gap:24px;border-left:4px solid var(--smalt);padding-left:24px">
       <div>
-        <div class="section-tag" style="color:var(--sky);margin-bottom:14px">Six capabilities</div>
-        <h2 class="svc-dark-h">Six ways we create<br><span style="color:var(--sky)">commercial value</span></h2>
+        <div class="section-tag" style="margin-bottom:12px">Six capabilities</div>
+        <h2 style="font-size:clamp(36px,5vw,60px);font-weight:900;text-transform:uppercase;color:var(--navy);letter-spacing:-0.03em;line-height:0.97;margin-top:8px">Six ways we create<br><span style="color:var(--smalt)">commercial value</span></h2>
       </div>
-      <div class="svc-dark-sub-col">
-        <p class="svc-dark-sub">We design, implement, and stay until the results are visible. Each capability is built around delivery, not advice.</p>
+      <div style="max-width:300px;padding-top:16px;align-self:flex-end">
+        <p style="font-size:13px;color:var(--text);line-height:1.8;font-weight:400">We design, implement, and stay until the results are visible. Each capability is built around delivery, not advice.</p>
       </div>
     </div>
-    <div class="svc-dark-grid">
+    <div class="wwd-services-grid">
 
-      <div class="svc-tile-dk">
-        <div class="svc-num-dk">01</div>
-        <div class="svc-name-dk">Sales &amp; Value Creation Strategy</div>
-        <div class="svc-desc-dk" style="margin-bottom:14px;color:rgba(255,255,255,0.4)">Most portcos start a hold period without a clear picture of where the commercial value actually sits, or in what order to go after it.</div>
-        <div class="svc-desc-dk">We map it, prioritise it, and build the plan. AI-assisted transaction analysis cuts diagnostic time from weeks to days. Typical time-to-insight: 4–6 weeks.</div>
+      <div class="wwd-svc-card">
+        <div class="wwd-svc-num">01</div>
+        <div class="wwd-svc-name">Sales &amp; Value Creation Strategy</div>
+        <div class="wwd-svc-problem">Most portcos start a hold period without a clear picture of where the commercial value actually sits, or in what order to go after it.</div>
+        <div class="wwd-svc-outcome">We map it, prioritise it, and build the plan. AI-assisted transaction analysis cuts diagnostic time from weeks to days. Typical time-to-insight: 4–6 weeks.</div>
       </div>
 
-      <div class="svc-tile-dk">
-        <div class="svc-num-dk">02</div>
-        <div class="svc-name-dk">Sales Acceleration</div>
-        <div class="svc-desc-dk" style="margin-bottom:14px;color:rgba(255,255,255,0.4)">Reps are busy, but often on the wrong accounts, in the wrong channels, with no pipeline discipline to show for it.</div>
-        <div class="svc-desc-dk">We rebuild the commercial engine. Average 50% increase in high-potential account visits after segmentation.</div>
+      <div class="wwd-svc-card">
+        <div class="wwd-svc-num">02</div>
+        <div class="wwd-svc-name">Sales Acceleration</div>
+        <div class="wwd-svc-problem">Reps are busy, but often on the wrong accounts, in the wrong channels, with no pipeline discipline to show for it.</div>
+        <div class="wwd-svc-outcome">We rebuild the commercial engine. Average 50% increase in high-potential account visits after segmentation.</div>
       </div>
 
-      <div class="svc-tile-dk">
-        <div class="svc-num-dk">03</div>
-        <div class="svc-name-dk">Pricing Optimisation</div>
-        <div class="svc-desc-dk" style="margin-bottom:14px;color:rgba(255,255,255,0.4)">Most portcos are under-pricing by 8–12% without knowing it. Autonomous rep discounting erodes margin no one can see on a P&amp;L.</div>
-        <div class="svc-desc-dk">We close the gap. Typical gross margin uplift: 2–3 percentage points, sustained after engagement close.</div>
+      <div class="wwd-svc-card">
+        <div class="wwd-svc-num">03</div>
+        <div class="wwd-svc-name">Pricing Optimisation</div>
+        <div class="wwd-svc-problem">Most portcos are under-pricing by 8–12% without knowing it. Autonomous rep discounting erodes margin no one can see on a P&amp;L.</div>
+        <div class="wwd-svc-outcome">We close the gap. Typical gross margin uplift: 2–3 percentage points, sustained after engagement close.</div>
       </div>
 
-      <div class="svc-tile-dk">
-        <div class="svc-num-dk">04</div>
-        <div class="svc-name-dk">Organisational Set-up for Growth</div>
-        <div class="svc-desc-dk" style="margin-bottom:14px;color:rgba(255,255,255,0.4)">Commercial improvements stall when the team structure, incentives, and KPIs aren't built to sustain them beyond the engagement.</div>
-        <div class="svc-desc-dk">We design the organisation and embed the mechanics that hold the gains long after we leave.</div>
+      <div class="wwd-svc-card">
+        <div class="wwd-svc-num">04</div>
+        <div class="wwd-svc-name">Organisational Set-up for Growth</div>
+        <div class="wwd-svc-problem">Commercial improvements stall when the team structure, incentives, and KPIs aren't built to sustain them beyond the engagement.</div>
+        <div class="wwd-svc-outcome">We design the organisation and embed the mechanics that hold the gains long after we leave.</div>
       </div>
 
-      <div class="svc-tile-dk">
-        <div class="svc-num-dk">05</div>
-        <div class="svc-name-dk">Sales Operations Set-up</div>
-        <div class="svc-desc-dk" style="margin-bottom:14px;color:rgba(255,255,255,0.4)">Leaders can't manage what they can't see. Most portcos lack the management information infrastructure to track commercial performance in real time.</div>
-        <div class="svc-desc-dk">We build the dashboards, CRM, and MIS that get used. AI-generated summaries surface rep performance patterns before the weekly review.</div>
+      <div class="wwd-svc-card">
+        <div class="wwd-svc-num">05</div>
+        <div class="wwd-svc-name">Sales Operations Set-up</div>
+        <div class="wwd-svc-problem">Leaders can't manage what they can't see. Most portcos lack the management information infrastructure to track commercial performance in real time.</div>
+        <div class="wwd-svc-outcome">We build the dashboards, CRM, and MIS that get used. AI-generated summaries surface rep performance patterns before the weekly review.</div>
       </div>
 
-      <div class="svc-tile-dk">
-        <div class="svc-num-dk">06</div>
-        <div class="svc-name-dk">Pragmatic Custom Tooling</div>
-        <div class="svc-desc-dk" style="margin-bottom:14px;color:rgba(255,255,255,0.4)">Off-the-shelf solutions create workarounds. Commercial change needs tools designed around the specific business, not retrofitted from a template.</div>
-        <div class="svc-desc-dk">We build pricing tools, Power BI dashboards, and CRM configurations that embed change permanently.</div>
+      <div class="wwd-svc-card">
+        <div class="wwd-svc-num">06</div>
+        <div class="wwd-svc-name">Pragmatic Custom Tooling</div>
+        <div class="wwd-svc-problem">Off-the-shelf solutions create workarounds. Commercial change needs tools designed around the specific business, not retrofitted from a template.</div>
+        <div class="wwd-svc-outcome">We build pricing tools, Power BI dashboards, and CRM configurations that embed change permanently.</div>
       </div>
 
     </div>
-  </section>
+  </div>
 
   <!-- PROOF / VISUAL BREAK SECTION -->
   <div class="wwd-proof-section" style="background-image:url('https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?auto=format&fit=crop&w=1600&q=80')">
