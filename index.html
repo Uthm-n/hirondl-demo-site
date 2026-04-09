@@ -72,8 +72,8 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .hero-eyebrow{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sky);margin-bottom:22px;position:relative;font-weight:600}
 .hero-h{font-size:clamp(46px,7vw,86px);font-weight:900;text-transform:uppercase;color:#fff;line-height:0.95;letter-spacing:-0.03em;margin-bottom:14px;position:relative}
 .hero-h .sky{color:var(--sky)}
-.hero-tagline{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:16px;font-weight:600;position:relative}
-.hero-sub{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.75;max-width:520px;margin-bottom:36px;position:relative;font-weight:300}
+.hero-tagline{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-bottom:16px;font-weight:600;position:relative}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.88);line-height:1.75;max-width:520px;margin-bottom:36px;position:relative;font-weight:300}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;position:relative}
 .btn-primary{background:var(--smalt);color:#fff;padding:13px 28px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border:none;transition:background 0.15s;font-family:'Montserrat','Arial',sans-serif}
 .btn-primary:hover{background:#1e3ab5}
@@ -128,7 +128,7 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .tc-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%;display:block}
 .tc-name{font-size:14px;font-weight:700;color:#fff;margin-bottom:2px}
 .tc-role{font-size:9px;color:var(--sky);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;font-weight:600}
-.tc-bio{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.65;font-weight:300}
+.tc-bio{font-size:11px;color:rgba(255,255,255,0.82);line-height:1.65;font-weight:300}
 .fp-row{display:flex;gap:0;margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.07);align-items:center;flex-wrap:wrap;gap:12px}
 .fp-label{font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-right:8px;font-weight:600}
 .fp-city{display:flex;align-items:center;gap:6px;padding-right:16px;border-right:1px solid rgba(255,255,255,0.07)}
@@ -146,7 +146,7 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .page-hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)}
 .page-hero-tag{font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sky);margin-bottom:12px;font-weight:600}
 .page-hero-h{font-size:clamp(40px,6vw,70px);font-weight:800;text-transform:uppercase;color:#fff;letter-spacing:-0.03em;line-height:0.97;margin-bottom:12px}
-.page-hero-sub{font-size:14px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.75;font-weight:300}
+.page-hero-sub{font-size:14px;color:rgba(255,255,255,0.88);max-width:520px;line-height:1.75;font-weight:300}
 
 /* WWD redesign */
 .wwd-hero{background:var(--navy);background-size:cover;background-position:center;padding:160px 48px 100px;position:relative;overflow:hidden;min-height:65vh;display:flex;flex-direction:column;justify-content:flex-end}
@@ -319,6 +319,20 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
 .cs-chart-half-label{font-size:10px;font-weight:700;color:var(--text);margin-bottom:14px;letter-spacing:0.06em;text-transform:uppercase}
 .cs-chart-half{position:relative;height:260px}
 
+/* DARK SERVICES SECTION (homepage) */
+.svc-dark-section{background:var(--navy);padding:80px 48px;position:relative;overflow:hidden}
+.svc-dark-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:56px;flex-wrap:wrap;gap:24px}
+.svc-dark-h{font-size:clamp(40px,5.5vw,64px);font-weight:900;text-transform:uppercase;color:#fff;letter-spacing:-0.03em;line-height:0.97;margin-top:10px}
+.svc-dark-sub-col{max-width:300px;display:flex;flex-direction:column;align-items:flex-start;gap:18px;padding-top:16px}
+.svc-dark-sub{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.8;font-weight:400}
+.svc-dark-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.07)}
+.svc-tile-dk{background:rgba(255,255,255,0.02);padding:34px 30px;cursor:pointer;transition:background 0.18s;border-top:2px solid transparent}
+.svc-tile-dk:hover{background:rgba(255,255,255,0.06);border-top-color:var(--sky)}
+.svc-num-dk{font-size:38px;font-weight:300;color:rgba(255,255,255,0.1);margin-bottom:14px;line-height:1;letter-spacing:-0.02em;transition:color 0.18s}
+.svc-tile-dk:hover .svc-num-dk{color:var(--sky)}
+.svc-name-dk{font-size:14px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.3}
+.svc-desc-dk{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.75;font-weight:400}
+
 /* CS EXTRA SECTIONS (Tooling / Challenges / AI use case) */
 .cs-extras{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#080e2e}
 .cs-extra-card{background:#0a0f30;padding:28px 30px;border-top:3px solid rgba(255,255,255,0.08)}
@@ -335,7 +349,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
   nav{padding:0 20px}.nav-links{display:none}.nav-hamburger{display:flex}
   .hero,.section,.page-hero,.wwd-hero,.wwd-pe-strip,.wwd-services-section,.wwd-proof-section,.cs-narrative,.contact-left,.contact-right,.map-section{padding-left:24px;padding-right:24px}
   .proof-bar{grid-template-columns:1fr 1fr}
-  .services-grid,.wwd-grid,.wwd-services-grid,.wwd-proof-tiles,.cs-index,.cs-cols,.cs-extras,.team-full-grid,.blog-grid,.contact-grid{grid-template-columns:1fr}
+  .services-grid,.svc-dark-grid,.wwd-grid,.wwd-services-grid,.wwd-proof-tiles,.cs-index,.cs-cols,.cs-extras,.team-full-grid,.blog-grid,.contact-grid{grid-template-columns:1fr}
   .team-grid{grid-template-columns:1fr 1fr}
   .form-row{grid-template-columns:1fr}
   .logos-label{padding:0 16px 0 20px}
@@ -396,7 +410,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <div class="hero-btns">
       <button class="btn-primary" onclick="showPage('cases')">See our work</button>
       <button class="btn-secondary" onclick="showPage('contact')">Get in touch</button>
-      <a href="https://www.linkedin.com/company/hirondl-and-co-ltd/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border:1px solid rgba(255,255,255,0.2);border-radius:3px;color:rgba(255,255,255,0.7);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.15s" onmouseover="this.style.borderColor='rgba(255,255,255,0.55)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='rgba(255,255,255,0.7)'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>Follow us on LinkedIn</a>
+      <a href="https://www.linkedin.com/company/hirondl-and-co-ltd/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border:1px solid rgba(255,255,255,0.2);border-radius:3px;color:#fff;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.15s" onmouseover="this.style.borderColor='rgba(255,255,255,0.55)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>Follow us on LinkedIn</a>
     </div>
     <div class="proof-bar">
       <div class="proof-item">
@@ -443,17 +457,25 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     </div>
   </div>
 
-  <section class="section" style="background:#fff">
-    <div class="section-tag">What we do</div>
-    <div class="section-h">Six ways we create<br>commercial value</div>
-    <p class="section-sub">We design, implement, and stay until the results are visible. Each capability area is built around delivery, not advice.</p>
-    <div class="services-grid">
-      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">01</div><div class="svc-name">Sales and Value Creation Strategy</div><div class="svc-desc">Maturity assessments, growth lever diagnostics, value creation plan development, go-to-market model design.</div></div>
-      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">02</div><div class="svc-name">Sales Acceleration</div><div class="svc-desc">Lead generation, customer segmentation and account planning, pipeline set-up, digital channel development.</div></div>
-      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">03</div><div class="svc-name">Sustainable Pricing Optimisation</div><div class="svc-desc">Pricing opportunity capture, price setting tools, value pricing and value selling, price communication.</div></div>
-      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">04</div><div class="svc-name">Organisational Set-up for Growth</div><div class="svc-desc">Salesforce size and structure, capability building, field force incentive systems, KPI embedding.</div></div>
-      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">05</div><div class="svc-name">Sales Operations Set-up</div><div class="svc-desc">Management information systems, sales analytics and dashboards, CRM implementation.</div></div>
-      <div class="svc-tile" onclick="showPage('wwd')"><div class="svc-num">06</div><div class="svc-name">Pragmatic Custom Tooling</div><div class="svc-desc">Custom pricing tools, CRM builds, Power BI dashboards, prospect data scraping and longlists.</div></div>
+  <section class="svc-dark-section">
+    <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)"></div>
+    <div class="svc-dark-header">
+      <div>
+        <div class="section-tag" style="color:var(--sky)">What we do</div>
+        <h2 class="svc-dark-h">Six ways we create<br><span style="color:var(--sky)">commercial value</span></h2>
+      </div>
+      <div class="svc-dark-sub-col">
+        <p class="svc-dark-sub">We design, implement, and stay until the results are visible. Each capability area is built around delivery, not advice.</p>
+        <button class="btn-secondary" onclick="showPage('wwd')" style="font-size:10px;padding:11px 22px;white-space:nowrap">Full capability detail →</button>
+      </div>
+    </div>
+    <div class="svc-dark-grid">
+      <div class="svc-tile-dk" onclick="showPage('wwd')"><div class="svc-num-dk">01</div><div class="svc-name-dk">Sales &amp; Value Creation Strategy</div><div class="svc-desc-dk">Maturity assessments, growth lever diagnostics, value creation plan development, go-to-market model design.</div></div>
+      <div class="svc-tile-dk" onclick="showPage('wwd')"><div class="svc-num-dk">02</div><div class="svc-name-dk">Sales Acceleration</div><div class="svc-desc-dk">Lead generation, customer segmentation and account planning, pipeline set-up, digital channel development.</div></div>
+      <div class="svc-tile-dk" onclick="showPage('wwd')"><div class="svc-num-dk">03</div><div class="svc-name-dk">Pricing Optimisation</div><div class="svc-desc-dk">Pricing opportunity capture, price setting tools, value pricing and value selling, price communication.</div></div>
+      <div class="svc-tile-dk" onclick="showPage('wwd')"><div class="svc-num-dk">04</div><div class="svc-name-dk">Organisational Set-up for Growth</div><div class="svc-desc-dk">Salesforce size and structure, capability building, field force incentive systems, KPI embedding.</div></div>
+      <div class="svc-tile-dk" onclick="showPage('wwd')"><div class="svc-num-dk">05</div><div class="svc-name-dk">Sales Operations Set-up</div><div class="svc-desc-dk">Management information systems, sales analytics and dashboards, CRM implementation.</div></div>
+      <div class="svc-tile-dk" onclick="showPage('wwd')"><div class="svc-num-dk">06</div><div class="svc-name-dk">Pragmatic Custom Tooling</div><div class="svc-desc-dk">Custom pricing tools, CRM builds, Power BI dashboards, prospect data scraping and longlists.</div></div>
     </div>
   </section>
 
@@ -996,7 +1018,14 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     </div>
     <div class="blog-grid">
       <div class="blog-card" onclick="showBlog(0)"><div class="blog-tag">Pricing · 3 min read</div><div class="blog-title">When the Margin Wasn't Where the Model Said It Was</div><div class="blog-meta">By Cécile George · Hirondl</div><div class="blog-excerpt">A PE backed welding manufacturer. Three years of transaction data. A structural pricing problem nobody had looked for. Here is what we found and how we fixed it.</div></div>
-      <div class="blog-card" onclick="showPage('contact')" style="background:var(--navy);cursor:pointer"><div style="height:100%;display:flex;flex-direction:column;justify-content:center"><div class="blog-tag" style="color:var(--sky)">Get in touch</div><div class="blog-title" style="color:#fff">Have a commercial challenge we should write about?</div><div class="blog-excerpt" style="color:rgba(255,255,255,0.45)">We share what we learn from every engagement. If you are working through a similar situation, we would like to hear about it.</div></div></div>
+      <div class="blog-card" style="background:var(--smalt);cursor:pointer" onclick="window.open('https://uk.linkedin.com/company/hirondl-co-ltd','_blank')">
+        <div style="height:100%;display:flex;flex-direction:column;justify-content:center">
+          <div class="blog-tag" style="color:rgba(255,255,255,0.65)">Follow us on LinkedIn</div>
+          <div class="blog-title" style="color:#fff">Get fresh insights from our partners, straight to your feed.</div>
+          <div class="blog-excerpt" style="color:rgba(255,255,255,0.75);margin-bottom:24px">We share short pieces on pricing, sales transformation, and commercial value creation in PE-backed businesses.</div>
+          <a href="https://uk.linkedin.com/company/hirondl-co-ltd" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:11px 18px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;width:fit-content;transition:background 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Follow Hirondl &amp; Co</a>
+        </div>
+      </div>
     </div>
     <footer style="margin-top:0">
       <div>
