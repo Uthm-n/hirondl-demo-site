@@ -119,11 +119,12 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 /* HOMEPAGE SERVICES CITYSCAPE TEASER */
 .svc-cityscape{position:relative;min-height:440px;background:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;display:flex;align-items:center;padding:80px 88px}
 .svc-city-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(16,21,53,0.88) 0%,rgba(26,48,153,0.60) 100%)}
-.svc-city-content{position:relative;z-index:2;max-width:720px}
+.svc-city-content{position:relative;z-index:2;max-width:960px}
 .svc-city-h{font-size:clamp(36px,4.5vw,56px);font-weight:900;text-transform:uppercase;color:#fff;letter-spacing:-0.03em;line-height:0.97;margin-bottom:20px}
 .svc-city-sub{font-size:14px;color:#fff;line-height:1.75;margin-bottom:28px;font-weight:400;max-width:560px}
-.svc-city-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
-.svc-city-pills span{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.3);padding:7px 14px;border-radius:2px;background:rgba(255,255,255,0.06)}
+.svc-city-pills{display:flex;flex-wrap:nowrap;gap:8px;margin-bottom:32px;overflow-x:auto}
+.svc-city-pills span{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.3);padding:7px 14px;border-radius:2px;background:rgba(255,255,255,0.06);white-space:nowrap;cursor:pointer;transition:background 0.15s,border-color 0.15s;flex-shrink:0}
+.svc-city-pills span:hover{background:rgba(255,255,255,0.14);border-color:rgba(255,255,255,0.65)}
 
 /* TEAM PREVIEW */
 .team-preview{background:var(--navy);padding:72px 48px;position:relative;overflow:hidden}
@@ -472,15 +473,15 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <div class="svc-city-overlay"></div>
     <div class="svc-city-content">
       <div class="section-tag" style="color:var(--sky);margin-bottom:14px">What we do</div>
-      <h2 class="svc-city-h">Six ways we create<br>commercial value</h2>
+      <h2 class="svc-city-h">Ways we create<br>commercial value</h2>
       <p class="svc-city-sub">Sales strategy, pricing, sales acceleration, organisational design, sales operations, and custom tooling. Each built around delivery inside Private Equity-backed businesses.</p>
       <div class="svc-city-pills">
-        <span>Sales Strategy</span>
-        <span>Sales Acceleration</span>
-        <span>Pricing</span>
-        <span>Org Design</span>
-        <span>Sales Operations</span>
-        <span>Custom Tooling</span>
+        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-01')">Sales Strategy</span>
+        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-02')">Sales Acceleration</span>
+        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-03')">Pricing</span>
+        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-04')">Org Design</span>
+        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-05')">Sales Operations</span>
+        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-06')">Custom Tooling</span>
       </div>
       <button class="btn-primary" onclick="event.stopPropagation();showPage('wwd')" style="pointer-events:auto">Explore what we do &rarr;</button>
     </div>
@@ -564,42 +565,42 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     </div>
     <div class="wwd-services-grid">
 
-      <div class="wwd-svc-card">
+      <div class="wwd-svc-card" id="wwd-svc-01">
         <div class="wwd-svc-num">01</div>
         <div class="wwd-svc-name">Sales &amp; Value Creation Strategy</div>
         <div class="wwd-svc-problem">Most portcos start a hold period without a clear picture of where the commercial value actually sits, or in what order to go after it.</div>
         <div class="wwd-svc-outcome">We map it, prioritise it, and build the plan. AI-assisted transaction analysis cuts diagnostic time from weeks to days. Typical time-to-insight: 4–6 weeks.</div>
       </div>
 
-      <div class="wwd-svc-card">
+      <div class="wwd-svc-card" id="wwd-svc-02">
         <div class="wwd-svc-num">02</div>
         <div class="wwd-svc-name">Sales Acceleration</div>
         <div class="wwd-svc-problem">Reps are busy, but often on the wrong accounts, in the wrong channels, with no pipeline discipline to show for it.</div>
         <div class="wwd-svc-outcome">We rebuild the commercial engine. Average 50% increase in high-potential account visits after segmentation.</div>
       </div>
 
-      <div class="wwd-svc-card">
+      <div class="wwd-svc-card" id="wwd-svc-03">
         <div class="wwd-svc-num">03</div>
         <div class="wwd-svc-name">Pricing Optimisation</div>
         <div class="wwd-svc-problem">Most portcos are under-pricing by 8–12% without knowing it. Autonomous rep discounting erodes margin no one can see on a P&amp;L.</div>
         <div class="wwd-svc-outcome">We close the gap. Typical gross margin uplift: 2–3 percentage points, sustained after engagement close.</div>
       </div>
 
-      <div class="wwd-svc-card">
+      <div class="wwd-svc-card" id="wwd-svc-04">
         <div class="wwd-svc-num">04</div>
         <div class="wwd-svc-name">Organisational Set-up for Growth</div>
         <div class="wwd-svc-problem">Commercial improvements stall when the team structure, incentives, and KPIs aren't built to sustain them beyond the engagement.</div>
         <div class="wwd-svc-outcome">We design the organisation and embed the mechanics that hold the gains long after we leave.</div>
       </div>
 
-      <div class="wwd-svc-card">
+      <div class="wwd-svc-card" id="wwd-svc-05">
         <div class="wwd-svc-num">05</div>
         <div class="wwd-svc-name">Sales Operations Set-up</div>
         <div class="wwd-svc-problem">Leaders can't manage what they can't see. Most portcos lack the management information infrastructure to track commercial performance in real time.</div>
         <div class="wwd-svc-outcome">We build the dashboards, CRM, and MIS that get used. AI-generated summaries surface rep performance patterns before the weekly review.</div>
       </div>
 
-      <div class="wwd-svc-card">
+      <div class="wwd-svc-card" id="wwd-svc-06">
         <div class="wwd-svc-num">06</div>
         <div class="wwd-svc-name">Pragmatic Custom Tooling</div>
         <div class="wwd-svc-problem">Off-the-shelf solutions create workarounds. Commercial change needs tools designed around the specific business, not retrofitted from a template.</div>
@@ -1209,7 +1210,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       <h2 style="font-size:clamp(22px,3vw,34px);font-weight:800;text-transform:uppercase;color:#fff;letter-spacing:-0.02em;margin-bottom:8px;line-height:1.05">30 minutes. No slides. No pitch.</h2>
       <p style="font-size:13px;color:rgba(255,255,255,0.65);max-width:460px;line-height:1.75">Tell us about the portfolio company and the commercial challenge. We'll tell you whether we're the right fit and what we'd do first.</p>
     </div>
-    <button class="btn-primary" onclick="showPage('contact')" style="background:#fff;color:var(--smalt);white-space:nowrap">Book a call with Cécile →</button>
+    <button class="btn-primary" onclick="showPage('contact')" style="background:#fff;color:var(--smalt);white-space:nowrap">Book a call with our team →</button>
   </div>
 
   <footer>
@@ -1291,6 +1292,13 @@ function showPage(id,_noPush){
   if(id==='insights'){document.getElementById('blog-index-view').style.display='block';document.getElementById('blog-post-view').style.display='none';}
   if(id==='team'){setTimeout(initEuropeMap,120);}
   if(!_noPush)history.pushState({page:id},'','#'+id);
+}
+function goToSection(pageId,sectionId){
+  showPage(pageId);
+  setTimeout(function(){
+    var el=document.getElementById(sectionId);
+    if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+  },80);
 }
 /* Browser back/forward support */
 window.addEventListener('popstate',function(e){
