@@ -319,12 +319,23 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
 .cs-chart-half-label{font-size:10px;font-weight:700;color:var(--text);margin-bottom:14px;letter-spacing:0.06em;text-transform:uppercase}
 .cs-chart-half{position:relative;height:260px}
 
+/* CS EXTRA SECTIONS (Tooling / Challenges / AI use case) */
+.cs-extras{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#080e2e}
+.cs-extra-card{background:#0a0f30;padding:28px 30px;border-top:3px solid rgba(255,255,255,0.08)}
+.cs-extra-ai{border-top-color:var(--sky)}
+.cs-extra-head{font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.45);font-weight:700;margin-bottom:10px}
+.cs-extra-ai .cs-extra-head{color:var(--sky)}
+.cs-extra-title{font-size:13px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.3}
+.cs-extra-body{font-size:12px;color:rgba(255,255,255,0.65);line-height:1.8;font-weight:400}
+.cs-extra-body ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px}
+.cs-extra-body ul li::before{content:'→';color:var(--sky);margin-right:6px;font-weight:700}
+
 /* RESPONSIVE */
 @media(max-width:768px){
   nav{padding:0 20px}.nav-links{display:none}.nav-hamburger{display:flex}
   .hero,.section,.page-hero,.wwd-hero,.wwd-pe-strip,.wwd-services-section,.wwd-proof-section,.cs-narrative,.contact-left,.contact-right,.map-section{padding-left:24px;padding-right:24px}
   .proof-bar{grid-template-columns:1fr 1fr}
-  .services-grid,.wwd-grid,.wwd-services-grid,.wwd-proof-tiles,.cs-index,.cs-cols,.team-full-grid,.blog-grid,.contact-grid{grid-template-columns:1fr}
+  .services-grid,.wwd-grid,.wwd-services-grid,.wwd-proof-tiles,.cs-index,.cs-cols,.cs-extras,.team-full-grid,.blog-grid,.contact-grid{grid-template-columns:1fr}
   .team-grid{grid-template-columns:1fr 1fr}
   .form-row{grid-template-columns:1fr}
   .logos-label{padding:0 16px 0 20px}
@@ -378,7 +389,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       <path d="M660 60 Q480 360 360 510 Q240 660 280 960" stroke="white" stroke-width="1" fill="none"/>
       <path d="M540 -60 Q360 240 240 390 Q120 540 160 840" stroke="white" stroke-width="0.5" fill="none"/>
     </svg>
-    <div class="hero-eyebrow">Value Creation · Growth · Transformation</div>
+    <div class="hero-eyebrow">Value Creation · Growth · AI-Enhanced Transformation</div>
     <h1 class="hero-h">We stay<br><span class="sky">until impact.</span><br>Not until<br>the deck is done.</h1>
     <div class="hero-tagline">Your Partner in Ambitious Growth</div>
     <p class="hero-sub">Hirondl designs and executes commercial transformations for PE-backed and industrial businesses. We partner from diagnosis through to measurable outcome capture.</p>
@@ -462,7 +473,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <div class="fp-row">
       <span class="fp-label">Physical presence</span>
       <div class="fp-city"><div class="fp-dot"></div><span class="fp-name">London HQ</span></div>
-      <div class="fp-city"><div class="fp-dot"></div><span class="fp-name">Berlin</span></div>
+      <div class="fp-city"><div class="fp-dot"></div><span class="fp-name">Munich</span></div>
       <div class="fp-city"><div class="fp-dot"></div><span class="fp-name">Milan</span></div>
       <div class="fp-city"><div class="fp-dot"></div><span class="fp-name">Copenhagen</span></div>
     </div>
@@ -508,7 +519,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
 
   <!-- PE DIFFERENTIATOR STRIP -->
   <div class="wwd-pe-strip">
-    <p>Exclusively serving Private Equity funds and their portfolio companies — not banks, not corporates, not one-off projects.</p>
+    <p>Exclusively serving Private Equity funds and their portfolio companies — not banks, not corporates, not one-off projects. AI-assisted diagnostics accelerate insight; our partners drive implementation.</p>
   </div>
 
   <!-- 6 SERVICE CARDS -->
@@ -520,7 +531,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         <div class="wwd-svc-num">01</div>
         <div class="wwd-svc-name">Sales &amp; Value Creation Strategy</div>
         <div class="wwd-svc-problem">Most portcos start a hold period without a clear picture of where the commercial value actually sits — or in what order to go after it.</div>
-        <div class="wwd-svc-outcome">We map it, prioritise it, and build the plan. Typical time-to-insight: 4–6 weeks.</div>
+        <div class="wwd-svc-outcome">We map it, prioritise it, and build the plan. AI-assisted transaction analysis cuts diagnostic time from weeks to days. Typical time-to-insight: 4–6 weeks.</div>
       </div>
 
       <div class="wwd-svc-card">
@@ -548,7 +559,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         <div class="wwd-svc-num">05</div>
         <div class="wwd-svc-name">Sales Operations Set-up</div>
         <div class="wwd-svc-problem">Leaders can't manage what they can't see. Most portcos lack the management information infrastructure to track commercial performance in real time.</div>
-        <div class="wwd-svc-outcome">We build the dashboards, CRM, and MIS that get used — not shelved after the consultant leaves.</div>
+        <div class="wwd-svc-outcome">We build the dashboards, CRM, and MIS that get used — not shelved after the consultant leaves. AI-generated summaries surface rep performance patterns before the weekly review.</div>
       </div>
 
       <div class="wwd-svc-card">
@@ -692,6 +703,23 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         <div class="cs-sec-title">How we adapted mid-program</div>
         <div class="cs-para">Initial group workshops met significant resistance in two markets. We shifted to individual coaching sessions working through each rep's own account data. Personal data proved far harder to dismiss than aggregate patterns. The wave-based rollout let early adopter markets serve as proof of concept for resistant ones.</div>
       </div>
+      <div class="cs-extras">
+        <div class="cs-extra-card">
+          <div class="cs-extra-head">Custom Tooling Built</div>
+          <div class="cs-extra-title">Tools that stayed in use after we left</div>
+          <div class="cs-extra-body"><ul><li>Rep-level price opportunity capture sheets — personalised per sales territory</li><li>Power BI gross margin tracking dashboard with wave-by-wave progress view</li><li>Revised distribution price book with floor pricing and discount logic</li></ul></div>
+        </div>
+        <div class="cs-extra-card">
+          <div class="cs-extra-head">Implementation Challenges</div>
+          <div class="cs-extra-title">What we ran into — and how we solved it</div>
+          <div class="cs-extra-body"><ul><li>Strong rep resistance in two markets initially — group workshops dismissed as "head office theory"</li><li>Shifted to 1:1 coaching using each rep's own account data; personal numbers proved harder to argue with</li><li>Early-adopter markets used as internal proof — resistant teams came along once peers showed results</li></ul></div>
+        </div>
+        <div class="cs-extra-card cs-extra-ai">
+          <div class="cs-extra-head">AI Use Case</div>
+          <div class="cs-extra-title">How AI accelerated this engagement</div>
+          <div class="cs-extra-body"><ul><li>AI-assisted transaction clustering identified structural discount patterns across 3 years of data in days rather than 8 weeks of manual analysis</li><li>Automated flagging of accounts with the highest recoverable margin surfaced the 20% of accounts driving 80% of the opportunity</li><li>Enabled rep-specific insight packs to be built at scale, one per territory, without adding analyst headcount</li></ul></div>
+        </div>
+      </div>
       <div class="cs-cta-block"><div><h3>Facing a pricing challenge in a portfolio company?</h3><p>We have delivered pricing transformations across manufacturing, distribution, and B2B services. References available on request.</p></div><button class="btn-primary" onclick="showPage('contact')">Get in touch</button></div>
       <footer>
         <div>
@@ -734,6 +762,23 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         <div class="cs-sec-title">The situation</div>
         <div class="cs-para">Sales reps were working hard. The problem was not effort — it was direction. When we mapped where time was actually being spent against where potential was highest, the mismatch was significant. Accounts receiving the most attention were ones reps had strong relationships with, not the ones with the largest untapped share of wallet.</div>
         <div class="cs-pullquote"><p>The most common objection was that reps would lose C customer relationships. In practice, A customers — previously under-served — benefited most from the reallocation, and SOW gains followed within the first two quarters.</p></div>
+      </div>
+      <div class="cs-extras">
+        <div class="cs-extra-card">
+          <div class="cs-extra-head">Custom Tooling Built</div>
+          <div class="cs-extra-title">Tools that stayed in use after we left</div>
+          <div class="cs-extra-body"><ul><li>Potential and share-of-wallet scoring model for 10,000+ accounts across 6 markets</li><li>Territory rebalancing tool allowing managers to redistribute accounts between reps based on potential</li><li>Segmentation heatmap by market centre — visualising A/B/C split and visit allocation before and after</li></ul></div>
+        </div>
+        <div class="cs-extra-card">
+          <div class="cs-extra-head">Implementation Challenges</div>
+          <div class="cs-extra-title">What we ran into — and how we solved it</div>
+          <div class="cs-extra-body"><ul><li>CRM data gaps in several markets meant potential scoring required external data enrichment before the model could run</li><li>Rep scepticism about losing C-account relationships — resolved through workshops showing individual account uplift data</li><li>Regional manager alignment took longer than expected; phased rollout gave each market time to calibrate</li></ul></div>
+        </div>
+        <div class="cs-extra-card cs-extra-ai">
+          <div class="cs-extra-head">AI Use Case</div>
+          <div class="cs-extra-title">How AI accelerated this engagement</div>
+          <div class="cs-extra-body"><ul><li>ML-based potential scoring model processed 10,000+ customer accounts across 6 markets in hours, not weeks</li><li>Automated external data enrichment filled CRM gaps using company size, industry code, and web signals</li><li>AI-generated rep performance summaries surfaced outliers for manager review ahead of each coaching session</li></ul></div>
+        </div>
       </div>
       <div class="cs-cta-block"><div><h3>Are your reps focused on the right customers?</h3><p>We map potential and share of wallet to redirect commercial effort where it generates the highest return.</p></div><button class="btn-primary" onclick="showPage('contact')">Get in touch</button></div>
       <footer>
@@ -785,6 +830,23 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         <div class="cs-para">The premium paper supplier had built its commercial organisation incrementally. The same model had been replicated into new geographies without testing whether underlying customer potential and competitive dynamics warranted it. Outside Europe, no framework existed at all.</div>
         <div class="cs-pullquote"><p>The geographic coverage analysis revealed something the business had not previously quantified. Several regions with among the highest potential in the portfolio were being covered by a single rep with no dedicated resource. That finding directly justified 30 to 40 new hires.</p></div>
       </div>
+      <div class="cs-extras">
+        <div class="cs-extra-card">
+          <div class="cs-extra-head">Custom Tooling Built</div>
+          <div class="cs-extra-title">Tools that stayed in use after we left</div>
+          <div class="cs-extra-body"><ul><li>Global market sizing model covering 80+ countries — combining trade flows, industry data, and proprietary benchmarks</li><li>Territory planning workbook allowing regional managers to set visit targets from the potential model</li><li>Rollout dashboard tracking framework adoption across affiliates in real time</li></ul></div>
+        </div>
+        <div class="cs-extra-card">
+          <div class="cs-extra-head">Implementation Challenges</div>
+          <div class="cs-extra-title">What we ran into — and how we solved it</div>
+          <div class="cs-extra-body"><ul><li>Data standardisation across 4 continents — different CRM fields, currencies, and product codes required significant pre-processing</li><li>Aligning 6 regional leaders on a single framework took calibration workshops in each region before rollout</li><li>Some affiliates had no prior segmentation — required building from scratch in parallel with other regions</li></ul></div>
+        </div>
+        <div class="cs-extra-card cs-extra-ai">
+          <div class="cs-extra-head">AI Use Case</div>
+          <div class="cs-extra-title">How AI accelerated this engagement</div>
+          <div class="cs-extra-body"><ul><li>AI market sizing model combined trade flow data, industry reports, and proprietary benchmarks across 80+ countries in weeks rather than months</li><li>Automated translation and classification of non-English CRM data from APAC and LATAM affiliates</li><li>AI-assisted scenario modelling let regional leaders test headcount plans against potential estimates before committing</li></ul></div>
+        </div>
+      </div>
       <div class="cs-cta-block"><div><h3>Unsure where your sales resource is actually needed?</h3><p>We build potential and SOW frameworks that tell you exactly where to invest, where to maintain, and where to pull back.</p></div><button class="btn-primary" onclick="showPage('contact')">Get in touch</button></div>
       <footer>
         <div>
@@ -830,6 +892,23 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         <div class="cs-sec-title">How we adapted mid-engagement</div>
         <div class="cs-para">Our initial brief was to recommend a single updated go-to-market model for the region. As the potential data came in, it became clear that a single model was the wrong answer. We shifted to a clustering methodology — markets were grouped into archetypes based on potential, distributor reliability, competitive dynamics, and barriers to direct entry. Each archetype received a distinct GTM recommendation.</div>
       </div>
+      <div class="cs-extras">
+        <div class="cs-extra-card">
+          <div class="cs-extra-head">Custom Tooling Built</div>
+          <div class="cs-extra-title">Tools that stayed in use after we left</div>
+          <div class="cs-extra-body"><ul><li>Market entry scoring model ranking 50 Asian markets by potential, competitive intensity, and barrier to entry</li><li>Distributor evaluation framework with weighted scorecard used to rationalise and select partners per archetype</li><li>Year 1 P&amp;L template for subsidiary launches, pre-built for two new markets</li></ul></div>
+        </div>
+        <div class="cs-extra-card">
+          <div class="cs-extra-head">Implementation Challenges</div>
+          <div class="cs-extra-title">What we ran into — and how we solved it</div>
+          <div class="cs-extra-body"><ul><li>Limited reliable data in Tier 2 and Tier 3 markets — required triangulation from trade associations, field interviews, and public filings</li><li>Regulatory variation across 50 markets meant standard GTM assumptions had to be tested country-by-country</li><li>Incumbent distributors resistant to renegotiation — legal review and phased transition plan built into the programme</li></ul></div>
+        </div>
+        <div class="cs-extra-card cs-extra-ai">
+          <div class="cs-extra-head">AI Use Case</div>
+          <div class="cs-extra-title">How AI accelerated this engagement</div>
+          <div class="cs-extra-body"><ul><li>AI synthesis of competitive intelligence across 50 Asian markets compressed what would have been a 3-month research phase to 3 weeks</li><li>Automated regulatory summary generation flagged key market entry restrictions by country before field validation</li><li>AI-assisted distributor profiling scanned public data to pre-screen 200+ potential partners down to a shortlist of 40</li></ul></div>
+        </div>
+      </div>
       <div class="cs-cta-block"><div><h3>Facing a similar challenge in a portfolio company?</h3><p>We work directly with PE teams and portfolio companies to turn value creation plans into measurable outcomes.</p></div><button class="btn-primary" onclick="showPage('contact')">Get in touch</button></div>
       <footer>
         <div>
@@ -854,7 +933,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
   </div>
   <div class="team-full-grid">
     <div class="tf-card"><div class="tf-avatar" style="background:var(--smalt)"><img src="Cecile.jpg" alt="Cécile George"></div><div class="tf-loc">London · Managing Director</div><div class="tf-name">Cécile George</div><div class="tf-role">Founder</div><div class="tf-bio">20+ years delivering rapid revenue and margin growth. Former Operating Partner at a PE house. Held both generalist consulting and independent expert roles for McKinsey and Company. Built and led global sales teams in B2B chemicals. Extensive experience operating businesses directly.</div><a class="tf-linkedin" href="https://www.linkedin.com/in/c%C3%A9cile-tanmaya-george/" target="_blank" rel="noopener noreferrer"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
-    <div class="tf-card"><div class="tf-avatar" style="background:#0f6e56"><img src="Gregor.png" alt="Gregor Cohnen"></div><div class="tf-loc">Berlin · Partner</div><div class="tf-name">Gregor Cohnen</div><div class="tf-role">Partner Germany</div><div class="tf-bio">20+ years value creation leadership in private equity and industry. Focus on design and execution of complex commercial transformations in B2B. Held both in-house consulting and operational roles at Aurelius, Paragon, and PE portfolio companies across Europe.</div><a class="tf-linkedin" href="https://www.linkedin.com/in/gregor-c-50bb8b296/" target="_blank" rel="noopener noreferrer"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
+    <div class="tf-card"><div class="tf-avatar" style="background:#0f6e56"><img src="Gregor.png" alt="Gregor Cohnen"></div><div class="tf-loc">Munich · Partner</div><div class="tf-name">Gregor Cohnen</div><div class="tf-role">Partner Germany</div><div class="tf-bio">20+ years value creation leadership in private equity and industry. Focus on design and execution of complex commercial transformations in B2B. Held both in-house consulting and operational roles at Aurelius, Paragon, and PE portfolio companies across Europe.</div><a class="tf-linkedin" href="https://www.linkedin.com/in/gregor-c-50bb8b296/" target="_blank" rel="noopener noreferrer"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
     <div class="tf-card"><div class="tf-avatar" style="background:#6b3a8a"><img src="Renata.png" alt="Renata Vancini"></div><div class="tf-loc">Milan · Partner</div><div class="tf-name">Renata Vancini</div><div class="tf-role">Partner Italy</div><div class="tf-bio">15+ years of hands-on business building experience from Fortune 500s down to startups. Top-tier sales and marketing boutique consultancy background. Deep expertise in sales and pricing transformations across FMCG, industrial goods, and luxury.</div><a class="tf-linkedin" href="https://www.linkedin.com/in/rvancini/" target="_blank" rel="noopener noreferrer"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
     <div class="tf-card"><div class="tf-avatar" style="background:#0f6e56"><img src="Yabing.png" alt="Yabing Wu"></div><div class="tf-loc">London · Principal</div><div class="tf-name">Yabing Wu</div><div class="tf-role">Principal</div><div class="tf-bio">13+ years international B2B SaaS experience spanning commercial leadership, partnerships, and GTM strategy across the UK, Europe, and China. Former senior commercial roles at Deel (pre-IPO Decacorn) and Thomas International (PE-backed). Specialises in ecosystem-led growth for PE-backed software businesses.</div><a class="tf-linkedin" href="https://www.linkedin.com/in/yabingwu90/" target="_blank" rel="noopener noreferrer"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
     <div class="tf-card"><div class="tf-avatar" style="background:#854F0B"><img src="Luca.jpg" alt="Luca Pelamatti"></div><div class="tf-loc">Europe · Senior Expert</div><div class="tf-name">Luca Pelamatti</div><div class="tf-role">Senior Expert</div><div class="tf-bio">Former Bain consultant. 10+ years driving top-line growth for multinationals and SMEs. Focus on commercial excellence and Revenue Growth Management in B2B2C environments across Europe.</div><a class="tf-linkedin" href="https://www.linkedin.com/in/luca-pelamatti-08276182/" target="_blank" rel="noopener noreferrer"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
@@ -877,7 +956,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       </div>
       <div class="map-office-card" onclick="focusMapMarker(1)" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:16px;cursor:pointer;transition:border-color 0.15s" onmouseover="this.style.borderColor='var(--sky)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
         <div style="font-size:9px;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin-bottom:6px">📍 Partner</div>
-        <div style="font-size:13px;color:#fff;font-weight:600;margin-bottom:4px">Berlin</div>
+        <div style="font-size:13px;color:#fff;font-weight:600;margin-bottom:4px">Munich</div>
         <div style="font-size:11px;color:rgba(255,255,255,0.45)">Germany · Gregor Cohnen</div>
         <div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:8px;font-weight:700">Case studies coming soon</div>
       </div>
@@ -987,7 +1066,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       <div style="background:#fff;padding:32px">
         <div style="font-size:28px;font-weight:300;color:var(--border);margin-bottom:12px;letter-spacing:-0.02em">01</div>
         <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px">Entry & 100-day plan</div>
-        <p style="font-size:12px;color:var(--muted);line-height:1.75">We map the commercial value creation opportunity in the first 90 days. Quick wins identified, VCP agreed, programme structured around your hold period.</p>
+        <p style="font-size:12px;color:var(--muted);line-height:1.75">We map the commercial value creation opportunity in the first 90 days. AI-assisted data analysis helps us identify pricing and segmentation levers faster. Quick wins identified, VCP agreed, programme structured around your hold period.</p>
       </div>
       <div style="background:#fff;padding:32px">
         <div style="font-size:28px;font-weight:300;color:var(--border);margin-bottom:12px;letter-spacing:-0.02em">02</div>
@@ -1010,7 +1089,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px">
       <div style="background:#fff;border:1px solid var(--border);border-radius:4px;padding:24px 28px;display:flex;gap:16px;align-items:flex-start">
         <div style="width:6px;height:6px;border-radius:50%;background:var(--smalt);flex-shrink:0;margin-top:6px"></div>
-        <div><div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px">Commercial Due Diligence support</div><p style="font-size:12px;color:var(--muted);line-height:1.7">Independent commercial assessment to validate the investment thesis and size the value creation opportunity before close.</p></div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px">Commercial Maturity Assessment</div><p style="font-size:12px;color:var(--muted);line-height:1.7">Pre-deal assessment of commercial value creation levers — sizing the pricing, sales effectiveness, and go-to-market opportunity before close.</p></div>
       </div>
       <div style="background:#fff;border:1px solid var(--border);border-radius:4px;padding:24px 28px;display:flex;gap:16px;align-items:flex-start">
         <div style="width:6px;height:6px;border-radius:50%;background:var(--smalt);flex-shrink:0;margin-top:6px"></div>
@@ -1030,7 +1109,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       </div>
       <div style="background:#fff;border:1px solid var(--border);border-radius:4px;padding:24px 28px;display:flex;gap:16px;align-items:flex-start">
         <div style="width:6px;height:6px;border-radius:50%;background:var(--smalt);flex-shrink:0;margin-top:6px"></div>
-        <div><div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px">Commercial leadership hiring</div><p style="font-size:12px;color:var(--muted);line-height:1.7">Defining and justifying the commercial headcount plan. Role profiling, market benchmarking, and candidate assessment for senior hires.</p></div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px">Commercial leadership hiring</div><p style="font-size:12px;color:var(--muted);line-height:1.7">We define the headcount plan and build detailed role profiles for senior commercial hires. We then work alongside specialist headhunters to run the search — ensuring the brief is precise and the right candidate is secured.</p></div>
       </div>
     </div>
   </section>
@@ -1173,7 +1252,7 @@ function showPage(id){
 let _mapDone=false, _euroMap=null, _markers=[];
 const _offices=[
   {lat:51.5074,lng:-0.1278,city:'London',role:'HQ · Cécile George',cs:[0,1],label:'2 case studies available',color:'#8AC5FF'},
-  {lat:52.5200,lng:13.4050,city:'Berlin',role:'Partner Germany · Gregor Cohnen',cs:[],label:'Case studies coming soon',color:'#ffffff'},
+  {lat:48.1351,lng:11.5820,city:'Munich',role:'Partner Germany · Gregor Cohnen',cs:[],label:'Case studies coming soon',color:'#ffffff'},
   {lat:45.4642,lng:9.1900,city:'Milan',role:'Partner Italy · Renata Vancini',cs:[],label:'Case studies coming soon',color:'#ffffff'},
   {lat:55.6761,lng:12.5683,city:'Copenhagen',role:'Partner Denmark',cs:[],label:'Case studies coming soon',color:'#ffffff'}
 ];
