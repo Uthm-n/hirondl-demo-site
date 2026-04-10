@@ -87,7 +87,7 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .proof-item:last-child{border-right:none}
 .proof-n{font-size:clamp(26px,4vw,40px);font-weight:300;color:#fff;line-height:1;letter-spacing:-0.02em}
 .proof-n .u{color:var(--sky);font-size:65%}
-.proof-l{font-size:10px;color:rgba(255,255,255,0.4);margin-top:7px;line-height:1.55;max-width:180px;font-weight:400}
+.proof-l{font-size:10px;color:#fff;margin-top:7px;line-height:1.55;max-width:180px;font-weight:400}
 
 /* LOGOS — infinite marquee */
 .logos-strip{background:#0d1228;border-top:1px solid rgba(255,255,255,0.06);overflow:hidden;display:flex;align-items:center;height:60px}
@@ -530,7 +530,6 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         <div style="font-size:11px;color:rgba(255,255,255,0.45)">Italy · Renata Vancini</div>
       </div>
       <div class="map-office-card" onclick="focusMapMarker(3)" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:16px;cursor:pointer;transition:border-color 0.15s" onmouseover="this.style.borderColor='var(--sky)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
-        <div style="font-size:9px;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin-bottom:6px">📍 Partner</div>
         <div style="font-size:13px;color:#fff;font-weight:600;margin-bottom:4px">Copenhagen</div>
         <div style="font-size:11px;color:rgba(255,255,255,0.45)">Denmark</div>
       </div>
@@ -595,11 +594,9 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <!-- Column headers -->
     <div class="wwd-col-header">
       <div class="wwd-col-hd-sales">
-        <div class="wwd-col-eyebrow" style="color:var(--sky)">Growth</div>
         <div class="wwd-col-title">Sales &amp; GTM</div>
       </div>
       <div class="wwd-col-hd-pricing">
-        <div class="wwd-col-eyebrow" style="color:rgba(255,255,255,0.55)">Where we have the edge</div>
         <div class="wwd-col-title">Pricing</div>
       </div>
     </div>
@@ -1270,16 +1267,9 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
           <div class="clt-row"><div class="clt-av" style="background:#0f6e56"><img src="Gregor.png" alt="Gregor Cohnen"></div><div><div class="clt-name">Gregor Cohnen</div><div class="clt-role">Partner · 20+ years Private Equity value creation</div></div></div>
         </div>
       </div>
-      <div class="contact-right">
-        <div style="margin-bottom:24px"><div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px">Send us a message</div><div style="font-size:12px;color:var(--muted);font-weight:400">We respond within one business day.</div></div>
-        <div class="form-row">
-          <div class="form-group"><label class="form-label">Your name</label><input class="form-input" type="text" placeholder="James Whitfield"></div>
-          <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" placeholder="james@fund.com"></div>
-        </div>
-        <div class="form-group"><label class="form-label">Fund or company</label><input class="form-input" type="text" placeholder="Paragon Partners"></div>
-        <div class="form-group"><label class="form-label">What would you like to discuss?</label><textarea class="form-input" placeholder="Brief context on the portfolio company or commercial challenge, anything that helps us make the most of 30 minutes."></textarea></div>
-        <button class="form-submit" onclick="submitForm()">Send message</button>
-        <div id="form-confirm" style="display:none;margin-top:16px;padding:14px;background:rgba(26,48,153,0.06);border:1px solid rgba(26,48,153,0.18);border-radius:4px;font-size:13px;color:var(--smalt);font-weight:500">Thank you. We will be in touch within one business day.</div>
+      <div class="contact-right" style="padding:0;background:#fff">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/ceciletanmayageorge/30min" style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </div>
     </div>
   </div>
