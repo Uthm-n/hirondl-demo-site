@@ -171,10 +171,18 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .wwd-pe-strip{background:var(--smalt);padding:16px 48px;text-align:center}
 .wwd-pe-strip p{font-size:12px;color:#fff;letter-spacing:0.05em;font-weight:600;line-height:1.6}
 .wwd-services-section{background:#fff;padding:72px 48px}
+.wwd-col-header{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:1px}
+.wwd-col-hd-sales{background:var(--navy);padding:22px 30px}
+.wwd-col-hd-pricing{background:var(--smalt);padding:22px 30px}
+.wwd-col-eyebrow{font-size:8px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;margin-bottom:6px}
+.wwd-col-title{font-size:17px;font-weight:900;text-transform:uppercase;color:#fff;letter-spacing:-0.02em}
 .wwd-services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
 .wwd-svc-card{background:#fff;padding:36px 30px;border-left:3px solid transparent;transition:background 0.15s,border-left-color 0.2s;display:flex;flex-direction:column}
 .wwd-svc-card:hover{background:var(--surface);border-left-color:var(--smalt)}
+.wwd-svc-card.pricing{background:#f5f7ff}
+.wwd-svc-card.pricing:hover{background:#edf0ff;border-left-color:var(--smalt)}
 .wwd-svc-num{font-size:32px;font-weight:300;color:var(--border);letter-spacing:-0.02em;line-height:1;margin-bottom:12px}
+.wwd-svc-card.pricing .wwd-svc-num{color:rgba(26,48,153,0.2)}
 .wwd-svc-name{font-size:15px;font-weight:800;color:var(--text);letter-spacing:-0.01em;line-height:1.2;margin-bottom:12px}
 .wwd-svc-problem{font-size:12px;color:var(--muted);line-height:1.75;font-style:italic;margin-bottom:10px;font-weight:400}
 .wwd-svc-outcome{font-size:12px;color:var(--smalt);font-weight:700;line-height:1.6;padding-top:10px;border-top:1px solid var(--border);margin-top:auto}
@@ -467,14 +475,14 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <div class="svc-city-content">
       <div class="section-tag" style="color:var(--sky);margin-bottom:14px">What we do</div>
       <h2 class="svc-city-h">Ways we create<br>commercial value</h2>
-      <p class="svc-city-sub">Commercial value creation strategy, GTM acceleration, pricing, organisational design, sales operations, and custom tooling. Each built around delivery inside Private Equity-backed businesses.</p>
+      <p class="svc-city-sub">Commercial value creation strategy, GTM acceleration, sales operations, transaction pricing, price architecture, and custom pricing tools. Each built around delivery inside Private Equity-backed businesses.</p>
       <div class="svc-city-pills">
         <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-01')">Commercial Strategy</span>
         <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-02')">GTM Acceleration</span>
-        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-03')">Pricing</span>
-        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-04')">Org Design</span>
-        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-05')">Sales Operations</span>
-        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-06')">Custom Tooling</span>
+        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-03')">Sales Operations</span>
+        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-04')">Transaction Pricing</span>
+        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-05')">Price Architecture</span>
+        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-06')">Pricing Tools</span>
       </div>
       <button class="btn-primary" onclick="event.stopPropagation();showPage('wwd')" style="pointer-events:auto">Explore what we do &rarr;</button>
     </div>
@@ -494,14 +502,40 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       <div class="team-card"><div class="tc-avatar" style="background:#6b3a8a"><img src="Renata.png" alt="Renata Vancini"></div><div class="tc-name">Renata Vancini</div><div class="tc-role">Partner · Italy</div><div class="tc-bio">15+ years business building from Fortune 500s to startups. Sales and pricing transformation specialist.</div></div>
       <div class="team-card"><div class="tc-avatar" style="background:#0a5c7a"><img src="Yabing.png" alt="Yabing Wu"></div><div class="tc-name">Yabing Wu</div><div class="tc-role">Principal · London</div><div class="tc-bio">13+ years B2B SaaS and GTM strategy. Former Deel and Thomas International. Ecosystem-led growth and international market entry specialist.</div></div>
     </div>
-    <div class="fp-row">
-      <span class="fp-label">Physical presence</span>
-      <div class="fp-city"><div class="fp-dot"></div><span class="fp-name">London HQ</span></div>
-      <div class="fp-city"><div class="fp-dot"></div><span class="fp-name">Munich</span></div>
-      <div class="fp-city"><div class="fp-dot"></div><span class="fp-name">Milan</span></div>
-      <div class="fp-city"><div class="fp-dot"></div><span class="fp-name">Copenhagen</span></div>
-    </div>
   </section>
+
+  <!-- PAN-EUROPEAN MAP — homepage -->
+  <div class="map-section" style="padding:0">
+    <div style="padding:40px 48px 24px;background:var(--navy)">
+      <div class="section-tag" style="color:var(--sky)">Physical presence</div>
+      <div class="section-h" style="color:#fff;margin-bottom:6px">Pan-European</div>
+      <p style="font-size:13px;color:rgba(255,255,255,0.55);font-weight:300;line-height:1.75;max-width:560px">In-country partners operating in local language across four European capitals.</p>
+    </div>
+    <div id="europe-map" style="height:420px;width:100%;position:relative;z-index:0"></div>
+    <div style="background:var(--navy);padding:24px 48px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+      <div class="map-office-card" onclick="focusMapMarker(0)" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:16px;cursor:pointer;transition:border-color 0.15s" onmouseover="this.style.borderColor='var(--sky)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+        <div style="font-size:9px;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin-bottom:6px">🏢 HQ</div>
+        <div style="font-size:13px;color:#fff;font-weight:600;margin-bottom:4px">London</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.45)">England · Cécile George</div>
+        <div style="font-size:10px;color:var(--sky);margin-top:8px;font-weight:700">2 case studies →</div>
+      </div>
+      <div class="map-office-card" onclick="focusMapMarker(1)" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:16px;cursor:pointer;transition:border-color 0.15s" onmouseover="this.style.borderColor='var(--sky)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+        <div style="font-size:9px;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin-bottom:6px">📍 Partner</div>
+        <div style="font-size:13px;color:#fff;font-weight:600;margin-bottom:4px">Munich</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.45)">Germany · Gregor Cohnen</div>
+      </div>
+      <div class="map-office-card" onclick="focusMapMarker(2)" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:16px;cursor:pointer;transition:border-color 0.15s" onmouseover="this.style.borderColor='var(--sky)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+        <div style="font-size:9px;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin-bottom:6px">📍 Partner</div>
+        <div style="font-size:13px;color:#fff;font-weight:600;margin-bottom:4px">Milan</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.45)">Italy · Renata Vancini</div>
+      </div>
+      <div class="map-office-card" onclick="focusMapMarker(3)" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:16px;cursor:pointer;transition:border-color 0.15s" onmouseover="this.style.borderColor='var(--sky)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+        <div style="font-size:9px;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin-bottom:6px">📍 Partner</div>
+        <div style="font-size:13px;color:#fff;font-weight:600;margin-bottom:4px">Copenhagen</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.45)">Denmark</div>
+      </div>
+    </div>
+  </div>
 
   <div class="home-cta">
     <div class="hcta-text">
@@ -548,7 +582,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
 
   <!-- 6 SERVICE CARDS — white background -->
   <div class="wwd-services-section">
-    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:52px;flex-wrap:wrap;gap:24px;border-left:4px solid var(--smalt);padding-left:24px">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:24px;border-left:4px solid var(--smalt);padding-left:24px">
       <div>
         <div class="section-tag" style="margin-bottom:12px">Six capabilities</div>
         <h2 style="font-size:clamp(36px,5vw,60px);font-weight:900;text-transform:uppercase;color:var(--navy);letter-spacing:-0.03em;line-height:0.97;margin-top:8px">Six ways we create<br><span style="color:var(--smalt)">commercial value</span></h2>
@@ -557,48 +591,63 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         <p style="font-size:13px;color:var(--text);line-height:1.8;font-weight:400">We design, implement, and stay until the results are visible. Each capability is built around delivery, not advice.</p>
       </div>
     </div>
+
+    <!-- Column headers -->
+    <div class="wwd-col-header">
+      <div class="wwd-col-hd-sales">
+        <div class="wwd-col-eyebrow" style="color:var(--sky)">Growth</div>
+        <div class="wwd-col-title">Sales &amp; GTM</div>
+      </div>
+      <div class="wwd-col-hd-pricing">
+        <div class="wwd-col-eyebrow" style="color:rgba(255,255,255,0.55)">Where we have the edge</div>
+        <div class="wwd-col-title">Pricing</div>
+      </div>
+    </div>
+
     <div class="wwd-services-grid">
 
+      <!-- SALES ROW -->
       <div class="wwd-svc-card" id="wwd-svc-01">
         <div class="wwd-svc-num">01</div>
         <div class="wwd-svc-name">Commercial Value Creation Strategy</div>
         <div class="wwd-svc-problem">Most businesses start a growth programme without a clear picture of where commercial value actually sits, or in what order to go after it.</div>
-        <div class="wwd-svc-outcome">We map it, prioritise it, and build the plan. The overarching strategic foundation linking commercial opportunity to fund-level value creation. AI-assisted analysis cuts diagnostic time from weeks to days. Typical time-to-insight: 4–6 weeks.</div>
+        <div class="wwd-svc-outcome">We map it, prioritise it, and build the plan. The overarching strategic foundation linking commercial opportunity to fund-level value creation. Typical time-to-insight: 4–6 weeks.</div>
       </div>
 
       <div class="wwd-svc-card" id="wwd-svc-02">
         <div class="wwd-svc-num">02</div>
         <div class="wwd-svc-name">GTM Acceleration</div>
         <div class="wwd-svc-problem">Growth rarely comes from direct sales alone. Most businesses haven't built the full GTM infrastructure — the right channels, partners, and markets — to capture available opportunity.</div>
-        <div class="wwd-svc-outcome">We design and execute end-to-end GTM programmes: direct sales acceleration, channel management, ecosystem-led and partner-led growth, and international expansion. Average 50% increase in high-potential account coverage after segmentation.</div>
+        <div class="wwd-svc-outcome">Direct sales acceleration, channel management, ecosystem-led and partner-led growth, and international expansion.</div>
       </div>
 
       <div class="wwd-svc-card" id="wwd-svc-03">
         <div class="wwd-svc-num">03</div>
-        <div class="wwd-svc-name">Pricing Optimisation</div>
-        <div class="wwd-svc-problem">Most businesses are under-pricing by 8–12% without knowing it. Autonomous rep discounting erodes margin no one can see on a P&amp;L.</div>
-        <div class="wwd-svc-outcome">We close the gap — from quick wins to full transformation. Disciplines include transaction pricing, value pricing, target price setting, and price communication. Typical gross margin uplift: 2–3 percentage points, sustained after engagement close.</div>
+        <div class="wwd-svc-name">Sales Operations &amp; Org Design</div>
+        <div class="wwd-svc-problem">Leaders can't manage what they can't see. Structure, incentives, and KPIs that aren't built to sustain change mean gains don't stick.</div>
+        <div class="wwd-svc-outcome">Dashboards, CRM, MIS, salesforce structure, and incentive design — built to last after we leave.</div>
       </div>
 
-      <div class="wwd-svc-card" id="wwd-svc-04">
+      <!-- PRICING ROW -->
+      <div class="wwd-svc-card pricing" id="wwd-svc-04">
         <div class="wwd-svc-num">04</div>
-        <div class="wwd-svc-name">Organisational Set-up for Growth</div>
-        <div class="wwd-svc-problem">Commercial improvements stall when the team structure, incentives, and KPIs aren't built to sustain them beyond the engagement.</div>
-        <div class="wwd-svc-outcome">We design the organisation and embed the mechanics that hold the gains long after we leave.</div>
+        <div class="wwd-svc-name">Transaction &amp; Value Pricing</div>
+        <div class="wwd-svc-problem">Most businesses are under-pricing by 8–12% without knowing it. Rep discounting erodes margin no one can see on a P&amp;L.</div>
+        <div class="wwd-svc-outcome">We identify and recover structural margin leakage — from quick wins to full transformation. Typical uplift: 2–3 percentage points, sustained after engagement close.</div>
       </div>
 
-      <div class="wwd-svc-card" id="wwd-svc-05">
+      <div class="wwd-svc-card pricing" id="wwd-svc-05">
         <div class="wwd-svc-num">05</div>
-        <div class="wwd-svc-name">Sales Operations Set-up</div>
-        <div class="wwd-svc-problem">Leaders can't manage what they can't see. Most portcos lack the management information infrastructure to track commercial performance in real time.</div>
-        <div class="wwd-svc-outcome">We build the dashboards, CRM, and MIS that get used. AI-generated summaries surface rep performance patterns before the weekly review.</div>
+        <div class="wwd-svc-name">Price Setting &amp; Architecture</div>
+        <div class="wwd-svc-problem">Prices set by gut or history, not by value delivered. No clear logic linking product, customer, and price point.</div>
+        <div class="wwd-svc-outcome">Target price setting, price architecture, and segmented pricing models that hold under commercial pressure.</div>
       </div>
 
-      <div class="wwd-svc-card" id="wwd-svc-06">
+      <div class="wwd-svc-card pricing" id="wwd-svc-06">
         <div class="wwd-svc-num">06</div>
-        <div class="wwd-svc-name">Pragmatic Custom Tooling</div>
-        <div class="wwd-svc-problem">Off-the-shelf solutions create workarounds. Commercial change needs tools designed around the specific business, not retrofitted from a template.</div>
-        <div class="wwd-svc-outcome">We build pricing tools, Power BI dashboards, and CRM configurations that embed change permanently.</div>
+        <div class="wwd-svc-name">Pricing Tools &amp; Custom Tooling</div>
+        <div class="wwd-svc-problem">Off-the-shelf solutions create workarounds. Price communication breaks down without the right infrastructure.</div>
+        <div class="wwd-svc-outcome">Custom pricing tools, Power BI dashboards, and CRM configurations that embed change permanently.</div>
       </div>
 
     </div>
@@ -990,40 +1039,6 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <div class="tf-card"><div class="tf-avatar" style="background:#6b2d0f"><img src="Krishna.png" alt="Krishna Chaitanya"></div><div class="tf-loc">London</div><div class="tf-name">Krishna Chaitanya</div><div class="tf-role">Senior Expert</div><div class="tf-bio">Former Simon-Kucher &amp; Partners consultant. Supports with pricing projects, analytics and modelling across Private Equity-backed engagements.</div><a class="tf-linkedin" href="https://www.linkedin.com/in/krishna-chaitanya-90117465/" target="_blank" rel="noopener noreferrer"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
     <div class="tf-card"><div class="tf-avatar" style="background:#1a3099"><img src="Uthman.png" alt="Uthman Mahmood"></div><div class="tf-loc">London</div><div class="tf-name">Uthman Mahmood</div><div class="tf-role">Junior Consultant</div><div class="tf-bio">Current placement intern from Warwick Business School, former Aon intern, and Ex-Apple Specialist. Outreach expert — built a commercial outreach programme with a 21% response rate and taught over 1,000 students from top universities how to leverage junior experience to land internships.</div><a class="tf-linkedin" href="https://www.linkedin.com/in/uthman-mahmood" target="_blank" rel="noopener noreferrer"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
   </div>
-  <div class="map-section" style="padding:0">
-    <div style="padding:40px 48px 24px;background:var(--navy)">
-      <div class="section-tag" style="color:var(--sky)">Physical presence</div>
-      <div class="section-h" style="color:#fff;margin-bottom:6px">Pan-European</div>
-      <p style="font-size:13px;color:rgba(255,255,255,0.45);font-weight:300;line-height:1.75;max-width:560px">In-country partners operating in local language across four European capitals. Click any pin to see that office's case studies and team.</p>
-    </div>
-    <div id="europe-map" style="height:480px;width:100%;position:relative;z-index:0"></div>
-    <div style="background:var(--navy);padding:24px 48px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
-      <div class="map-office-card" onclick="focusMapMarker(0)" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:16px;cursor:pointer;transition:border-color 0.15s" onmouseover="this.style.borderColor='var(--sky)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
-        <div style="font-size:9px;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin-bottom:6px">🏢 HQ</div>
-        <div style="font-size:13px;color:#fff;font-weight:600;margin-bottom:4px">London</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.45)">England · Cécile George</div>
-        <div style="font-size:10px;color:var(--sky);margin-top:8px;font-weight:700">2 case studies →</div>
-      </div>
-      <div class="map-office-card" onclick="focusMapMarker(1)" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:16px;cursor:pointer;transition:border-color 0.15s" onmouseover="this.style.borderColor='var(--sky)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
-        <div style="font-size:9px;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin-bottom:6px">📍 Partner</div>
-        <div style="font-size:13px;color:#fff;font-weight:600;margin-bottom:4px">Munich</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.45)">Germany · Gregor Cohnen</div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:8px;font-weight:700">Case studies coming soon</div>
-      </div>
-      <div class="map-office-card" onclick="focusMapMarker(2)" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:16px;cursor:pointer;transition:border-color 0.15s" onmouseover="this.style.borderColor='var(--sky)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
-        <div style="font-size:9px;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin-bottom:6px">📍 Partner</div>
-        <div style="font-size:13px;color:#fff;font-weight:600;margin-bottom:4px">Milan</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.45)">Italy · Renata Vancini</div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:8px;font-weight:700">Case studies coming soon</div>
-      </div>
-      <div class="map-office-card" onclick="focusMapMarker(3)" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:16px;cursor:pointer;transition:border-color 0.15s" onmouseover="this.style.borderColor='var(--sky)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
-        <div style="font-size:9px;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin-bottom:6px">📍 Partner</div>
-        <div style="font-size:13px;color:#fff;font-weight:600;margin-bottom:4px">Copenhagen</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.45)">Denmark</div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:8px;font-weight:700">Case studies coming soon</div>
-      </div>
-    </div>
-  </div>
   <footer>
     <div>
       <div class="footer-logo">
@@ -1302,7 +1317,7 @@ function showPage(id,_noPush){
   window.scrollTo(0,0);
   if(id==='cases'){document.getElementById('cs-index-view').style.display='block';document.getElementById('cs-detail-view').style.display='none';document.querySelectorAll('.cs-detail').forEach(d=>d.classList.remove('active'))}
   if(id==='insights'){document.getElementById('blog-index-view').style.display='block';document.getElementById('blog-post-view').style.display='none';}
-  if(id==='team'){setTimeout(initEuropeMap,120);}
+  if(id==='home'){setTimeout(initEuropeMap,120);}
   if(!_noPush)history.pushState({page:id},'','#'+id);
 }
 function goToSection(pageId,sectionId){
@@ -1322,6 +1337,7 @@ window.addEventListener('popstate',function(e){
   var h=location.hash.replace('#','');
   if(valid.indexOf(h)>-1){showPage(h,true);}
   else{history.replaceState({page:'home'},'','#home');}
+  if((h===''||h==='home'||valid.indexOf(h)===-1)){setTimeout(initEuropeMap,300);}
 })();
 
 /* ═══ INTERACTIVE EUROPE MAP ═══ */
