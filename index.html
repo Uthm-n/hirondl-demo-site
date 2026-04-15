@@ -228,6 +228,11 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .cs-desc{font-size:12px;color:rgba(255,255,255,0.65);line-height:1.7;font-weight:400}
 .cs-city-tag{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:700;color:rgba(255,255,255,0.5);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px}
 .cs-city-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--sky);flex-shrink:0}
+.wwd-why{background:var(--navy);padding:56px 48px;border-top:1px solid rgba(255,255,255,0.08)}
+.wwd-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);margin-top:28px}
+.wwd-why-item{background:var(--navy);padding:28px 28px}
+.wwd-why-head{font-size:13px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.3}
+.wwd-why-body{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.75;font-weight:400}
 .cs-cat-badge{position:absolute;top:18px;left:24px;font-size:8px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(26,48,153,0.7);border:1px solid rgba(138,197,255,0.25);padding:4px 10px;border-radius:2px;z-index:2}
 .cs-filter-label{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);width:100%;text-align:center;margin-bottom:4px}
 
@@ -390,7 +395,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
   .hero,.section,.page-hero,.wwd-hero,.wwd-pe-strip,.wwd-services-section,.wwd-proof-section,.cs-narrative,.contact-left,.contact-right,.map-section{padding-left:24px;padding-right:24px}
   .svc-cityscape{padding:60px 24px}
   .proof-bar{grid-template-columns:1fr 1fr}
-  .services-grid,.svc-dark-grid,.wwd-grid,.wwd-services-grid,.wwd-proof-tiles,.cs-index,.cs-cols,.cs-extras,.team-full-grid,.blog-grid,.contact-grid{grid-template-columns:1fr}
+  .services-grid,.svc-dark-grid,.wwd-grid,.wwd-services-grid,.wwd-proof-tiles,.cs-index,.cs-cols,.cs-extras,.team-full-grid,.blog-grid,.contact-grid,.wwd-why-grid{grid-template-columns:1fr}
   .team-grid{grid-template-columns:1fr 1fr}
   .form-row{grid-template-columns:1fr}
   .logos-label{padding:0 16px 0 20px}
@@ -725,6 +730,38 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       <div class="wwd-proof-tile">
         <div class="wwd-proof-n">3–12<span class="u">mo</span></div>
         <div class="wwd-proof-desc">typical engagement length, scaled to the transformation</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY WE SUCCEED -->
+  <div class="wwd-why">
+    <div class="section-tag" style="color:var(--sky)">How we deliver</div>
+    <div style="font-size:clamp(20px,2.5vw,26px);font-weight:800;text-transform:uppercase;color:#fff;letter-spacing:-0.02em;line-height:1.1;margin-top:8px">Why we succeed<br>in transformation</div>
+    <div class="wwd-why-grid">
+      <div class="wwd-why-item">
+        <div class="wwd-why-head">Impact-first scoping</div>
+        <div class="wwd-why-body">We focus on the levers that will actually move the number — not a 50-slide diagnostic.</div>
+      </div>
+      <div class="wwd-why-item">
+        <div class="wwd-why-head">Hands-on with the sales team</div>
+        <div class="wwd-why-body">We coach reps individually on their own data, not from a classroom.</div>
+      </div>
+      <div class="wwd-why-item">
+        <div class="wwd-why-head">Flexible team model</div>
+        <div class="wwd-why-body">From a single expert to a full delivery team — scaled to what the business needs.</div>
+      </div>
+      <div class="wwd-why-item">
+        <div class="wwd-why-head">Local language, local culture</div>
+        <div class="wwd-why-body">We deliver in-market across the UK, France, Germany, Italy, Scandinavia and Eastern Europe.</div>
+      </div>
+      <div class="wwd-why-item">
+        <div class="wwd-why-head">Custom tooling, not slide decks</div>
+        <div class="wwd-why-body">We build the dashboards, models and pricing tools that stay in use after we leave.</div>
+      </div>
+      <div class="wwd-why-item">
+        <div class="wwd-why-head">Built to hand over</div>
+        <div class="wwd-why-body">We work alongside internal leaders so the change sustains without us.</div>
       </div>
     </div>
   </div>
