@@ -107,9 +107,13 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 
 /* SERVICES */
 .section{padding:96px 48px}
-.section-tag{font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--smalt);margin-bottom:12px;font-weight:700}
-.section-h{font-size:clamp(32px,5vw,54px);font-weight:800;text-transform:uppercase;color:var(--text);letter-spacing:-0.03em;margin-bottom:8px;line-height:1.0}
-.section-sub{font-size:13px;color:var(--muted);line-height:1.75;max-width:560px;margin-bottom:48px;font-weight:400}
+.section-tag{font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:var(--smalt);margin-bottom:16px;font-weight:700}
+.section-h{font-size:clamp(32px,5vw,54px);font-weight:800;text-transform:uppercase;color:var(--text);letter-spacing:-0.03em;margin-bottom:14px;line-height:1.0}
+.section-sub{font-size:13px;color:var(--muted);line-height:1.85;max-width:560px;margin-bottom:56px;font-weight:400}
+/* Architectural accent: left border on light content sections */
+.section-accent{border-left:4px solid var(--smalt);padding-left:44px}
+/* Horizontal section divider */
+.section-rule{height:1px;background:var(--border);margin:0}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
 .svc-tile{background:#fff;padding:30px;cursor:pointer;transition:background 0.15s;border-bottom:3px solid transparent}
 .svc-tile:hover{background:var(--surface);border-bottom-color:var(--smalt)}
@@ -170,7 +174,8 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .wwd-hero-sub{font-size:15px;color:#fff;line-height:1.8;max-width:none;font-weight:300}
 .wwd-pe-strip{background:var(--smalt);padding:16px 48px;text-align:center}
 .wwd-pe-strip p{font-size:12px;color:#fff;letter-spacing:0.05em;font-weight:600;line-height:1.6}
-.wwd-services-section{background:#fff;padding:96px 48px}
+.wwd-services-section{background:#fff;padding:96px 48px;position:relative}
+.wwd-services-section::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)}
 .wwd-col-header{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:1px}
 .wwd-col-hd-sales{background:var(--sky);padding:22px 30px}
 .wwd-col-hd-pricing{background:var(--smalt);padding:22px 30px}
@@ -228,11 +233,12 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .cs-desc{font-size:12px;color:rgba(255,255,255,0.65);line-height:1.7;font-weight:400}
 .cs-city-tag{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:700;color:rgba(255,255,255,0.5);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px}
 .cs-city-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--sky);flex-shrink:0}
-.wwd-why{background:#fff;padding:80px 48px}
+.wwd-why{background:#fff;padding:80px 48px;position:relative}
+.wwd-why::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)}
 .wwd-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:28px}
-.wwd-why-item{background:#fff;padding:28px 28px}
-.wwd-why-head{font-size:13px;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.3}
-.wwd-why-body{font-size:12px;color:var(--muted);line-height:1.75;font-weight:400}
+.wwd-why-item{background:#fff;padding:32px 32px}
+.wwd-why-head{font-size:13px;font-weight:700;color:var(--text);margin-bottom:10px;line-height:1.3}
+.wwd-why-body{font-size:12px;color:var(--muted);line-height:1.85;font-weight:400}
 .cs-cat-badge{position:absolute;top:18px;left:24px;font-size:8px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(26,48,153,0.7);border:1px solid rgba(138,197,255,0.25);padding:4px 10px;border-radius:2px;z-index:2}
 .cs-filter-label{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);width:100%;text-align:center;margin-bottom:4px}
 
@@ -699,8 +705,9 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     </div>
   </div>
 
+  <div class="section-rule"></div>
   <!-- SECTOR STRENGTHS -->
-  <div style="background:#fff;padding:80px 48px;border-top:1px solid var(--border)">
+  <div style="background:#fff;padding:80px 48px">
     <div class="section-tag" style="margin-bottom:16px;color:var(--smalt)">Sector strengths</div>
     <div style="font-size:clamp(20px,2.5vw,26px);font-weight:800;text-transform:uppercase;color:var(--text);letter-spacing:-0.02em;line-height:1.1;margin-bottom:10px">B2B agnostic.<br>Sector-proven.</div>
     <p style="font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:32px;font-weight:400">We operate across industries. Our deepest delivery track record sits in the sectors below.</p>
@@ -735,6 +742,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     </div>
   </div>
 
+  <div class="section-rule"></div>
   <!-- WHY WE SUCCEED -->
   <div class="wwd-why">
     <div class="section-tag" style="color:var(--smalt)">How we deliver</div>
