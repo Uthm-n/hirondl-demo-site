@@ -228,6 +228,8 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .cs-desc{font-size:12px;color:rgba(255,255,255,0.65);line-height:1.7;font-weight:400}
 .cs-city-tag{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:700;color:rgba(255,255,255,0.5);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px}
 .cs-city-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--sky);flex-shrink:0}
+.cs-cat-badge{position:absolute;top:18px;left:24px;font-size:8px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(26,48,153,0.7);border:1px solid rgba(138,197,255,0.25);padding:4px 10px;border-radius:2px;z-index:2}
+.cs-filter-label{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);width:100%;text-align:center;margin-bottom:4px}
 
 /* INDIVIDUAL CS PAGE */
 .cs-detail{display:none}.cs-detail.active{display:block}
@@ -762,7 +764,8 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     </div>
 
     <!-- CATEGORY FILTER BUTTONS -->
-    <div style="background:var(--navy);padding:24px 48px 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
+    <div style="background:var(--navy);padding:40px 48px 36px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+      <div class="cs-filter-label">Filter by sector</div>
       <span class="cs-filter-btn active" onclick="filterCS('all')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid var(--sky);padding:8px 20px;border-radius:2px;background:rgba(138,197,255,0.12);cursor:pointer;transition:border-color 0.15s,background 0.15s">All</span>
       <span class="cs-filter-btn" onclick="filterCS('industry')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:2px;background:rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.15s,background 0.15s">Industry</span>
       <span class="cs-filter-btn" onclick="filterCS('b2b')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:2px;background:rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.15s,background 0.15s">B2B Services</span>
@@ -772,6 +775,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <div class="cs-index">
       <!-- INDUSTRY CASE STUDIES -->
       <div class="cs-card" data-category="industry" onclick="showCS(0)" style="background-image:url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-cat-badge">Industry</div>
         <div class="cs-card-body">
           <div class="cs-city-tag">London, UK</div>
           <div class="cs-tag">Pricing · Private Equity Portfolio · Industrial</div>
@@ -781,6 +785,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         </div>
       </div>
       <div class="cs-card" data-category="industry" onclick="showCS(1)" style="background-image:url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-cat-badge">Industry</div>
         <div class="cs-card-body">
           <div class="cs-city-tag">Frankfurt, Germany</div>
           <div class="cs-tag">Segmentation · Private Equity Portfolio · Industrial</div>
@@ -790,6 +795,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         </div>
       </div>
       <div class="cs-card" data-category="industry" onclick="showCS(2)" style="background-image:url('https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-cat-badge">Industry</div>
         <div class="cs-card-body">
           <div class="cs-city-tag">Amsterdam, Netherlands</div>
           <div class="cs-tag">Segmentation · Private Equity Portfolio · Specialty Materials</div>
@@ -799,6 +805,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         </div>
       </div>
       <div class="cs-card" data-category="industry" onclick="showCS(3)" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-cat-badge">Industry</div>
         <div class="cs-card-body">
           <div class="cs-city-tag">Singapore</div>
           <div class="cs-tag">Go-to-Market · Private Equity Portfolio · Specialty Materials</div>
@@ -810,6 +817,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
 
       <!-- B2B SERVICES CASE STUDIES (DUMMY) -->
       <div class="cs-card" data-category="b2b" style="background-image:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-cat-badge">B2B Services</div>
         <div class="cs-card-body">
           <div class="cs-city-tag">Milan, Italy</div>
           <div class="cs-tag">Sales Transformation · Private Equity Portfolio · B2B Services</div>
@@ -819,6 +827,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         </div>
       </div>
       <div class="cs-card" data-category="b2b" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-cat-badge">B2B Services</div>
         <div class="cs-card-body">
           <div class="cs-city-tag">Munich, Germany</div>
           <div class="cs-tag">Pricing · Private Equity Portfolio · B2B Services</div>
@@ -828,6 +837,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         </div>
       </div>
       <div class="cs-card" data-category="b2b" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-cat-badge">B2B Services</div>
         <div class="cs-card-body">
           <div class="cs-city-tag">Copenhagen, Denmark</div>
           <div class="cs-tag">GTM Strategy · Private Equity Portfolio · B2B Services</div>
@@ -837,6 +847,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         </div>
       </div>
       <div class="cs-card" data-category="b2b" style="background-image:url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-cat-badge">B2B Services</div>
         <div class="cs-card-body">
           <div class="cs-city-tag">London, UK</div>
           <div class="cs-tag">Segmentation · Private Equity Portfolio · B2B Services</div>
@@ -848,6 +859,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
 
       <!-- SAAS CASE STUDIES (DUMMY) -->
       <div class="cs-card" data-category="saas" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-cat-badge">SaaS</div>
         <div class="cs-card-body">
           <div class="cs-city-tag">London, UK</div>
           <div class="cs-tag">Pricing · Growth Equity · SaaS</div>
@@ -857,6 +869,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         </div>
       </div>
       <div class="cs-card" data-category="saas" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-cat-badge">SaaS</div>
         <div class="cs-card-body">
           <div class="cs-city-tag">Berlin, Germany</div>
           <div class="cs-tag">GTM Strategy · Venture-Backed · SaaS</div>
@@ -866,6 +879,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         </div>
       </div>
       <div class="cs-card" data-category="saas" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-cat-badge">SaaS</div>
         <div class="cs-card-body">
           <div class="cs-city-tag">Amsterdam, Netherlands</div>
           <div class="cs-tag">Segmentation · Growth Equity · SaaS</div>
@@ -875,6 +889,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         </div>
       </div>
       <div class="cs-card" data-category="saas" style="background-image:url('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-cat-badge">SaaS</div>
         <div class="cs-card-body">
           <div class="cs-city-tag">Paris, France</div>
           <div class="cs-tag">Sales Transformation · Growth Equity · SaaS</div>
@@ -955,11 +970,6 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
           <div class="cs-extra-title">Tools that stayed in use after we left</div>
           <div class="cs-extra-body"><ul><li>Rep-level price opportunity capture sheets, personalised per sales territory</li><li>Power BI gross margin tracking dashboard with wave-by-wave progress view</li><li>Revised distribution price book with floor pricing and discount logic</li></ul></div>
         </div>
-        <div class="cs-extra-card">
-          <div class="cs-extra-head">Obstacles we overcame</div>
-          <div class="cs-extra-title">What we ran into and how we solved it</div>
-          <div class="cs-extra-body"><ul><li>Strong rep resistance in two markets initially, with group workshops dismissed as "head office theory"</li><li>Shifted to 1:1 coaching using each rep's own account data; personal numbers proved harder to argue with</li><li>Early-adopter markets used as internal proof; resistant teams came along once peers showed results</li></ul></div>
-        </div>
         <div class="cs-extra-card cs-extra-ai">
           <div class="cs-extra-head">AI Use Case</div>
           <div class="cs-extra-title">How AI accelerated this engagement</div>
@@ -1014,11 +1024,6 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
           <div class="cs-extra-head">Custom Tooling Built</div>
           <div class="cs-extra-title">Tools that stayed in use after we left</div>
           <div class="cs-extra-body"><ul><li>Potential and share-of-wallet scoring model for 10,000+ accounts across 6 markets</li><li>Territory rebalancing tool allowing managers to redistribute accounts between reps based on potential</li><li>Segmentation heatmap by market centre, showing A/B/C split and visit allocation before and after</li></ul></div>
-        </div>
-        <div class="cs-extra-card">
-          <div class="cs-extra-head">Obstacles we overcame</div>
-          <div class="cs-extra-title">What we ran into and how we solved it</div>
-          <div class="cs-extra-body"><ul><li>CRM data gaps in several markets meant potential scoring required external data enrichment before the model could run</li><li>Rep scepticism about losing C-account relationships, resolved through workshops showing individual account uplift data</li><li>Regional manager alignment took longer than expected; phased rollout gave each market time to calibrate</li></ul></div>
         </div>
         <div class="cs-extra-card cs-extra-ai">
           <div class="cs-extra-head">AI Use Case</div>
@@ -1082,11 +1087,6 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
           <div class="cs-extra-title">Tools that stayed in use after we left</div>
           <div class="cs-extra-body"><ul><li>Global market sizing model covering 80+ countries, combining trade flows, industry data, and proprietary benchmarks</li><li>Territory planning workbook allowing regional managers to set visit targets from the potential model</li><li>Rollout dashboard tracking framework adoption across affiliates in real time</li></ul></div>
         </div>
-        <div class="cs-extra-card">
-          <div class="cs-extra-head">Obstacles we overcame</div>
-          <div class="cs-extra-title">What we ran into and how we solved it</div>
-          <div class="cs-extra-body"><ul><li>Data standardisation across 4 continents, with different CRM fields, currencies, and product codes requiring significant pre-processing</li><li>Aligning 6 regional leaders on a single framework took calibration workshops in each region before rollout</li><li>Some affiliates had no prior segmentation, requiring a build from scratch in parallel with other regions</li></ul></div>
-        </div>
         <div class="cs-extra-card cs-extra-ai">
           <div class="cs-extra-head">AI Use Case</div>
           <div class="cs-extra-title">How AI accelerated this engagement</div>
@@ -1143,11 +1143,6 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
           <div class="cs-extra-head">Custom Tooling Built</div>
           <div class="cs-extra-title">Tools that stayed in use after we left</div>
           <div class="cs-extra-body"><ul><li>Market entry scoring model ranking 50 Asian markets by potential, competitive intensity, and barrier to entry</li><li>Distributor evaluation framework with weighted scorecard used to rationalise and select partners per archetype</li><li>Year 1 P&amp;L template for subsidiary launches, pre-built for two new markets</li></ul></div>
-        </div>
-        <div class="cs-extra-card">
-          <div class="cs-extra-head">Obstacles we overcame</div>
-          <div class="cs-extra-title">What we ran into and how we solved it</div>
-          <div class="cs-extra-body"><ul><li>Limited reliable data in Tier 2 and Tier 3 markets, requiring triangulation from trade associations, field interviews, and public filings</li><li>Regulatory variation across 50 markets meant standard GTM assumptions had to be tested country-by-country</li><li>Incumbent distributors resistant to renegotiation, with a legal review and phased transition plan built into the programme</li></ul></div>
         </div>
         <div class="cs-extra-card cs-extra-ai">
           <div class="cs-extra-head">AI Use Case</div>
