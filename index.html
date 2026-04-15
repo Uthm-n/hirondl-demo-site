@@ -455,7 +455,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     </div>
     <div class="proof-bar">
       <div class="proof-item">
-        <div class="proof-n">2–3<span class="u">pp</span></div>
+        <div class="proof-n">2–5<span class="u">pp</span></div>
         <div class="proof-l">Gross margin improvement sustained after engagement close</div>
       </div>
       <div class="proof-item" style="padding-left:24px">
@@ -665,7 +665,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         <div class="wwd-svc-num">04</div>
         <div class="wwd-svc-name">Transaction &amp; Value Pricing</div>
         <div class="wwd-svc-problem">Rep discounting erodes margins no one can see on a P&amp;L. Value pricing helps to identify underpriced products &amp; services.</div>
-        <div class="wwd-svc-outcome">We recover structural margin leakage — from quick wins to full transformation. Typical uplift: 2–3 percentage points, sustained after engagement close.</div>
+        <div class="wwd-svc-outcome">We recover structural margin leakage — from quick wins to full transformation. Typical uplift: 2–5 percentage points, sustained after engagement close.</div>
       </div>
 
       <div class="wwd-svc-card pricing" id="wwd-svc-05">
@@ -703,12 +703,8 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <div class="wwd-proof-h">Results we hold ourselves to</div>
     <div class="wwd-proof-tiles">
       <div class="wwd-proof-tile">
-        <div class="wwd-proof-n">2–3<span class="u">pp</span></div>
+        <div class="wwd-proof-n">2–5<span class="u">pp</span></div>
         <div class="wwd-proof-desc">gross margin improvement for a Private Equity-backed manufacturer, sustained after engagement close</div>
-      </div>
-      <div class="wwd-proof-tile">
-        <div class="wwd-proof-n">50<span class="u">%</span></div>
-        <div class="wwd-proof-desc">increase in high-potential account visits after potential-based segmentation</div>
       </div>
       <div class="wwd-proof-tile">
         <div class="wwd-proof-n">150<span class="u">+</span></div>
@@ -1519,13 +1515,14 @@ const _offices=[
   {lat:51.5074,lng:-0.1278,city:'London',role:'HQ · Cécile George',cs:[0,1],label:'2 case studies available',color:'#8AC5FF'},
   {lat:48.1351,lng:11.5820,city:'Munich',role:'Partner Germany · Gregor Cohnen',cs:[],label:'Case studies coming soon',color:'#ffffff'},
   {lat:41.9028,lng:12.4964,city:'Rome',role:'Partner Italy · Renata Vancini',cs:[],label:'Case studies coming soon',color:'#ffffff'},
-  {lat:55.6761,lng:12.5683,city:'Copenhagen',role:'Denmark',cs:[],label:'Case studies coming soon',color:'#ffffff'},
-  {lat:45.8150,lng:15.9819,city:'Zagreb',role:'Croatia · Igor Milat',cs:[],label:'Case studies coming soon',color:'#ffffff'}
+  {lat:55.6761,lng:12.5683,city:'Copenhagen',role:'Senior Expert · Thomas Dahl',cs:[],label:'Case studies coming soon',color:'#ffffff'},
+  {lat:45.8150,lng:15.9819,city:'Zagreb',role:'Head of AI & Development · Igor Milat',cs:[],label:'Case studies coming soon',color:'#ffffff'},
+  {lat:45.4642,lng:9.1900,city:'Milan',role:'Senior Expert · Luca Pelamatti',cs:[],label:'Case studies coming soon',color:'#ffffff'}
 ];
 function initEuropeMap(){
   if(_mapDone||!document.getElementById('europe-map'))return;
   _mapDone=true;
-  _euroMap=L.map('europe-map',{center:[52,10],zoom:5,zoomControl:true,attributionControl:false,scrollWheelZoom:false});
+  _euroMap=L.map('europe-map',{center:[49,10],zoom:4,zoomControl:true,attributionControl:false,scrollWheelZoom:false});
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{maxZoom:19}).addTo(_euroMap);
   _offices.forEach(function(o,i){
     const hasCS=o.cs.length>0;
