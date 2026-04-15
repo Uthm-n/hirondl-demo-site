@@ -689,9 +689,9 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <div style="font-size:clamp(20px,2.5vw,26px);font-weight:800;text-transform:uppercase;color:#fff;letter-spacing:-0.02em;line-height:1.1;margin-bottom:10px">B2B agnostic.<br>Sector-proven.</div>
     <p style="font-size:13px;color:#fff;line-height:1.75;margin-bottom:32px;font-weight:400">We operate across industries. Our deepest delivery track record sits in the sectors below.</p>
     <div style="display:flex;flex-wrap:wrap;gap:10px">
-      <span onclick="showPage('cases')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:2px;background:rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.15s,background 0.15s" onmouseover="this.style.borderColor='var(--sky)';this.style.background='rgba(138,197,255,0.12)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.25)';this.style.background='rgba(255,255,255,0.06)'">B2B Services</span>
-      <span onclick="showPage('cases')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:2px;background:rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.15s,background 0.15s" onmouseover="this.style.borderColor='var(--sky)';this.style.background='rgba(138,197,255,0.12)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.25)';this.style.background='rgba(255,255,255,0.06)'">Industry</span>
-      <span onclick="showPage('cases')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:2px;background:rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.15s,background 0.15s" onmouseover="this.style.borderColor='var(--sky)';this.style.background='rgba(138,197,255,0.12)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.25)';this.style.background='rgba(255,255,255,0.06)'">SaaS</span>
+      <span onclick="showPage('cases');setTimeout(function(){filterCS('b2b');document.querySelectorAll('.cs-filter-btn').forEach(function(b){b.classList.remove('active');b.style.borderColor='rgba(255,255,255,0.25)';b.style.background='rgba(255,255,255,0.06)';if(b.textContent.trim()==='B2B Services'){b.classList.add('active');b.style.borderColor='var(--sky)';b.style.background='rgba(138,197,255,0.12)'}})},50)" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:2px;background:rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.15s,background 0.15s" onmouseover="this.style.borderColor='var(--sky)';this.style.background='rgba(138,197,255,0.12)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.25)';this.style.background='rgba(255,255,255,0.06)'">B2B Services</span>
+      <span onclick="showPage('cases');setTimeout(function(){filterCS('industry');document.querySelectorAll('.cs-filter-btn').forEach(function(b){b.classList.remove('active');b.style.borderColor='rgba(255,255,255,0.25)';b.style.background='rgba(255,255,255,0.06)';if(b.textContent.trim()==='Industry'){b.classList.add('active');b.style.borderColor='var(--sky)';b.style.background='rgba(138,197,255,0.12)'}})},50)" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:2px;background:rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.15s,background 0.15s" onmouseover="this.style.borderColor='var(--sky)';this.style.background='rgba(138,197,255,0.12)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.25)';this.style.background='rgba(255,255,255,0.06)'">Industry</span>
+      <span onclick="showPage('cases');setTimeout(function(){filterCS('saas');document.querySelectorAll('.cs-filter-btn').forEach(function(b){b.classList.remove('active');b.style.borderColor='rgba(255,255,255,0.25)';b.style.background='rgba(255,255,255,0.06)';if(b.textContent.trim()==='SaaS'){b.classList.add('active');b.style.borderColor='var(--sky)';b.style.background='rgba(138,197,255,0.12)'}})},50)" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:2px;background:rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.15s,background 0.15s" onmouseover="this.style.borderColor='var(--sky)';this.style.background='rgba(138,197,255,0.12)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.25)';this.style.background='rgba(255,255,255,0.06)'">SaaS</span>
     </div>
   </div>
 
@@ -758,10 +758,20 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <div class="page-hero">
       <div class="page-hero-tag">Proof of delivery</div>
       <div class="page-hero-h">Case studies</div>
-      <p class="page-hero-sub">Four engagements across pricing, segmentation, and go-to-market strategy. Every number below is from a real project.</p>
+      <p class="page-hero-sub">Real engagements across pricing, segmentation, and go-to-market strategy. Every number below is from a real project.</p>
     </div>
+
+    <!-- CATEGORY FILTER BUTTONS -->
+    <div style="background:var(--navy);padding:24px 48px 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
+      <span class="cs-filter-btn active" onclick="filterCS('all')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid var(--sky);padding:8px 20px;border-radius:2px;background:rgba(138,197,255,0.12);cursor:pointer;transition:border-color 0.15s,background 0.15s">All</span>
+      <span class="cs-filter-btn" onclick="filterCS('industry')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:2px;background:rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.15s,background 0.15s">Industry</span>
+      <span class="cs-filter-btn" onclick="filterCS('b2b')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:2px;background:rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.15s,background 0.15s">B2B Services</span>
+      <span class="cs-filter-btn" onclick="filterCS('saas')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:2px;background:rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.15s,background 0.15s">SaaS</span>
+    </div>
+
     <div class="cs-index">
-      <div class="cs-card" onclick="showCS(0)" style="background-image:url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1200&q=80')">
+      <!-- INDUSTRY CASE STUDIES -->
+      <div class="cs-card" data-category="industry" onclick="showCS(0)" style="background-image:url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1200&q=80')">
         <div class="cs-card-body">
           <div class="cs-city-tag">London, UK</div>
           <div class="cs-tag">Pricing · Private Equity Portfolio · Industrial</div>
@@ -770,7 +780,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
           <div class="cs-desc">Rebuilt pricing discipline across six European markets. Recovered structural margin erosion caused by autonomous rep discounting.</div>
         </div>
       </div>
-      <div class="cs-card" onclick="showCS(1)" style="background-image:url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80')">
+      <div class="cs-card" data-category="industry" onclick="showCS(1)" style="background-image:url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80')">
         <div class="cs-card-body">
           <div class="cs-city-tag">Frankfurt, Germany</div>
           <div class="cs-tag">Segmentation · Private Equity Portfolio · Industrial</div>
@@ -779,7 +789,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
           <div class="cs-desc">Rebuilt commercial targeting from sales-volume logic to potential and share of wallet. Unlocked 25% rep capacity for hunting.</div>
         </div>
       </div>
-      <div class="cs-card" onclick="showCS(2)" style="background-image:url('https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?auto=format&fit=crop&w=1200&q=80')">
+      <div class="cs-card" data-category="industry" onclick="showCS(2)" style="background-image:url('https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?auto=format&fit=crop&w=1200&q=80')">
         <div class="cs-card-body">
           <div class="cs-city-tag">Amsterdam, Netherlands</div>
           <div class="cs-tag">Segmentation · Private Equity Portfolio · Specialty Materials</div>
@@ -788,13 +798,89 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
           <div class="cs-desc">Global segmentation rollout justified 30 to 40 new sales hires through market potential analysis rather than headcount intuition.</div>
         </div>
       </div>
-      <div class="cs-card" onclick="showCS(3)" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80')">
+      <div class="cs-card" data-category="industry" onclick="showCS(3)" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80')">
         <div class="cs-card-body">
           <div class="cs-city-tag">Singapore</div>
           <div class="cs-tag">Go-to-Market · Private Equity Portfolio · Specialty Materials</div>
           <div class="cs-title">Asian GTM Strategy — Private Equity-Owned Premium Paper Supplier</div>
           <div class="cs-stats"><div class="cs-stat"><div class="n">2</div><div class="l">New subsidiaries opened</div></div><div class="cs-stat"><div class="n">2×</div><div class="l">Regional sales growth</div></div></div>
           <div class="cs-desc">Designed and executed a market entry strategy across 50 Asian markets, leading to two new subsidiaries and sustained double-digit growth.</div>
+        </div>
+      </div>
+
+      <!-- B2B SERVICES CASE STUDIES (DUMMY) -->
+      <div class="cs-card" data-category="b2b" style="background-image:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-card-body">
+          <div class="cs-city-tag">Milan, Italy</div>
+          <div class="cs-tag">Sales Transformation · Private Equity Portfolio · B2B Services</div>
+          <div class="cs-title">Sales Force Effectiveness Program — PE-Backed Facilities Management Group</div>
+          <div class="cs-stats"><div class="cs-stat"><div class="n">18%</div><div class="l">Revenue uplift in Year 1</div></div><div class="cs-stat"><div class="n">3×</div><div class="l">Pipeline conversion rate</div></div></div>
+          <div class="cs-desc">Case study details coming soon.</div>
+        </div>
+      </div>
+      <div class="cs-card" data-category="b2b" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-card-body">
+          <div class="cs-city-tag">Munich, Germany</div>
+          <div class="cs-tag">Pricing · Private Equity Portfolio · B2B Services</div>
+          <div class="cs-title">Value-Based Pricing Redesign — PE-Backed Professional Services Firm</div>
+          <div class="cs-stats"><div class="cs-stat"><div class="n">4–6pp</div><div class="l">EBITDA margin improvement</div></div><div class="cs-stat"><div class="n">92%</div><div class="l">Client retention maintained</div></div></div>
+          <div class="cs-desc">Case study details coming soon.</div>
+        </div>
+      </div>
+      <div class="cs-card" data-category="b2b" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-card-body">
+          <div class="cs-city-tag">Copenhagen, Denmark</div>
+          <div class="cs-tag">GTM Strategy · Private Equity Portfolio · B2B Services</div>
+          <div class="cs-title">European Expansion Strategy — PE-Backed Staffing &amp; Recruitment Platform</div>
+          <div class="cs-stats"><div class="cs-stat"><div class="n">5</div><div class="l">New markets launched</div></div><div class="cs-stat"><div class="n">2.5×</div><div class="l">Revenue growth in 18 months</div></div></div>
+          <div class="cs-desc">Case study details coming soon.</div>
+        </div>
+      </div>
+      <div class="cs-card" data-category="b2b" style="background-image:url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-card-body">
+          <div class="cs-city-tag">London, UK</div>
+          <div class="cs-tag">Segmentation · Private Equity Portfolio · B2B Services</div>
+          <div class="cs-title">Customer Segmentation &amp; Account Prioritisation — PE-Backed Testing &amp; Certification Provider</div>
+          <div class="cs-stats"><div class="cs-stat"><div class="n">30%</div><div class="l">More time on key accounts</div></div><div class="cs-stat"><div class="n">12%</div><div class="l">Cross-sell revenue increase</div></div></div>
+          <div class="cs-desc">Case study details coming soon.</div>
+        </div>
+      </div>
+
+      <!-- SAAS CASE STUDIES (DUMMY) -->
+      <div class="cs-card" data-category="saas" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-card-body">
+          <div class="cs-city-tag">London, UK</div>
+          <div class="cs-tag">Pricing · Growth Equity · SaaS</div>
+          <div class="cs-title">Packaging &amp; Pricing Optimisation — Growth-Stage HR Tech Platform</div>
+          <div class="cs-stats"><div class="cs-stat"><div class="n">22%</div><div class="l">ARPU increase</div></div><div class="cs-stat"><div class="n">8pp</div><div class="l">Net revenue retention uplift</div></div></div>
+          <div class="cs-desc">Case study details coming soon.</div>
+        </div>
+      </div>
+      <div class="cs-card" data-category="saas" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-card-body">
+          <div class="cs-city-tag">Berlin, Germany</div>
+          <div class="cs-tag">GTM Strategy · Venture-Backed · SaaS</div>
+          <div class="cs-title">Product-Led to Sales-Led Motion — Series B Supply Chain SaaS</div>
+          <div class="cs-stats"><div class="cs-stat"><div class="n">3×</div><div class="l">Enterprise pipeline in 6 months</div></div><div class="cs-stat"><div class="n">45%</div><div class="l">Shorter sales cycle</div></div></div>
+          <div class="cs-desc">Case study details coming soon.</div>
+        </div>
+      </div>
+      <div class="cs-card" data-category="saas" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-card-body">
+          <div class="cs-city-tag">Amsterdam, Netherlands</div>
+          <div class="cs-tag">Segmentation · Growth Equity · SaaS</div>
+          <div class="cs-title">ICP Definition &amp; Territory Design — PE-Backed FinTech Platform</div>
+          <div class="cs-stats"><div class="cs-stat"><div class="n">40%</div><div class="l">Increase in qualified leads</div></div><div class="cs-stat"><div class="n">2×</div><div class="l">Rep quota attainment</div></div></div>
+          <div class="cs-desc">Case study details coming soon.</div>
+        </div>
+      </div>
+      <div class="cs-card" data-category="saas" style="background-image:url('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-card-body">
+          <div class="cs-city-tag">Paris, France</div>
+          <div class="cs-tag">Sales Transformation · Growth Equity · SaaS</div>
+          <div class="cs-title">Sales Playbook &amp; Enablement Redesign — Series C Cybersecurity SaaS</div>
+          <div class="cs-stats"><div class="cs-stat"><div class="n">35%</div><div class="l">Win rate improvement</div></div><div class="cs-stat"><div class="n">60%</div><div class="l">Faster rep ramp time</div></div></div>
+          <div class="cs-desc">Case study details coming soon.</div>
         </div>
       </div>
     </div>
@@ -1480,6 +1566,23 @@ function backToCS(){
   document.getElementById('cs-index-view').style.display='block';
   document.getElementById('cs-detail-view').style.display='none';
   window.scrollTo(0,0);
+}
+function filterCS(cat){
+  document.querySelectorAll('.cs-filter-btn').forEach(function(btn){
+    btn.classList.remove('active');
+    btn.style.borderColor='rgba(255,255,255,0.25)';
+    btn.style.background='rgba(255,255,255,0.06)';
+  });
+  event.currentTarget.classList.add('active');
+  event.currentTarget.style.borderColor='var(--sky)';
+  event.currentTarget.style.background='rgba(138,197,255,0.12)';
+  document.querySelectorAll('.cs-card').forEach(function(card){
+    if(cat==='all'||card.getAttribute('data-category')===cat){
+      card.style.display='flex';
+    }else{
+      card.style.display='none';
+    }
+  });
 }
 function showBlog(i){
   document.getElementById('blog-index-view').style.display='none';
