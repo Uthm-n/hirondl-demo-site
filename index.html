@@ -67,7 +67,7 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .mobile-menu .mob-cta{margin-top:24px;background:var(--smalt);color:#fff !important;padding:14px 24px;border-radius:3px;text-align:center;border-bottom:none !important}
 
 /* ═══════════ HOMEPAGE ═══════════ */
-.hero{min-height:100vh;background:linear-gradient(135deg,rgba(16,21,53,0.92) 0%,rgba(16,21,53,0.80) 100%),url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;display:flex;flex-direction:column;justify-content:center;padding:120px 48px 80px;position:relative;overflow:hidden}
+.hero{min-height:auto;background:linear-gradient(135deg,rgba(16,21,53,0.92) 0%,rgba(16,21,53,0.80) 100%),url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;display:flex;flex-direction:column;justify-content:center;padding:120px 48px 48px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)}
 .hero-bg{position:absolute;right:0;top:0;width:50%;height:100%;opacity:0.04;pointer-events:none}
 .hero-eyebrow{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sky);margin-bottom:22px;position:relative;font-weight:600}
@@ -1407,15 +1407,14 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
   </section>
 
   <!-- Track record -->
-  <section class="section" style="background:var(--navy);position:relative;overflow:hidden">
-    <div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)"></div>
-    <div class="section-tag" style="color:var(--sky)">Track record</div>
-    <div class="section-h" style="color:#fff">Numbers which matter in Private Equity</div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,0.07);margin-top:36px">
-      <div style="padding:24px 0;border-right:1px solid rgba(255,255,255,0.07)"><div style="font-size:38px;font-weight:300;color:#fff;line-height:1;letter-spacing:-0.02em">150<span style="color:var(--sky);font-size:65%">+</span></div><div style="font-size:10px;color:#fff;margin-top:7px;line-height:1.55">Engagements since 2014</div></div>
-      <div style="padding:24px 0;border-right:1px solid rgba(255,255,255,0.07);padding-left:24px"><div style="font-size:38px;font-weight:300;color:#fff;line-height:1;letter-spacing:-0.02em">2–4<span style="color:var(--sky);font-size:65%">pp</span></div><div style="font-size:10px;color:#fff;margin-top:7px;line-height:1.55">Typical gross margin improvement in pricing engagements</div></div>
-      <div style="padding:24px 0;border-right:1px solid rgba(255,255,255,0.07);padding-left:24px"><div style="font-size:38px;font-weight:300;color:#fff;line-height:1;letter-spacing:-0.02em">12<span style="color:var(--sky);font-size:65%">mo</span></div><div style="font-size:10px;color:#fff;margin-top:7px;line-height:1.55">Typical time-to-impact for embedded programmes</div></div>
-      <div style="padding:24px 0;padding-left:24px"><div style="font-size:38px;font-weight:300;color:#fff;line-height:1;letter-spacing:-0.02em">4<span style="color:var(--sky);font-size:65%"> markets</span></div><div style="font-size:10px;color:#fff;margin-top:7px;line-height:1.55">European capitals with in-country Private Equity-experienced partners</div></div>
+  <section class="section" style="background:var(--surface)">
+    <div class="section-tag">Track record</div>
+    <div class="section-h">Numbers which matter in Private Equity</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:36px">
+      <div style="background:#fff;padding:44px 32px;text-align:center"><div style="font-size:clamp(44px,6vw,72px);font-weight:300;color:var(--smalt);letter-spacing:-0.03em;line-height:1;margin-bottom:12px">150<span style="color:var(--sky);font-size:60%">+</span></div><div style="font-size:12px;color:var(--muted);line-height:1.75;max-width:220px;margin:0 auto">Engagements delivered across Europe since 2014</div></div>
+      <div style="background:#fff;padding:44px 32px;text-align:center"><div style="font-size:clamp(44px,6vw,72px);font-weight:300;color:var(--smalt);letter-spacing:-0.03em;line-height:1;margin-bottom:12px">2–5<span style="color:var(--sky);font-size:60%">pp</span></div><div style="font-size:12px;color:var(--muted);line-height:1.75;max-width:220px;margin:0 auto">Revenue growth improvement</div></div>
+      <div style="background:#fff;padding:44px 32px;text-align:center"><div style="font-size:clamp(44px,6vw,72px);font-weight:300;color:var(--smalt);letter-spacing:-0.03em;line-height:1;margin-bottom:12px">80<span style="color:var(--sky);font-size:60%">%+</span></div><div style="font-size:12px;color:var(--muted);line-height:1.75;max-width:220px;margin:0 auto">Client re-engagement rate</div></div>
+      <div style="background:#fff;padding:44px 32px;text-align:center"><div style="font-size:clamp(44px,6vw,72px);font-weight:300;color:var(--smalt);letter-spacing:-0.03em;line-height:1;margin-bottom:12px">3–12<span style="color:var(--sky);font-size:60%">mo</span></div><div style="font-size:12px;color:var(--muted);line-height:1.75;max-width:220px;margin:0 auto">Typical engagement length, scaled to the transformation</div></div>
     </div>
   </section>
 
