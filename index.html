@@ -878,14 +878,14 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       </div>
 
       <!-- B2B SERVICES CASE STUDIES (DUMMY) -->
-      <div class="cs-card" data-category="b2b" style="background-image:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80')">
+      <div class="cs-card" data-category="b2b" onclick="showCS(4)" style="background-image:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80')">
         <div class="cs-cat-badge">B2B Services</div>
         <div class="cs-card-body">
-          <div class="cs-city-tag">Milan, Italy</div>
-          <div class="cs-tag">Sales Transformation · Private Equity Portfolio · B2B Services</div>
-          <div class="cs-title">Sales Force Effectiveness Program — PE-Backed Facilities Management Group</div>
-          <div class="cs-stats"><div class="cs-stat"><div class="n">18%</div><div class="l">Revenue uplift in Year 1</div></div><div class="cs-stat"><div class="n">3×</div><div class="l">Pipeline conversion rate</div></div></div>
-          <div class="cs-desc">Case study details coming soon.</div>
+          <div class="cs-city-tag">Germany</div>
+          <div class="cs-tag">Sales Strategy · Homecare · B2B Services</div>
+          <div class="cs-title">Sales Transformation &amp; Targeting Redesign — National Homecare Provider</div>
+          <div class="cs-stats"><div class="cs-stat"><div class="n">22%</div><div class="l">Commercial margin growth</div></div><div class="cs-stat"><div class="n">1st</div><div class="l">Time hitting target in 2 years</div></div></div>
+          <div class="cs-desc">Redesigned sales targeting and built nurse-level dashboards to stop customer losses and redirect effort to high-margin segments. Hit commercial target for the first time in two years.</div>
         </div>
       </div>
       <div class="cs-card" data-category="b2b" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80')">
@@ -1231,6 +1231,68 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       </footer>
     </div>
 
+    <div id="cs-4" class="cs-detail">
+      <div class="cs-hero-block" style="background-image:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80')">
+        <div class="cs-back" onclick="backToCS()">← All case studies</div>
+        <div class="cs-h-tag">Germany · B2B Healthcare Services · Homecare</div>
+        <div class="cs-h-title">Sales Transformation &amp; Targeting Redesign — National Homecare Provider</div>
+        <div class="cs-stat-row">
+          <div class="cs-stat-box"><div class="n">22%</div><div class="l">Commercial margin growth projected</div></div>
+          <div class="cs-stat-box"><div class="n">1st</div><div class="l">Time hitting target in 2 years</div></div>
+          <div class="cs-stat-box"><div class="n">8</div><div class="l">Regional markets redesigned</div></div>
+          <div class="cs-stat-box"><div class="n">€1.1m</div><div class="l">Annual margin uplift identified</div></div>
+        </div>
+      </div>
+      <div class="cs-cols">
+        <div class="cs-col"><div class="cs-col-head">Situation</div><div class="cs-col-body">A national homecare provider serving wound care, nutrition, stoma, and incontinence patients across Germany had missed its commercial targets for two consecutive years. Sales nurses were spread too thin across low-value accounts, with no data-driven targeting. The company was losing patients to smaller, more agile regional competitors who were cherry-picking high-margin segments.</div></div>
+        <div class="cs-col"><div class="cs-col-head">Approach</div><div class="cs-col-body">Mapped commercial margin by nurse, institution, and therapy segment across every region. Identified the fifty lowest-performing discharge sources and care homes consuming disproportionate capacity. Redirected freed nurse time to high-margin segments including parenteral nutrition and IV antibiotics. Built nurse-level performance dashboards and introduced structured KPI-driven coaching for regional managers.</div></div>
+        <div class="cs-col"><div class="cs-col-head">Impact</div><div class="cs-col-body">The business hit its commercial target for the first time in two years. Customer losses stopped and growth resumed with target accounts. Commercial margin projected to grow twenty-two percent from the baseline, with over one million euros in annual uplift identified across eight regional markets. Blueprint region scaled nationally.</div></div>
+      </div>
+      <div class="cs-chart-section">
+        <div class="cs-chart-label">Results visualised</div>
+        <div class="cs-chart-title">Commercial margin trajectory and capacity reallocation</div>
+        <div class="cs-chart-sub">Left: projected commercial margin growth across the programme. Right: nurse capacity shift from low-value to high-margin segments.</div>
+        <div class="cs-chart-grid">
+          <div>
+            <div class="cs-chart-half-label">Commercial margin (€m)</div>
+            <div class="cs-chart-half"><canvas id="chart-4a" role="img" aria-label="Bar chart showing commercial margin growth"></canvas></div>
+          </div>
+          <div>
+            <div class="cs-chart-half-label">Nurse capacity allocation</div>
+            <div class="cs-chart-half"><canvas id="chart-4b" role="img" aria-label="Bar chart showing nurse time reallocation"></canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class="cs-narrative">
+        <div class="cs-sec-title">Obstacles we overcame</div>
+        <div class="cs-para">The business had no centralised commercial data when we started. Nurse performance was tracked on paper, and regional managers had no visibility into which institutions were generating margin and which were consuming capacity without return. Building the data foundation was a prerequisite before any targeting decisions could be made.</div>
+        <div class="cs-pullquote"><p>The biggest shift was cultural. Sales nurses had always been measured on visit frequency, not commercial margin. Moving to margin-per-nurse as the lead KPI changed how every regional team thought about their day.</p></div>
+        <div class="cs-para">A major competitor's recent restructuring had created market instability, with experienced nurses and account managers leaving to join smaller regional players. We had to move fast to capture the displaced customers before competitors consolidated them.</div>
+      </div>
+      <div class="cs-extras">
+        <div class="cs-extra-card">
+          <div class="cs-extra-head">Custom Tooling Built</div>
+          <div class="cs-extra-title">Tools that stayed in use after we left</div>
+          <div class="cs-extra-body"><ul><li>Nurse-level commercial dashboard tracking margin, patient count, and segment mix per nurse per region</li><li>Institution scoring model ranking discharge sources and care homes by margin contribution and growth potential</li><li>Regional manager coaching framework with structured KPI review cadence</li><li>Capacity planning tool mapping nurse territory coverage against high-value institution density</li></ul></div>
+        </div>
+        <div class="cs-extra-card cs-extra-ai">
+          <div class="cs-extra-head">AI Use Case</div>
+          <div class="cs-extra-title">How AI accelerated this engagement</div>
+          <div class="cs-extra-body"><ul><li>AI-assisted analysis of patient and institution data identified the highest-margin therapy segments per region in days rather than weeks</li><li>Automated institution profiling matched care homes and discharge sources to margin potential using publicly available facility data</li><li>AI-generated regional performance summaries gave managers a coaching-ready view of each nurse ahead of review sessions</li></ul></div>
+        </div>
+      </div>
+      <div class="cs-cta-block"><div><h3>Is your sales team focused on the right accounts?</h3><p>We redesign commercial targeting and build the dashboards that make the change stick.</p></div><button class="btn-primary" onclick="showPage('contact')">Get in touch</button></div>
+      <footer>
+        <div>
+          <div class="footer-logo">
+            <img src="logo.png" alt="Hirondl" height="28" style="filter:brightness(0) invert(1);display:block">
+            <div><div class="footer-logo-text">Hirondl</div><div class="footer-est">Est. 2014</div></div>
+          </div>
+        </div>
+        <div class="footer-links"><a onclick="backToCS()">All case studies</a></div>
+        <div class="footer-contact">contact@hirondl.com</div>
+      </footer>
+    </div>
 
   </div>
 </div>
@@ -1827,6 +1889,53 @@ function initChart(i){
         scales:{
           y:{beginAtZero:true,max:100,grid:{color:'rgba(0,0,0,0.05)'}},
           x:{grid:{display:false}}
+        }
+      }
+    });
+  }
+
+  if(i===4){
+    new Chart(document.getElementById('chart-4a'),{
+      type:'bar',
+      data:{
+        labels:["FY'24 (Baseline)","FY'25 (Year 1)","FY'26 (Year 2)"],
+        datasets:[{
+          label:'Commercial margin (€m)',
+          data:[4.8,5.2,6.2],
+          backgroundColor:['rgba(173,173,173,0.45)','rgba(26,48,153,0.75)','rgba(138,197,255,0.85)'],
+          borderColor:[grey,smalt,sky],borderWidth:1
+        }]
+      },
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        plugins:{
+          legend:{display:false},
+          tooltip:{callbacks:{label:c=>' €'+c.parsed.y+'m'}}
+        },
+        scales:{
+          y:{beginAtZero:true,max:7,ticks:{callback:v=>'€'+v+'m'},grid:{color:'rgba(0,0,0,0.05)'}},
+          x:{grid:{display:false}}
+        }
+      }
+    });
+    new Chart(document.getElementById('chart-4b'),{
+      type:'bar',
+      data:{
+        labels:['High-margin segments','Standard segments','Low-value accounts'],
+        datasets:[
+          {label:'Before',data:[20,45,35],backgroundColor:'rgba(173,173,173,0.45)',borderColor:grey,borderWidth:1},
+          {label:'After', data:[45,40,15],backgroundColor:'rgba(26,48,153,0.75)',borderColor:smalt,borderWidth:1}
+        ]
+      },
+      options:{
+        indexAxis:'y',responsive:true,maintainAspectRatio:false,
+        plugins:{
+          legend:{position:'top',labels:{boxWidth:12,padding:12}},
+          tooltip:{callbacks:{label:c=>' '+c.dataset.label+': '+c.parsed.x+'% of nurse time'}}
+        },
+        scales:{
+          x:{max:55,ticks:{callback:v=>v+'%'},grid:{color:'rgba(0,0,0,0.05)'}},
+          y:{grid:{display:false}}
         }
       }
     });
