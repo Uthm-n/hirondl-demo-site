@@ -67,7 +67,7 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .mobile-menu .mob-cta{margin-top:24px;background:var(--smalt);color:#fff !important;padding:14px 24px;border-radius:3px;text-align:center;border-bottom:none !important}
 
 /* ═══════════ HOMEPAGE ═══════════ */
-.hero{min-height:auto;background:linear-gradient(135deg,rgba(16,21,53,0.92) 0%,rgba(16,21,53,0.80) 100%),url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;display:flex;flex-direction:column;justify-content:center;padding:120px 48px 48px;position:relative;overflow:hidden}
+.hero{min-height:auto;background:linear-gradient(135deg,rgba(16,21,53,0.92) 0%,rgba(16,21,53,0.80) 100%),url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;display:flex;flex-direction:column;justify-content:center;padding:100px 48px 40px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--smalt)}
 .hero-bg{position:absolute;right:0;top:0;width:50%;height:100%;opacity:0.04;pointer-events:none}
 .hero-eyebrow{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sky);margin-bottom:22px;position:relative;font-weight:600}
@@ -82,7 +82,7 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .btn-secondary:hover{border-color:rgba(255,255,255,0.55)}
 
 /* PROOF BAR */
-.proof-bar{display:grid;grid-template-columns:repeat(4,1fr);background:var(--surface);border-radius:6px;padding:32px 0;margin-top:64px;position:relative}
+.proof-bar{display:grid;grid-template-columns:repeat(4,1fr);background:var(--surface);border-radius:6px;padding:32px 0;margin-top:40px;position:relative}
 .proof-item{padding:8px 24px;border-right:1px solid var(--border)}
 .proof-item:last-child{border-right:none}
 .proof-n{font-size:clamp(26px,4vw,40px);font-weight:300;color:var(--smalt);line-height:1;letter-spacing:-0.02em}
@@ -456,6 +456,10 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       <path d="M660 60 Q480 360 360 510 Q240 660 280 960" stroke="white" stroke-width="1" fill="none"/>
       <path d="M540 -60 Q360 240 240 390 Q120 540 160 840" stroke="white" stroke-width="0.5" fill="none"/>
     </svg>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px;position:relative">
+      <img src="logo.png" alt="Hirondl" height="32" style="filter:brightness(0) invert(1);display:block">
+      <div><div style="font-size:14px;font-weight:700;color:#fff;letter-spacing:0.12em;text-transform:uppercase">Hirondl</div><div style="font-size:9px;color:rgba(255,255,255,0.45);letter-spacing:0.1em;font-weight:500">Est. 2014</div></div>
+    </div>
     <div class="hero-eyebrow">Value Creation · Growth · AI-Enhanced Transformation</div>
     <h1 class="hero-h">We stay<br><span class="sky">until impact.</span><br>Not until<br>the deck is done.</h1>
     <div class="hero-tagline">Your Partner in Ambitious Growth</div>
@@ -712,8 +716,8 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <div style="font-size:clamp(20px,2.5vw,26px);font-weight:800;text-transform:uppercase;color:var(--text);letter-spacing:-0.02em;line-height:1.1;margin-bottom:10px">B2B agnostic.<br>Sector-proven.</div>
     <p style="font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:32px;font-weight:400">We operate across industries. Our deepest delivery track record sits in the sectors below.</p>
     <div style="display:flex;flex-wrap:wrap;gap:10px">
-      <span onclick="showPage('cases');setTimeout(function(){filterCS('b2b');document.querySelectorAll('.cs-filter-btn').forEach(function(b){b.classList.remove('active');b.style.borderColor='rgba(255,255,255,0.25)';b.style.background='rgba(255,255,255,0.06)';if(b.textContent.trim()==='B2B Services'){b.classList.add('active');b.style.borderColor='var(--sky)';b.style.background='rgba(138,197,255,0.12)'}})},50)" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--smalt);border:1px solid var(--border);padding:8px 20px;border-radius:2px;background:#fff;cursor:pointer;transition:border-color 0.15s,background 0.15s,color 0.15s" onmouseover="this.style.borderColor='var(--smalt)';this.style.background='var(--smalt)';this.style.color='#fff'" onmouseout="this.style.borderColor='var(--border)';this.style.background='#fff';this.style.color='var(--smalt)'">B2B Services</span>
       <span onclick="showPage('cases');setTimeout(function(){filterCS('industry');document.querySelectorAll('.cs-filter-btn').forEach(function(b){b.classList.remove('active');b.style.borderColor='rgba(255,255,255,0.25)';b.style.background='rgba(255,255,255,0.06)';if(b.textContent.trim()==='Industry'){b.classList.add('active');b.style.borderColor='var(--sky)';b.style.background='rgba(138,197,255,0.12)'}})},50)" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--smalt);border:1px solid var(--border);padding:8px 20px;border-radius:2px;background:#fff;cursor:pointer;transition:border-color 0.15s,background 0.15s,color 0.15s" onmouseover="this.style.borderColor='var(--smalt)';this.style.background='var(--smalt)';this.style.color='#fff'" onmouseout="this.style.borderColor='var(--border)';this.style.background='#fff';this.style.color='var(--smalt)'">Industry</span>
+      <span onclick="showPage('cases');setTimeout(function(){filterCS('b2b');document.querySelectorAll('.cs-filter-btn').forEach(function(b){b.classList.remove('active');b.style.borderColor='rgba(255,255,255,0.25)';b.style.background='rgba(255,255,255,0.06)';if(b.textContent.trim()==='B2B Services'){b.classList.add('active');b.style.borderColor='var(--sky)';b.style.background='rgba(138,197,255,0.12)'}})},50)" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--smalt);border:1px solid var(--border);padding:8px 20px;border-radius:2px;background:#fff;cursor:pointer;transition:border-color 0.15s,background 0.15s,color 0.15s" onmouseover="this.style.borderColor='var(--smalt)';this.style.background='var(--smalt)';this.style.color='#fff'" onmouseout="this.style.borderColor='var(--border)';this.style.background='#fff';this.style.color='var(--smalt)'">B2B Services</span>
       <span onclick="showPage('cases');setTimeout(function(){filterCS('saas');document.querySelectorAll('.cs-filter-btn').forEach(function(b){b.classList.remove('active');b.style.borderColor='rgba(255,255,255,0.25)';b.style.background='rgba(255,255,255,0.06)';if(b.textContent.trim()==='SaaS'){b.classList.add('active');b.style.borderColor='var(--sky)';b.style.background='rgba(138,197,255,0.12)'}})},50)" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--smalt);border:1px solid var(--border);padding:8px 20px;border-radius:2px;background:#fff;cursor:pointer;transition:border-color 0.15s,background 0.15s,color 0.15s" onmouseover="this.style.borderColor='var(--smalt)';this.style.background='var(--smalt)';this.style.color='#fff'" onmouseout="this.style.borderColor='var(--border)';this.style.background='#fff';this.style.color='var(--smalt)'">SaaS</span>
     </div>
   </div>
