@@ -240,7 +240,7 @@ nav::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;backgro
 .wwd-why-head{font-size:13px;font-weight:700;color:var(--text);margin-bottom:10px;line-height:1.3}
 .wwd-why-body{font-size:12px;color:var(--muted);line-height:1.85;font-weight:400}
 .cs-cat-badge{position:absolute;top:18px;left:24px;font-size:8px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(26,48,153,0.7);border:1px solid rgba(138,197,255,0.25);padding:4px 10px;border-radius:2px;z-index:2}
-.cs-filter-label{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);width:100%;text-align:center;margin-bottom:4px}
+.cs-filter-label{font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;width:100%;text-align:center;margin-bottom:8px}
 
 /* INDIVIDUAL CS PAGE */
 .cs-detail{display:none}.cs-detail.active{display:block}
@@ -579,11 +579,13 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         <div style="font-size:10px;color:#fff;margin-top:4px;line-height:1.5">Gregor Cohnen</div>
       </div>
       <div class="map-office-card" onclick="focusMapMarker(3)" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:16px;cursor:pointer;transition:border-color 0.15s" onmouseover="this.style.borderColor='var(--sky)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+        <div style="font-size:9px;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin-bottom:6px">📍 Senior Expert</div>
         <div style="font-size:13px;color:#fff;font-weight:600;margin-bottom:4px">Copenhagen</div>
         <div style="font-size:11px;color:#fff">Denmark</div>
         <div style="font-size:10px;color:#fff;margin-top:4px;line-height:1.5">Thomas Dahl</div>
       </div>
       <div class="map-office-card" onclick="focusMapMarker(4)" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:16px;cursor:pointer;transition:border-color 0.15s" onmouseover="this.style.borderColor='var(--sky)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+        <div style="font-size:9px;color:var(--sky);letter-spacing:0.1em;text-transform:uppercase;font-weight:700;margin-bottom:6px">📍 Head of AI</div>
         <div style="font-size:13px;color:#fff;font-weight:600;margin-bottom:4px">Zagreb</div>
         <div style="font-size:11px;color:#fff">Croatia</div>
         <div style="font-size:10px;color:#fff;margin-top:4px;line-height:1.5">Igor Milat</div>
@@ -638,11 +640,11 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
   <div class="wwd-services-section">
     <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:24px;border-left:4px solid var(--smalt);padding-left:24px">
       <div>
-        <div class="section-tag" style="margin-bottom:12px;color:var(--sky)">Six capabilities</div>
-        <h2 style="font-size:clamp(36px,5vw,60px);font-weight:900;text-transform:uppercase;color:#fff;letter-spacing:-0.03em;line-height:0.97;margin-top:8px">Six ways we create<br><span style="color:var(--sky)">commercial value</span></h2>
+        <div class="section-tag" style="margin-bottom:12px;color:var(--smalt)">Six capabilities</div>
+        <h2 style="font-size:clamp(36px,5vw,60px);font-weight:900;text-transform:uppercase;color:var(--text);letter-spacing:-0.03em;line-height:0.97;margin-top:8px">Six ways we create<br><span style="color:var(--smalt)">commercial value</span></h2>
       </div>
       <div style="padding-top:16px;align-self:flex-end">
-        <p style="font-size:13px;color:rgba(255,255,255,0.82);line-height:1.8;font-weight:400">We design, implement, and stay until the results are visible. Each capability is built around delivery, not advice.</p>
+        <p style="font-size:13px;color:var(--muted);line-height:1.8;font-weight:400">We design, implement, and stay until the results are visible. Each capability is built around delivery, not advice.</p>
       </div>
     </div>
 
@@ -1685,9 +1687,7 @@ function showCS(i){
   initChart(i);
 }
 function backToCS(){
-  document.getElementById('cs-index-view').style.display='block';
-  document.getElementById('cs-detail-view').style.display='none';
-  window.scrollTo(0,0);
+  showPage('cases');
 }
 function filterCS(cat){
   document.querySelectorAll('.cs-filter-btn').forEach(function(btn){
