@@ -2042,8 +2042,8 @@ function submitCSGate(){
   err.style.display='none';
   var btn=document.querySelector('.cs-gate-btn');
   btn.textContent='Opening…';btn.disabled=true;
-  var portal='PORTAL_ID';
-  var form='FORM_GUID';
+  var portal='49157678';
+  var form='08ce0a4c-7b4e-4768-8e93-d58aba758b76';
   fetch('https://api.hsforms.com/submissions/v3/integration/submit/'+portal+'/'+form,{
     method:'POST',
     headers:{'Content-Type':'application/json'},
