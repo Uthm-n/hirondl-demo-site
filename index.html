@@ -1917,8 +1917,6 @@ window.addEventListener('popstate',function(e){
   else if(valid.indexOf(h)>-1){showPage(h,true);}
   else{history.replaceState({page:'home'},'','#home');}
   if((h===''||h==='home'||valid.indexOf(h)===-1)){setTimeout(initEuropeMap,300);}
-  /* Restore unlocked state on every page load */
-  if(checkCSUnlock()){setTimeout(function(){unlockCS(0);},0);}
 })();
 
 /* ═══ INTERACTIVE EUROPE MAP ═══ */
@@ -1963,8 +1961,8 @@ function showCS(i,_noPush){
   document.querySelectorAll('.cs-detail').forEach(d=>d.classList.remove('active'));
   document.getElementById('cs-'+i).classList.add('active');
   window.scrollTo(0,0);
-  initChart(i);
-  if(checkCSUnlock())unlockCS(i);
+  if(checkCSUnlock()){unlockCS(i);}
+  if(typeof initChart==='function')initChart(i);
   if(!_noPush)history.pushState({page:'cases',cs:i},'','#case/'+i);
   if(typeof gtag!=='undefined')gtag('event','case_study_view',{cs_index:i});
 }
@@ -2019,7 +2017,12 @@ function unlockCS(i){
   var t=document.getElementById('cs-gate-trigger-'+i);
   var l=document.getElementById('cs-locked-'+i);
   if(t)t.style.display='none';
-  if(l)l.style.display='block';
+  if(l){
+    l.style.display='block';
+    /* Reset chart so it re-draws on the now-visible canvas */
+    if(typeof _chartDone!=='undefined')delete _chartDone[i];
+    setTimeout(function(){if(typeof initChart==='function')initChart(i);},50);
+  }
 }
 function openGateModal(i){
   _gateCS=i;
@@ -2081,6 +2084,9 @@ const smalt='#1A3099',sky='#8AC5FF',grey='#ADADAD';
 
 function initChart(i){
   if(_chartDone[i]) return;
+  /* Skip if the canvas is inside a hidden container — it will be called again after unlock */
+  var testCanvas=document.getElementById('chart-'+i)||document.getElementById('chart-'+i+'a');
+  if(testCanvas && testCanvas.offsetParent===null) return;
   _chartDone[i]=true;
   Chart.defaults.font.family="'Montserrat','Arial',sans-serif";
   Chart.defaults.font.size=11;
@@ -2333,6 +2339,17 @@ function initChart(i){
   }
 
 }
+/* On page load (after Chart.js is ready), re-run unlock + chart init
+   for any case study shown via direct URL or browser refresh */
+(function(){
+  var h=location.hash.replace('#','');
+  var m=h.match(/^case\/(\d+)$/);
+  if(m){
+    var i=parseInt(m[1]);
+    if(typeof checkCSUnlock==='function'&&checkCSUnlock())unlockCS(i);
+    initChart(i);
+  }
+})();
 </script>
 
 <!-- CONTENT GATE MODAL (shared across all case studies) -->
