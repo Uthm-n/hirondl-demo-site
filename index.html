@@ -1917,6 +1917,8 @@ window.addEventListener('popstate',function(e){
   else if(valid.indexOf(h)>-1){showPage(h,true);}
   else{history.replaceState({page:'home'},'','#home');}
   if((h===''||h==='home'||valid.indexOf(h)===-1)){setTimeout(initEuropeMap,300);}
+  /* Restore unlocked state on every page load */
+  if(checkCSUnlock()){setTimeout(function(){unlockCS(0);},0);}
 })();
 
 /* ═══ INTERACTIVE EUROPE MAP ═══ */
