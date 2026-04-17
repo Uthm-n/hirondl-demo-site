@@ -535,7 +535,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         <div class="section-tag" style="color:var(--sky)">Our team</div>
         <div class="section-h" style="color:#fff">Operators, not advisors</div>
       </div>
-      <span class="tp-link" onclick="showPage('team')">Meet the full team →</span>
+      <span class="tp-link" onclick="showPage('team')">View team profiles →</span>
     </div>
     <div class="team-grid">
       <div class="team-card"><div class="tc-avatar" style="background:var(--smalt)"><img src="Cecile.jpg" alt="Cécile George"></div><div class="tc-name">Cécile George</div><div class="tc-role">Founder · London</div><div class="tc-bio">20+ years delivering rapid revenue and margin growth. Former Operating Partner. Ex McKinsey, INSEAD.</div></div>
@@ -786,7 +786,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
   <section class="team-preview">
     <div class="tp-header">
       <div><div class="section-tag" style="color:var(--sky)">Our team</div><h2 class="section-h" style="color:#fff">OPERATORS, NOT ADVISORS</h2></div>
-      <span class="tp-link" onclick="showPage('team')">Meet the full team →</span>
+      <span class="tp-link" onclick="showPage('team')">View team profiles →</span>
     </div>
     <div class="team-grid">
       <div class="team-card"><div class="tc-avatar" style="background:var(--smalt)"><img src="Cecile.jpg" alt="Cécile George"></div><div class="tc-name">Cécile George</div><div class="tc-role">Founder · London</div><div class="tc-bio">20+ years delivering rapid revenue and margin growth. Former Operating Partner. Ex McKinsey, INSEAD.</div></div>
@@ -854,7 +854,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
           <div class="cs-desc">Built a potential-based segmentation across 125+ agents in 50+ markets. Coached agents to target high-potential accounts, generating €7m in new sales within six months.</div>
         </div>
       </div>
-      <div class="cs-card" data-category="industry" onclick="showCS(2)" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=1200&q=80')">
+      <div class="cs-card" data-category="industry" onclick="showCS(2)" style="background-image:url('https://images.unsplash.com/photo-1565003010904-4a4d1f86f12e?auto=format&fit=crop&w=1200&q=80')">
         <div class="cs-cat-badge">Industry</div>
         <div class="cs-card-body">
           <div class="cs-city-tag">DACH Region</div>
@@ -917,7 +917,17 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         </div>
       </div>
 
-      <!-- SAAS CASE STUDIES (DUMMY) -->
+      <!-- SAAS CASE STUDIES -->
+      <div class="cs-card" data-category="saas" onclick="showCS(5)" style="background-image:url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-cat-badge">SaaS</div>
+        <div class="cs-card-body">
+          <div class="cs-city-tag">London, UK</div>
+          <div class="cs-tag">Ecosystem-Led Growth · Private Equity Portfolio · B2B SaaS</div>
+          <div class="cs-title">Ecosystem-Led Growth Transformation — PE-Backed Global Talent Assessment Platform</div>
+          <div class="cs-stats"><div class="cs-stat"><div class="n">2.5×</div><div class="l">ACV increase ($10K → $25K)</div></div><div class="cs-stat"><div class="n">~$1M</div><div class="l">Partner-influenced revenue</div></div></div>
+          <div class="cs-desc">Built an integration partner ecosystem that grew ACV 2.5×, generated ~$1M in partner-influenced revenue at zero incremental headcount, and reduced churn 15% on integrated accounts.</div>
+        </div>
+      </div>
       <div class="cs-card" data-category="saas" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80')">
         <div class="cs-cat-badge">SaaS</div>
         <div class="cs-card-body">
@@ -963,7 +973,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <section class="team-preview">
       <div class="tp-header">
         <div><div class="section-tag" style="color:var(--sky)">Our team</div><h2 class="section-h" style="color:#fff">OPERATORS, NOT ADVISORS</h2></div>
-        <span class="tp-link" onclick="showPage('team')">Meet the full team →</span>
+        <span class="tp-link" onclick="showPage('team')">View team profiles →</span>
       </div>
       <div class="team-grid">
         <div class="team-card"><div class="tc-avatar" style="background:var(--smalt)"><img src="Cecile.jpg" alt="Cécile George"></div><div class="tc-name">Cécile George</div><div class="tc-role">Founder · London</div><div class="tc-bio">20+ years delivering rapid revenue and margin growth. Former Operating Partner. Ex McKinsey, INSEAD.</div></div>
@@ -1112,7 +1122,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     </div>
 
     <div id="cs-2" class="cs-detail">
-      <div class="cs-hero-block" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=1600&q=80')">
+      <div class="cs-hero-block" style="background-image:url('https://images.unsplash.com/photo-1565003010904-4a4d1f86f12e?auto=format&fit=crop&w=1600&q=80')">
         <div class="cs-back" onclick="backToCS()">← All case studies</div>
         <div class="cs-h-tag">DACH Region · Private Equity Portfolio · Industrial Manufacturing</div>
         <div class="cs-h-title">Pricing Transformation &amp; New Customer Growth — PE-Backed Specialty Films Manufacturer</div>
@@ -1293,6 +1303,96 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       </footer>
     </div>
 
+    <div id="cs-5" class="cs-detail">
+      <div class="cs-hero-block" style="background-image:url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80')">
+        <div class="cs-back" onclick="backToCS()">← All case studies</div>
+        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(138,197,255,0.15);border:1px solid rgba(138,197,255,0.35);padding:5px 12px;border-radius:2px;margin-bottom:16px"><span style="font-size:8px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--sky)">Operator Track Record</span></div>
+        <div class="cs-h-tag">London, UK · Private Equity Portfolio · B2B SaaS</div>
+        <div class="cs-h-title">Ecosystem-Led Growth Transformation — PE-Backed Global Talent Assessment Platform</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.55);margin-bottom:22px;font-style:italic;line-height:1.6">Delivered by Yabing Wu during her tenure as Strategic Partnerships Global Lead at a PE-backed global talent assessment platform, before joining Hirondl.</div>
+        <div class="cs-stat-row">
+          <div class="cs-stat-box"><div class="n">2.5×</div><div class="l">Average contract value increase ($10K → $25K)</div></div>
+          <div class="cs-stat-box"><div class="n">80%</div><div class="l">Growth in partner-sourced pipeline</div></div>
+          <div class="cs-stat-box"><div class="n">~$1M</div><div class="l">Partner-influenced revenue generated</div></div>
+          <div class="cs-stat-box"><div class="n">15%</div><div class="l">Reduction in customer churn on integrated accounts</div></div>
+        </div>
+      </div>
+      <div class="cs-cols">
+        <div class="cs-col"><div class="cs-col-head">Situation</div><div class="cs-col-body">A PE-backed global talent assessment provider undergoing a service-to-SaaS transformation, serving customers across 60+ countries. The commercial problem had two layers: a sales enablement gap — no consistent way to scope, price, or close integration-attached deals — and an untapped ecosystem opportunity, with ATS vendors as potential co-sell partners rather than just technical dependencies. No structure existed to activate either.</div></div>
+        <div class="cs-col"><div class="cs-col-head">Approach</div><div class="cs-col-body">Mapped the full ATS ecosystem to identify highest-value integration partnerships by deal size, win-rate correlation, and customer demand signal. Built a centralised, self-serve integration knowledge hub converting fragmented tribal knowledge into a dynamic sales asset. Standardised scoping and pricing by ATS tier (global enterprise, regional, emerging). Launched co-sell motions with priority ATS partners — joint collateral, shared deal registration, and integration demonstration environments.</div></div>
+        <div class="cs-col"><div class="cs-col-head">Impact</div><div class="cs-col-body">ACV grew from $10K to $25K through integration-attached deal structures. Partner-influenced revenue reached ~$1M without incremental headcount. Win rates on integration-driven opportunities rose from 35% to 50%. Integration activations doubled. Customer churn on integrated accounts fell 15%. Sales adoption reached 90% within six months.</div></div>
+      </div>
+      <div class="cs-chart-section">
+        <div class="cs-chart-label">Results visualised</div>
+        <div class="cs-chart-title">ACV growth and win rate improvement</div>
+        <div class="cs-chart-sub">Left: average contract value before and after integration-attached deal structures. Right: win rate on integration-driven opportunities before and after the ecosystem programme.</div>
+        <div class="cs-chart-grid">
+          <div>
+            <div class="cs-chart-half-label">Average contract value ($K)</div>
+            <div class="cs-chart-half"><canvas id="chart-5a" role="img" aria-label="Bar chart showing ACV growth"></canvas></div>
+          </div>
+          <div>
+            <div class="cs-chart-half-label">Win rate on integration-driven deals</div>
+            <div class="cs-chart-half"><canvas id="chart-5b" role="img" aria-label="Bar chart showing win rate improvement"></canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class="cs-narrative">
+        <div class="cs-sec-title">Obstacles we overcame</div>
+        <div class="cs-para">The platform operated within a highly fragmented HR Tech ecosystem. Customers demanded seamless integrations with their existing Applicant Tracking Systems, but with 30+ global ATS providers and hundreds of regional ones, the business had no scalable way to deliver. Integration was simultaneously the most requested capability and the biggest commercial bottleneck — costing an estimated $2M annually in competitive losses. Deals that did close were underpriced. The partner ecosystem was untapped as a commercial channel, with no structured co-sell motion and no visibility into partner-sourced pipeline.</div>
+        <div class="cs-pullquote"><p>The partner co-sell motion required a reversal: instead of formal channel programme outreach, we started with integration delivery on shared customers, then formalised the partnership after proving value jointly.</p></div>
+        <div class="cs-para">The initial plan was a static documentation project. Two weeks in, it became clear this would replicate the problem. We shifted to a Confluence-based dynamic knowledge hub with keyword-linked search, co-created with AEs around real deal scenarios. Early adopter involvement turned sceptics into advocates — the tool spread through the sales team on its own momentum.</div>
+      </div>
+      <div style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:40px 48px">
+        <div class="cs-chart-label" style="margin-bottom:20px">Enterprise value connection</div>
+        <div style="overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse;font-size:12px">
+            <thead><tr style="border-bottom:2px solid var(--border)">
+              <th style="text-align:left;padding:10px 16px;color:var(--text);font-weight:700;white-space:nowrap">Lever</th>
+              <th style="text-align:left;padding:10px 16px;color:var(--text);font-weight:700">Mechanism</th>
+              <th style="text-align:left;padding:10px 16px;color:var(--text);font-weight:700;white-space:nowrap">Impact</th>
+            </tr></thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 16px;color:var(--text);font-weight:600;white-space:nowrap">Revenue expansion</td><td style="padding:10px 16px;color:var(--muted)">ACV uplift from integration-attached deal structures</td><td style="padding:10px 16px;color:var(--smalt);font-weight:600;white-space:nowrap">2.5× ACV ($10K → $25K)</td></tr>
+              <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 16px;color:var(--text);font-weight:600;white-space:nowrap">New revenue channel</td><td style="padding:10px 16px;color:var(--muted)">Partner co-sell at zero incremental headcount</td><td style="padding:10px 16px;color:var(--smalt);font-weight:600;white-space:nowrap">80% pipeline growth · ~$1M</td></tr>
+              <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 16px;color:var(--text);font-weight:600;white-space:nowrap">Net revenue retention</td><td style="padding:10px 16px;color:var(--muted)">Lower churn on stickier, integrated accounts</td><td style="padding:10px 16px;color:var(--smalt);font-weight:600;white-space:nowrap">15% churn reduction</td></tr>
+              <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 16px;color:var(--text);font-weight:600;white-space:nowrap">Sales efficiency</td><td style="padding:10px 16px;color:var(--muted)">Higher win rates, faster scoping</td><td style="padding:10px 16px;color:var(--smalt);font-weight:600;white-space:nowrap">Win rate +15pp · scoping −40%</td></tr>
+              <tr style="border-bottom:1px solid var(--border)"><td style="padding:10px 16px;color:var(--text);font-weight:600;white-space:nowrap">Margin improvement</td><td style="padding:10px 16px;color:var(--muted)">Engineering redirected from support to product</td><td style="padding:10px 16px;color:var(--smalt);font-weight:600;white-space:nowrap">Velocity +30% · support −20%</td></tr>
+              <tr><td style="padding:10px 16px;color:var(--text);font-weight:600;white-space:nowrap">Exit multiple defence</td><td style="padding:10px 16px;color:var(--muted)">Ecosystem lock-in strengthens competitive moat</td><td style="padding:10px 16px;color:var(--smalt);font-weight:600;white-space:nowrap">Activations 2× · 90% adoption</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="cs-extras">
+        <div class="cs-extra-card">
+          <div class="cs-extra-head">Custom Tooling Built</div>
+          <div class="cs-extra-title">Tools that stayed in use after the programme</div>
+          <div class="cs-extra-body"><ul><li>Dynamic integration sales knowledge hub with keyword search, linked to live pricing and scoping data</li><li>Standardised integration scoping and pricing templates by ATS tier (global enterprise, regional, emerging)</li><li>Routing workflow for custom integration requests with defined SLAs</li><li>Partner co-sell playbook with joint value propositions, deal registration, and shared pipeline tracking</li><li>Integration sales performance dashboard tracking activation rates, attach rates, ACV uplift, and partner pipeline</li></ul></div>
+        </div>
+        <div class="cs-extra-card">
+          <div class="cs-extra-head">Implementation Challenges</div>
+          <div class="cs-extra-title">What had to be solved mid-programme</div>
+          <div class="cs-extra-body"><ul><li>No single owner of integration sales — solved with a cross-functional team and defined SOPs</li><li>Sales team scepticism about "another internal tool" — overcome through early adopter co-creation</li><li>Partner engagement too formal — reversed the sequence to start with integration delivery on shared customers</li><li>Integration PM temporarily reassigned — took direct ownership reporting to commercial leadership</li></ul></div>
+        </div>
+        <div class="cs-extra-card cs-extra-ai">
+          <div class="cs-extra-head">AI Use Case</div>
+          <div class="cs-extra-title">How AI could accelerate this today</div>
+          <div class="cs-extra-body"><ul><li>AI-assisted ecosystem mapping to classify 300+ ATS targets by market share, complexity, and revenue potential in days</li><li>Automated partner scoring by customer overlap and deal-size correlation</li><li>AI-generated scoping summaries pre-populated from CRM data</li><li>Predictive pipeline modelling to forecast partner-sourced revenue contribution</li></ul></div>
+        </div>
+      </div>
+      <div class="cs-cta-block"><div><h3>Building a B2B SaaS platform without an ecosystem strategy?</h3><p>Integration and partner ecosystems are among the most underleveraged commercial levers in PE-backed software businesses. We help portfolio companies turn them into measurable revenue, retention, and pipeline growth.</p></div><button class="btn-primary" onclick="showPage('contact')">Get in touch</button></div>
+      <footer>
+        <div>
+          <div class="footer-logo">
+            <img src="logo.png" alt="Hirondl" height="28" style="filter:brightness(0) invert(1);display:block">
+            <div><div class="footer-logo-text">Hirondl</div><div class="footer-est">Est. 2014</div></div>
+          </div>
+        </div>
+        <div class="footer-links"><a onclick="backToCS()">All case studies</a></div>
+        <div class="footer-contact">contact@hirondl.com</div>
+      </footer>
+    </div>
+
   </div>
 </div>
 
@@ -1337,6 +1437,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <div class="blog-grid">
       <div class="blog-card" onclick="showBlog(0)"><div class="blog-tag">Pricing · 3 min read</div><div class="blog-title">When the Margin Wasn't Where the Model Said It Was</div><div class="blog-meta">By Cécile George · Hirondl</div><div class="blog-excerpt">A Private Equity-backed welding manufacturer. Three years of transaction data. A structural pricing problem nobody had looked for. Here is what we found and how we fixed it.</div></div>
       <div class="blog-card" style="cursor:pointer" onclick="window.open('https://www.linkedin.com/posts/hirondl-co-ltd_portfoliogrowth-commercialtransformation-activity-7449745572279988225--gll','_blank')"><div class="blog-tag">Sales Execution · LinkedIn Post</div><div class="blog-title">Your Sales Reps Are Working Hard. Just Not in the Right Direction.</div><div class="blog-meta">By Uthman Mahmood · Hirondl</div><div class="blog-excerpt">We audited a PE-backed welding supply manufacturer and found reps spending most of their time on legacy accounts — not because those accounts had the highest value, but because the relationships were comfortable.</div><a onclick="event.stopPropagation();window.open('https://www.linkedin.com/posts/hirondl-co-ltd_portfoliogrowth-commercialtransformation-activity-7449745572279988225--gll','_blank')" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--smalt);text-decoration:none">Want to read more? →</a></div>
+      <div class="blog-card" style="cursor:pointer" onclick="window.open('https://www.linkedin.com/posts/hirondl-co-ltd_saasceo-ecosystemledgrowth-privateequity-activity-7450539631348977664-5eqX','_blank')"><div class="blog-tag">Ecosystem-Led Growth · LinkedIn Post</div><div class="blog-title">The CEO Checklist: Should We Invest in ELG?</div><div class="blog-meta">By Yabing Wu · Hirondl</div><div class="blog-excerpt">Five honest questions PE-backed SaaS CEOs should answer before committing to an ecosystem-led growth strategy — and the assumptions that usually trip them up.</div><a onclick="event.stopPropagation();window.open('https://www.linkedin.com/posts/hirondl-co-ltd_saasceo-ecosystemledgrowth-privateequity-activity-7450539631348977664-5eqX','_blank')" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--smalt);text-decoration:none">Read on LinkedIn →</a></div>
       <div class="blog-card" style="background:var(--smalt);cursor:pointer" onclick="window.open('https://www.linkedin.com/company/hirondl-co-ltd/','_blank')">
         <div style="height:100%;display:flex;flex-direction:column;justify-content:center">
           <div class="blog-tag" style="color:rgba(255,255,255,0.65)">Follow us on LinkedIn</div>
@@ -1349,7 +1450,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <section class="team-preview">
       <div class="tp-header">
         <div><div class="section-tag" style="color:var(--sky)">Our team</div><h2 class="section-h" style="color:#fff">OPERATORS, NOT ADVISORS</h2></div>
-        <span class="tp-link" onclick="showPage('team')">Meet the full team →</span>
+        <span class="tp-link" onclick="showPage('team')">View team profiles →</span>
       </div>
       <div class="team-grid">
         <div class="team-card"><div class="tc-avatar" style="background:var(--smalt)"><img src="Cecile.jpg" alt="Cécile George"></div><div class="tc-name">Cécile George</div><div class="tc-role">Founder · London</div><div class="tc-bio">20+ years delivering rapid revenue and margin growth. Former Operating Partner. Ex McKinsey, INSEAD.</div></div>
@@ -1535,7 +1636,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
   <section class="team-preview">
     <div class="tp-header">
       <div><div class="section-tag" style="color:var(--sky)">Our team</div><h2 class="section-h" style="color:#fff">OPERATORS, NOT ADVISORS</h2></div>
-      <span class="tp-link" onclick="showPage('team')">Meet the full team →</span>
+      <span class="tp-link" onclick="showPage('team')">View team profiles →</span>
     </div>
     <div class="team-grid">
       <div class="team-card"><div class="tc-avatar" style="background:var(--smalt)"><img src="Cecile.jpg" alt="Cécile George"></div><div class="tc-name">Cécile George</div><div class="tc-role">Founder · London</div><div class="tc-bio">20+ years delivering rapid revenue and margin growth. Former Operating Partner. Ex McKinsey, INSEAD.</div></div>
@@ -1662,7 +1763,7 @@ function initEuropeMap(){
     const hasCS=o.cs.length>0;
     const icon=L.divIcon({className:'',html:`<div style="width:14px;height:14px;border-radius:50%;background:${hasCS?'#8AC5FF':'rgba(255,255,255,0.5)'};border:2px solid #fff;box-shadow:0 0 0 4px ${hasCS?'rgba(138,197,255,0.25)':'rgba(255,255,255,0.1)'}"></div>`,iconSize:[14,14],iconAnchor:[7,7]});
     const m=L.marker([o.lat,o.lng],{icon}).addTo(_euroMap);
-    const _csLabels=['Pricing Transformation · Industrial','Agent Segmentation · Industrial Manufacturing','Pricing Transformation · Specialty Films','GTM Strategy · Specialty Materials'];
+    const _csLabels=['Pricing Transformation · Industrial','Agent Segmentation · Industrial Manufacturing','Pricing Transformation · Specialty Films','GTM Strategy · Specialty Materials','Sales Transformation · Homecare','ELG Transformation · B2B SaaS'];
     const csLinks=hasCS?o.cs.map(c=>`<a onclick="showPage('cases');setTimeout(()=>showCS(${c}),50)" style="display:inline-block;margin-top:6px;font-size:11px;color:#8AC5FF;cursor:pointer;font-weight:700">${_csLabels[c]} →</a>`).join('<br>'):'<span style="font-size:11px;color:rgba(255,255,255,0.45)">Case studies coming soon</span>';
     m.bindPopup(`<div style="font-family:Montserrat,Arial,sans-serif;padding:4px 2px;min-width:180px"><div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:3px">${o.city}</div><div style="font-size:10px;color:rgba(255,255,255,0.55);margin-bottom:8px">${o.role}</div>${csLinks}</div>`,{className:'hirondl-popup',maxWidth:240});
     _markers.push(m);
@@ -1932,6 +2033,55 @@ function initChart(i){
         scales:{
           x:{max:55,ticks:{callback:v=>v+'%'},grid:{color:'rgba(0,0,0,0.05)'}},
           y:{grid:{display:false}}
+        }
+      }
+    });
+  }
+
+  if(i===5){
+    new Chart(document.getElementById('chart-5a'),{
+      type:'bar',
+      data:{
+        labels:['Before ELG','After ELG'],
+        datasets:[{
+          label:'Average contract value ($K)',
+          data:[10,25],
+          backgroundColor:['rgba(173,173,173,0.45)','rgba(26,48,153,0.85)'],
+          borderColor:[grey,smalt],borderWidth:1
+        }]
+      },
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        plugins:{
+          legend:{display:false},
+          tooltip:{callbacks:{label:c=>' $'+c.parsed.y+'K ACV'}}
+        },
+        scales:{
+          y:{beginAtZero:true,max:30,ticks:{callback:v=>'$'+v+'K'},grid:{color:'rgba(0,0,0,0.05)'}},
+          x:{grid:{display:false}}
+        }
+      }
+    });
+    new Chart(document.getElementById('chart-5b'),{
+      type:'bar',
+      data:{
+        labels:['Baseline win rate','After ELG'],
+        datasets:[{
+          label:'Win rate on integration deals',
+          data:[35,50],
+          backgroundColor:['rgba(173,173,173,0.45)','rgba(138,197,255,0.85)'],
+          borderColor:[grey,sky],borderWidth:1
+        }]
+      },
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        plugins:{
+          legend:{display:false},
+          tooltip:{callbacks:{label:c=>' '+c.parsed.y+'% win rate'}}
+        },
+        scales:{
+          y:{beginAtZero:true,max:65,ticks:{callback:v=>v+'%'},grid:{color:'rgba(0,0,0,0.05)'}},
+          x:{grid:{display:false}}
         }
       }
     });
