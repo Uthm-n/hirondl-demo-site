@@ -2050,7 +2050,10 @@ function submitCSGate(){
     {name:'lastname',value:ln},
     {name:'email',value:em},
     {name:'company',value:co},
-    {name:'jobtitle',value:ti}
+    {name:'jobtitle',value:ti},
+    {name:'lifecyclestage',value:'lead'},
+    {name:'hs_lead_status',value:'NEW'},
+    {name:'hs_analytics_source',value:'DIRECT_TRAFFIC'}
   ];
   if(ms)fields.push({name:'message',value:ms});
   fetch('https://api.hsforms.com/submissions/v3/integration/submit/'+portal+'/'+form,{
