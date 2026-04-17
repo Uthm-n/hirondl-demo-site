@@ -854,7 +854,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
           <div class="cs-desc">Built a potential-based segmentation across 125+ agents in 50+ markets. Coached agents to target high-potential accounts, generating €7m in new sales within six months.</div>
         </div>
       </div>
-      <div class="cs-card" data-category="industry" onclick="showCS(2)" style="background-image:url('https://images.unsplash.com/photo-1565003010904-4a4d1f86f12e?auto=format&fit=crop&w=1200&q=80')">
+      <div class="cs-card" data-category="industry" onclick="showCS(2)" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80')">
         <div class="cs-cat-badge">Industry</div>
         <div class="cs-card-body">
           <div class="cs-city-tag">DACH Region</div>
@@ -1122,7 +1122,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     </div>
 
     <div id="cs-2" class="cs-detail">
-      <div class="cs-hero-block" style="background-image:url('https://images.unsplash.com/photo-1565003010904-4a4d1f86f12e?auto=format&fit=crop&w=1600&q=80')">
+      <div class="cs-hero-block" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80')">
         <div class="cs-back" onclick="backToCS()">← All case studies</div>
         <div class="cs-h-tag">DACH Region · Private Equity Portfolio · Industrial Manufacturing</div>
         <div class="cs-h-title">Pricing Transformation &amp; New Customer Growth — PE-Backed Specialty Films Manufacturer</div>
@@ -1436,6 +1436,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     </div>
     <div class="blog-grid">
       <div class="blog-card" onclick="showBlog(0)"><div class="blog-tag">Pricing · 3 min read</div><div class="blog-title">When the Margin Wasn't Where the Model Said It Was</div><div class="blog-meta">By Cécile George · Hirondl</div><div class="blog-excerpt">A Private Equity-backed welding manufacturer. Three years of transaction data. A structural pricing problem nobody had looked for. Here is what we found and how we fixed it.</div></div>
+      <div class="blog-card" onclick="showBlog(1)" style="cursor:pointer"><div class="blog-tag">AI &amp; Commercial Transformation · 5 min read</div><div class="blog-title">AI in the commercial function: what we have learned, and what usually goes wrong</div><div class="blog-meta">By Cécile George · Hirondl</div><div class="blog-excerpt">Every PE-backed business is asking which AI tools to use in the commercial function. It is the wrong question — and answering it first tends to produce the same outcome. Here is what we do instead.</div></div>
       <div class="blog-card" style="cursor:pointer" onclick="window.open('https://www.linkedin.com/posts/hirondl-co-ltd_portfoliogrowth-commercialtransformation-activity-7449745572279988225--gll','_blank')"><div class="blog-tag">Sales Execution · LinkedIn Post</div><div class="blog-title">Your Sales Reps Are Working Hard. Just Not in the Right Direction.</div><div class="blog-meta">By Uthman Mahmood · Hirondl</div><div class="blog-excerpt">We audited a PE-backed welding supply manufacturer and found reps spending most of their time on legacy accounts — not because those accounts had the highest value, but because the relationships were comfortable.</div><a onclick="event.stopPropagation();window.open('https://www.linkedin.com/posts/hirondl-co-ltd_portfoliogrowth-commercialtransformation-activity-7449745572279988225--gll','_blank')" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--smalt);text-decoration:none">Want to read more? →</a></div>
       <div class="blog-card" style="cursor:pointer" onclick="window.open('https://www.linkedin.com/posts/hirondl-co-ltd_saasceo-ecosystemledgrowth-privateequity-activity-7450539631348977664-5eqX','_blank')"><div class="blog-tag">Ecosystem-Led Growth · LinkedIn Post</div><div class="blog-title">The CEO Checklist: Should We Invest in ELG?</div><div class="blog-meta">By Yabing Wu · Hirondl</div><div class="blog-excerpt">Five honest questions PE-backed SaaS CEOs should answer before committing to an ecosystem-led growth strategy — and the assumptions that usually trip them up.</div><a onclick="event.stopPropagation();window.open('https://www.linkedin.com/posts/hirondl-co-ltd_saasceo-ecosystemledgrowth-privateequity-activity-7450539631348977664-5eqX','_blank')" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--smalt);text-decoration:none">Read on LinkedIn →</a></div>
       <div class="blog-card" style="background:var(--smalt);cursor:pointer" onclick="window.open('https://www.linkedin.com/company/hirondl-co-ltd/','_blank')">
@@ -1476,7 +1477,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     </footer>
   </div>
   <div id="blog-post-view" style="display:none">
-    <div class="blog-post active">
+    <div class="blog-post" id="bp-0">
       <div class="bp-back" onclick="backToBlog()">← All insights</div>
       <div class="bp-tag">Pricing · 3 min read</div>
       <div class="bp-title">When the margin wasn't where the model said it was</div>
@@ -1498,6 +1499,137 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         <button class="btn-primary" onclick="showPage('contact')" style="width:auto">Book a 30-minute call</button>
       </div>
     </div>
+
+    <div class="blog-post" id="bp-1" style="display:none">
+      <div class="bp-back" onclick="backToBlog()">← All insights</div>
+      <div class="bp-tag">AI &amp; Commercial Transformation · 5 min read</div>
+      <div class="bp-title">AI in the commercial function: what we have learned, and what usually goes wrong</div>
+      <div class="bp-meta">By Cécile George · Hirondl · April 2026</div>
+
+      <div class="bp-sec">The question most boards are asking</div>
+      <div class="bp-para">Every PE-backed business I speak to is asking some version of the same question: which AI tools should we be using in the commercial function? It is a reasonable impulse. The technology is moving fast, the pressure to modernise is real, and the fear of falling behind competitors who are deploying it is genuine. But it is the wrong starting point — and answering it first tends to produce a predictable outcome: a set of expensive subscriptions, low adoption, and a leadership team that has not moved any commercial KPI.</div>
+      <div class="bp-para">The better question is this: where in your commercial process does poor-quality information cause the most expensive decisions? Answer that first. Then AI has a precise job to do. Without that answer, you are introducing a powerful accelerant into a system you do not fully understand.</div>
+
+      <div style="background:rgba(26,48,153,0.07);border-left:4px solid var(--smalt);padding:18px 24px;margin:28px 0;border-radius:0 4px 4px 0">
+        <div style="font-size:13px;color:var(--text);font-weight:700;line-height:1.65">The businesses that get the most from AI in commercial functions are not the ones that deploy the most tools. They are the ones that are most precise about the problem they are solving before they introduce any technology.</div>
+      </div>
+
+      <div class="bp-sec">Where we always start</div>
+      <div class="bp-para">Before any AI tool enters a Hirondl engagement, we run a data diagnostic. Three questions: What commercial decisions is this business making every week? What information are those decisions based on? And how reliable is that information?</div>
+      <div class="bp-para">In most cases, the answer is uncomfortable. Transaction data is incomplete. CRM adoption is patchy. Pricing decisions are made by individual reps using instinct rather than data. Customer segmentation reflects history, not potential. AI introduced into that environment will not fix it. It will amplify it — and faster than a team of analysts would have.</div>
+
+      <div class="bp-sec">Five places AI has genuinely accelerated our work</div>
+
+      <div style="border-top:1px solid var(--border);margin-top:8px">
+        <div style="display:flex;align-items:flex-start;gap:20px;padding:24px 0;border-bottom:1px solid var(--border)">
+          <div style="font-size:36px;font-weight:300;color:var(--sky);letter-spacing:-0.03em;line-height:1;flex-shrink:0;width:52px">01</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:8px">Transaction pattern recognition at scale</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.85">In a pricing engagement with a PE-backed welding supply manufacturer, three years of transaction data contained a structural margin problem that had never been quantified. For the same product, sold to comparable customers, prices varied by up to thirty-five percent — driven entirely by autonomous rep discounting. AI-assisted transaction clustering identified those patterns in three days. Without it, the same analysis would have taken six to eight weeks of manual work. The output was a ranked list of recoverable margin by customer and product group, ready for rep coaching within the first month.</div>
+            <div style="margin-top:14px"><span onclick="showPage('cases');setTimeout(function(){showCS(0)},50)" style="cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;color:var(--smalt);letter-spacing:0.1em;text-transform:uppercase">→ Pricing Transformation case study</span></div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:20px;padding:24px 0;border-bottom:1px solid var(--border)">
+          <div style="font-size:36px;font-weight:300;color:var(--sky);letter-spacing:-0.03em;line-height:1;flex-shrink:0;width:52px">02</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:8px">Market potential scoring across 50+ markets</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.85">In a casting equipment engagement, we needed to score over 125 agents across more than fifty global markets by customer potential. Running that analysis manually would have introduced significant error and taken months. AI-assisted market potential scoring — combining trade data, firmographic data, and competitive proxies — produced a ranked map of where the highest-potential accounts were sitting, unvisited. Agents were then coached against their own opportunity data, not generic targets. The result was €7 million in additional sales within six months from redirected effort alone.</div>
+            <div style="margin-top:14px"><span onclick="showPage('cases');setTimeout(function(){showCS(1)},50)" style="cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;color:var(--smalt);letter-spacing:0.1em;text-transform:uppercase">→ Agent Segmentation case study</span></div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:20px;padding:24px 0;border-bottom:1px solid var(--border)">
+          <div style="font-size:36px;font-weight:300;color:var(--sky);letter-spacing:-0.03em;line-height:1;flex-shrink:0;width:52px">03</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:8px">Competitive intelligence synthesis across multiple markets</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.85">For a market entry engagement across fifty Asian markets, the traditional approach — desk research by country — would have required a three-month research phase. AI synthesis compressed it to three weeks: regulatory summaries, competitive intensity proxies, and distributor landscape pre-screening, all structured and ready for in-market validation. The strategic judgement remained human. The time to reach it was cut by two thirds. Our partners were spending their hours on decisions, not on data gathering.</div>
+            <div style="margin-top:14px"><span onclick="showPage('cases');setTimeout(function(){showCS(3)},50)" style="cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;color:var(--smalt);letter-spacing:0.1em;text-transform:uppercase">→ Asian GTM Strategy case study</span></div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:20px;padding:24px 0;border-bottom:1px solid var(--border)">
+          <div style="font-size:36px;font-weight:300;color:var(--sky);letter-spacing:-0.03em;line-height:1;flex-shrink:0;width:52px">04</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:8px">New customer prospecting at a scale the team could never build manually</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.85">In a specialty films pricing engagement, we identified not just recoverable margin but an addressable new customer opportunity of 46,000 tonnes that the business had no systematic way to pursue. AI-assisted prospecting — combining public trade data, firmographic matching, and industry codes — built a pipeline of over 400 qualified leads integrated directly into Salesforce. The commercial team left the engagement with a prospecting infrastructure they had never had, rather than a list they would have to maintain manually.</div>
+            <div style="margin-top:14px"><span onclick="showPage('cases');setTimeout(function(){showCS(2)},50)" style="cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;color:var(--smalt);letter-spacing:0.1em;text-transform:uppercase">→ Specialty Films case study</span></div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:20px;padding:24px 0;border-bottom:1px solid var(--border)">
+          <div style="font-size:36px;font-weight:300;color:var(--sky);letter-spacing:-0.03em;line-height:1;flex-shrink:0;width:52px">05</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:8px">Partner and ecosystem mapping at scale</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.85">In an ecosystem-led growth programme at a PE-backed talent assessment platform, we needed to classify over 300 ATS integration partners by market share, revenue potential, and strategic fit. A manual exercise would have taken months and produced an unstructured output that the commercial team could not act on. AI-assisted scoring produced a prioritised partner roadmap in four weeks — which became the foundation for the co-sell programme that generated approximately $1M in partner-influenced revenue without incremental headcount.</div>
+            <div style="margin-top:14px"><span onclick="showPage('cases');setTimeout(function(){showCS(5)},50)" style="cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;color:var(--smalt);letter-spacing:0.1em;text-transform:uppercase">→ ELG Transformation case study</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin:32px 0">
+        <div style="background:var(--surface);padding:28px 20px;text-align:center">
+          <div style="font-size:32px;font-weight:300;color:var(--smalt);letter-spacing:-0.03em;line-height:1;margin-bottom:10px">3 days</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.65">not 6–8 weeks — to identify structural discount patterns across 3 years of transaction data</div>
+        </div>
+        <div style="background:var(--surface);padding:28px 20px;text-align:center">
+          <div style="font-size:32px;font-weight:300;color:var(--smalt);letter-spacing:-0.03em;line-height:1;margin-bottom:10px">3 weeks</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.65">not 3 months — to assess 50 Asian markets for entry potential, competitive intensity, and barriers</div>
+        </div>
+        <div style="background:var(--surface);padding:28px 20px;text-align:center">
+          <div style="font-size:32px;font-weight:300;color:var(--smalt);letter-spacing:-0.03em;line-height:1;margin-bottom:10px">400+</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.65">qualified prospecting leads built in one engagement using AI-assisted firmographic matching</div>
+        </div>
+      </div>
+
+      <div class="bp-sec">What bad implementation looks like</div>
+      <div class="bp-quote"><p>AI introduced into a broken commercial process does not fix it. It amplifies it — and faster than a team of analysts would have.</p></div>
+      <div class="bp-para">We have seen conversational intelligence platforms deployed before anyone had defined what a good sales call looks like. Prospecting AI tools activated before the business knew which customers were actually profitable. Outbound copy generated at scale before a validated message existed.</div>
+      <div class="bp-para">In each case, the result was the same. Volume went up. Quality went down. The commercial function became harder to manage, not easier — because AI had removed friction from an activity that was already pointed in the wrong direction. The failure mode is always predictable: treating AI as a solution to a problem you have not yet defined.</div>
+      <div class="bp-para">There is also a softer failure mode, harder to see in the moment. When a commercial team adopts AI tools as a productivity layer before the underlying commercial process is sound, they often lose the discipline of doing the diagnostic work manually. They skip the step of understanding the data because the AI generates an output quickly. The speed creates confidence. The confidence is often misplaced.</div>
+
+      <div class="bp-sec">The PE timing constraint changes everything</div>
+      <div class="bp-para">Most AI implementation advice assumes you have eighteen months to run pilots, iterate, and find what works. PE-backed businesses rarely do. When you have a thirty-six-month hold period and EBITDA improvement is expected in year one, the sequencing of AI deployment is not a technology question — it is a programme management question.</div>
+      <div class="bp-para">In our experience, AI delivers the highest return in the diagnostic and data structuring phase — the first sixty days of an engagement. This is where slow analysis is most expensive, where speed has the most direct commercial consequence, and where AI has the least risk of amplifying a broken process. Because at that stage, the process is being rebuilt from the data up.</div>
+      <div class="bp-para">Later in an engagement, AI supports sustainment: coaching summaries that update automatically before manager sessions, pipeline dashboards that flag outliers in real time, prospecting engines that run continuously rather than in quarterly bursts. But the strategic diagnosis has to come first. And the strategic diagnosis has to be human.</div>
+
+      <div style="background:var(--navy);border-radius:4px;padding:28px 32px;margin:32px 0">
+        <div style="font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--sky);margin-bottom:20px">How we sequence it</div>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div style="display:flex;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08)">
+            <div style="font-size:11px;font-weight:700;color:var(--sky);flex-shrink:0;width:20px">01</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.85);line-height:1.7"><strong style="color:#fff;font-weight:700">Diagnose</strong> — identify where poor-quality information causes the most expensive commercial decisions</div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08)">
+            <div style="font-size:11px;font-weight:700;color:var(--sky);flex-shrink:0;width:20px">02</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.85);line-height:1.7"><strong style="color:#fff;font-weight:700">Build the foundation</strong> — clean CRM data, consistent lifecycle definitions, baseline commercial metrics</div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08)">
+            <div style="font-size:11px;font-weight:700;color:var(--sky);flex-shrink:0;width:20px">03</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.85);line-height:1.7"><strong style="color:#fff;font-weight:700">Deploy precisely</strong> — apply AI specifically to the identified gap, not as a general productivity layer</div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08)">
+            <div style="font-size:11px;font-weight:700;color:var(--sky);flex-shrink:0;width:20px">04</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.85);line-height:1.7"><strong style="color:#fff;font-weight:700">Embed into workflow</strong> — build AI outputs directly into the daily process so adoption is automatic, not effortful</div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px;padding:14px 0">
+            <div style="font-size:11px;font-weight:700;color:var(--sky);flex-shrink:0;width:20px">05</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.85);line-height:1.7"><strong style="color:#fff;font-weight:700">Validate before expanding</strong> — confirm commercial KPIs are moving before broadening the AI scope</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bp-sec">The short version</div>
+      <div class="bp-para">AI is genuinely useful in commercial transformation. We use it in every engagement we run. The pattern it follows in good implementations is consistent: it compresses the time between raw data and actionable insight, it creates tools the commercial team continues to use after we leave, and it lets our partners spend their hours on judgement rather than on information gathering.</div>
+      <div class="bp-para">The pattern in poor implementations is equally consistent: a tool was introduced before the problem was defined. The question you need to answer first is not which AI tools to buy. It is where in your commercial process you are flying blind — and what it costs you every quarter that you are.</div>
+
+      <div style="margin-top:36px;padding:22px 26px;background:var(--surface);border-radius:6px;border:1px solid var(--border)">
+        <div style="font-size:13px;color:var(--text);font-weight:700;margin-bottom:4px">Working through an AI deployment challenge in a portfolio company?</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:14px;font-weight:400">contact@hirondl.com</div>
+        <button class="btn-primary" onclick="showPage('contact')" style="width:auto">Book a 30-minute call</button>
+      </div>
+    </div>
+
     <footer>
       <div>
         <div class="footer-logo">
@@ -1733,13 +1865,17 @@ function goToSection(pageId,sectionId){
 }
 /* Browser back/forward support */
 window.addEventListener('popstate',function(e){
-  showPage((e.state&&e.state.page)||'home',true);
+  var state=e.state||{};
+  if(state.cs!==undefined){showCS(state.cs,true);return;}
+  showPage(state.page||'home',true);
 });
 /* Record initial state and handle direct hash links */
 (function(){
   var valid=['home','wwd','cases','team','insights','pe','contact'];
   var h=location.hash.replace('#','');
-  if(valid.indexOf(h)>-1){showPage(h,true);}
+  var caseMatch=h.match(/^case\/(\d+)$/);
+  if(caseMatch){showPage('cases',true);showCS(parseInt(caseMatch[1]),true);}
+  else if(valid.indexOf(h)>-1){showPage(h,true);}
   else{history.replaceState({page:'home'},'','#home');}
   if((h===''||h==='home'||valid.indexOf(h)===-1)){setTimeout(initEuropeMap,300);}
 })();
@@ -1779,13 +1915,15 @@ function focusMapMarker(i){
   _euroMap.flyTo([o.lat,o.lng],7,{duration:1.2});
   _markers[i].openPopup();
 }
-function showCS(i){
+function showCS(i,_noPush){
+  showPage('cases',true);
   document.getElementById('cs-index-view').style.display='none';
   document.getElementById('cs-detail-view').style.display='block';
   document.querySelectorAll('.cs-detail').forEach(d=>d.classList.remove('active'));
   document.getElementById('cs-'+i).classList.add('active');
   window.scrollTo(0,0);
   initChart(i);
+  if(!_noPush)history.pushState({page:'cases',cs:i},'','#case/'+i);
 }
 function backToCS(){
   showPage('cases');
@@ -1810,6 +1948,9 @@ function filterCS(cat){
 function showBlog(i){
   document.getElementById('blog-index-view').style.display='none';
   document.getElementById('blog-post-view').style.display='block';
+  document.querySelectorAll('.blog-post').forEach(function(p){p.style.display='none'});
+  var post=document.getElementById('bp-'+i);
+  if(post)post.style.display='block';
   window.scrollTo(0,0);
 }
 function backToBlog(){
