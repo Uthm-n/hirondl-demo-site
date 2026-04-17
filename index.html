@@ -744,10 +744,10 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <div class="section-tag" style="margin-bottom:16px;color:var(--smalt)">Sector strengths</div>
     <div style="font-size:clamp(20px,2.5vw,26px);font-weight:800;text-transform:uppercase;color:var(--text);letter-spacing:-0.02em;line-height:1.1;margin-bottom:10px">B2B agnostic.<br>Sector-proven.</div>
     <p style="font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:32px;font-weight:400">We operate across industries. Our deepest delivery track record sits in the sectors below.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:10px">
-      <span onclick="showPage('cases');setTimeout(function(){filterCS('industry');document.querySelectorAll('.cs-filter-btn').forEach(function(b){b.classList.remove('active');b.style.borderColor='rgba(255,255,255,0.25)';b.style.background='rgba(255,255,255,0.06)';if(b.textContent.trim()==='Industry'){b.classList.add('active');b.style.borderColor='var(--sky)';b.style.background='rgba(138,197,255,0.12)'}})},50)" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--smalt);border:1px solid var(--border);padding:8px 20px;border-radius:2px;background:#fff;cursor:pointer;transition:border-color 0.15s,background 0.15s,color 0.15s" onmouseover="this.style.borderColor='var(--smalt)';this.style.background='var(--smalt)';this.style.color='#fff'" onmouseout="this.style.borderColor='var(--border)';this.style.background='#fff';this.style.color='var(--smalt)'">Industry</span>
-      <span onclick="showPage('cases');setTimeout(function(){filterCS('b2b');document.querySelectorAll('.cs-filter-btn').forEach(function(b){b.classList.remove('active');b.style.borderColor='rgba(255,255,255,0.25)';b.style.background='rgba(255,255,255,0.06)';if(b.textContent.trim()==='B2B Services'){b.classList.add('active');b.style.borderColor='var(--sky)';b.style.background='rgba(138,197,255,0.12)'}})},50)" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--smalt);border:1px solid var(--border);padding:8px 20px;border-radius:2px;background:#fff;cursor:pointer;transition:border-color 0.15s,background 0.15s,color 0.15s" onmouseover="this.style.borderColor='var(--smalt)';this.style.background='var(--smalt)';this.style.color='#fff'" onmouseout="this.style.borderColor='var(--border)';this.style.background='#fff';this.style.color='var(--smalt)'">B2B Services</span>
-      <span onclick="showPage('cases');setTimeout(function(){filterCS('saas');document.querySelectorAll('.cs-filter-btn').forEach(function(b){b.classList.remove('active');b.style.borderColor='rgba(255,255,255,0.25)';b.style.background='rgba(255,255,255,0.06)';if(b.textContent.trim()==='SaaS'){b.classList.add('active');b.style.borderColor='var(--sky)';b.style.background='rgba(138,197,255,0.12)'}})},50)" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--smalt);border:1px solid var(--border);padding:8px 20px;border-radius:2px;background:#fff;cursor:pointer;transition:border-color 0.15s,background 0.15s,color 0.15s" onmouseover="this.style.borderColor='var(--smalt)';this.style.background='var(--smalt)';this.style.color='#fff'" onmouseout="this.style.borderColor='var(--border)';this.style.background='#fff';this.style.color='var(--smalt)'">SaaS</span>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <span onclick="showPage('cases');setTimeout(function(){applyCSFilter('industry')},50)" style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--smalt);border:1px solid var(--border);padding:12px 28px;border-radius:2px;background:#fff;cursor:pointer;transition:border-color 0.15s,background 0.15s,color 0.15s" onmouseover="this.style.borderColor='var(--smalt)';this.style.background='var(--smalt)';this.style.color='#fff'" onmouseout="this.style.borderColor='var(--border)';this.style.background='#fff';this.style.color='var(--smalt)'">Industry</span>
+      <span onclick="showPage('cases');setTimeout(function(){applyCSFilter('b2b')},50)" style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--smalt);border:1px solid var(--border);padding:12px 28px;border-radius:2px;background:#fff;cursor:pointer;transition:border-color 0.15s,background 0.15s,color 0.15s" onmouseover="this.style.borderColor='var(--smalt)';this.style.background='var(--smalt)';this.style.color='#fff'" onmouseout="this.style.borderColor='var(--border)';this.style.background='#fff';this.style.color='var(--smalt)'">B2B Services</span>
+      <span onclick="showPage('cases');setTimeout(function(){applyCSFilter('saas')},50)" style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--smalt);border:1px solid var(--border);padding:12px 28px;border-radius:2px;background:#fff;cursor:pointer;transition:border-color 0.15s,background 0.15s,color 0.15s" onmouseover="this.style.borderColor='var(--smalt)';this.style.background='var(--smalt)';this.style.color='#fff'" onmouseout="this.style.borderColor='var(--border)';this.style.background='#fff';this.style.color='var(--smalt)'">SaaS</span>
     </div>
   </div>
 
@@ -810,7 +810,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
 
   <!-- BOTTOM CTA -->
   <div class="home-cta">
-    <div class="hcta-text"><h2>See these capabilities<br>in practice</h2><p>Our case studies show exactly how each service line has been applied inside Private Equity-backed and industrial businesses across Europe.</p></div>
+    <div class="hcta-text"><h2>See these capabilities in practice</h2><p style="max-width:none;white-space:nowrap">Our case studies show exactly how each service line has been applied inside Private Equity-backed and industrial businesses across Europe.</p></div>
     <button class="btn-primary" onclick="showPage('cases')">View case studies</button>
   </div>
 
@@ -1686,7 +1686,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
   <div class="page-hero" style="padding-bottom:80px">
     <div class="page-hero-tag">Private Equity</div>
     <div class="page-hero-h">Built for the hold period.<br>Not the pitch deck.</div>
-    <p class="page-hero-sub" style="max-width:600px">Hirondl embeds into your portfolio companies and drives commercial value from entry through to exit, measurable in EBITDA, not slide count.</p>
+    <p class="page-hero-sub" style="max-width:none;white-space:nowrap">Hirondl embeds into your portfolio companies and drives commercial value from entry through to exit, measurable in EBITDA, not slide count.</p>
     <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap">
       <button class="btn-primary" onclick="showPage('contact')">Book a 30-minute call</button>
       <button class="btn-secondary" onclick="showPage('cases')">See case studies →</button>
@@ -1697,7 +1697,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
   <section class="section" style="background:#fff">
     <div class="section-tag">Why Private Equity funds choose Hirondl</div>
     <div class="section-h">We work the way<br>Private Equity works</div>
-    <p class="section-sub">Most consultants hand over a report. We stay in the business, manage the programme, and leave only once the numbers move.</p>
+    <p class="section-sub" style="max-width:none;white-space:nowrap">Most consultants hand over a report. We stay in the business, manage the programme, and leave only once the numbers move.</p>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)">
       <div style="background:#fff;padding:32px">
         <div style="font-size:28px;font-weight:300;color:var(--sky);margin-bottom:12px;letter-spacing:-0.02em">01</div>
@@ -1968,6 +1968,18 @@ function showCS(i,_noPush){
 }
 function backToCS(){
   showPage('cases');
+}
+function applyCSFilter(cat){
+  document.querySelectorAll('.cs-filter-btn').forEach(function(btn){
+    var t=btn.textContent.trim();
+    var active=(cat==='all'&&t==='All')||(cat==='industry'&&t==='Industry')||(cat==='b2b'&&t==='B2B Services')||(cat==='saas'&&t==='SaaS');
+    btn.classList.toggle('active',active);
+    btn.style.borderColor=active?'var(--sky)':'rgba(255,255,255,0.25)';
+    btn.style.background=active?'rgba(138,197,255,0.12)':'rgba(255,255,255,0.06)';
+  });
+  document.querySelectorAll('.cs-card').forEach(function(card){
+    card.style.display=(cat==='all'||card.getAttribute('data-category')===cat)?'flex':'none';
+  });
 }
 function filterCS(cat){
   document.querySelectorAll('.cs-filter-btn').forEach(function(btn){
