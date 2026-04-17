@@ -2041,8 +2041,12 @@ function submitCSGate(){
     err.style.display='block';return;
   }
   err.style.display='none';
-  var btn=document.querySelector('.cs-gate-btn');
-  btn.textContent='Opening…';btn.disabled=true;
+  /* Unlock immediately — don't wait for API */
+  localStorage.setItem('hirondl_unlocked','true');
+  closeGateModal();
+  unlockCS(_gateCS);
+  if(typeof gtag!=='undefined')gtag('event','gate_submit',{cs_index:_gateCS});
+  /* Fire HubSpot in the background */
   var portal='49157678';
   var form='08ce0a4c-7b4e-4768-8e93-d58aba758b76';
   var fields=[
@@ -2052,22 +2056,14 @@ function submitCSGate(){
     {name:'company',value:co},
     {name:'jobtitle',value:ti},
     {name:'lifecyclestage',value:'lead'},
-    {name:'hs_lead_status',value:'NEW'},
-    {name:'hs_analytics_source',value:'DIRECT_TRAFFIC'}
+    {name:'hs_lead_status',value:'NEW'}
   ];
   if(ms)fields.push({name:'message',value:ms});
   fetch('https://api.hsforms.com/submissions/v3/integration/submit/'+portal+'/'+form,{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({fields:fields,context:{pageUri:location.href,pageName:document.title}})
-  }).then(function(){done();}).catch(function(){done();});
-  function done(){
-    localStorage.setItem('hirondl_unlocked','true');
-    closeGateModal();
-    unlockCS(_gateCS);
-    btn.textContent='Read the full case study →';btn.disabled=false;
-    if(typeof gtag!=='undefined')gtag('event','gate_submit',{cs_index:_gateCS});
-  }
+  }).catch(function(){});
 }
 </script>
 
