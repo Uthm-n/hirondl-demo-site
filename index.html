@@ -23,6 +23,16 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Hirondl & Co — Commercial Transformation Partners">
 <meta name="twitter:description" content="We stay until impact. Not until the deck is done.">
+
+<!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-XXXXXXXXXX',{send_page_view:false});
+</script>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
@@ -409,7 +419,28 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
   .logos-strip{height:48px}
   footer{padding:24px}
   .map-inner{grid-template-columns:1fr}
+  .cs-gate-row{grid-template-columns:1fr}
+  .cs-gate-input.full{grid-column:span 1}
 }
+/* ── CONTENT GATE ── */
+.cs-gate-overlay{position:fixed;inset:0;background:rgba(16,21,53,0.75);backdrop-filter:blur(4px);z-index:9000;display:none;align-items:center;justify-content:center;padding:16px}
+.cs-gate-overlay.open{display:flex}
+.cs-gate-modal{background:#fff;border-radius:6px;padding:40px;max-width:480px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.3)}
+.cs-gate-modal-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--smalt);margin-bottom:12px}
+.cs-gate-modal h3{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3}
+.cs-gate-modal p{font-size:14px;color:#555;margin-bottom:24px;line-height:1.6}
+.cs-gate-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.cs-gate-input{width:100%;border:1.5px solid #ddd;border-radius:4px;padding:10px 12px;font-family:Montserrat,Arial,sans-serif;font-size:13px;outline:none;transition:border-color .2s}
+.cs-gate-input:focus{border-color:var(--smalt)}
+.cs-gate-input.full{grid-column:span 2}
+.cs-gate-btn{width:100%;background:var(--smalt);color:#fff;border:none;border-radius:4px;padding:13px;font-family:Montserrat,Arial,sans-serif;font-size:14px;font-weight:700;cursor:pointer;margin-top:8px;transition:background .2s}
+.cs-gate-btn:hover{background:var(--navy)}
+.cs-gate-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:22px;color:#999;cursor:pointer;line-height:1}
+.cs-gate-privacy{font-size:11px;color:#aaa;text-align:center;margin-top:12px}
+.cs-gate-trigger{background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.96) 35%,#fff 100%);padding:56px 24px 36px;text-align:center;margin-top:-80px;position:relative;z-index:2}
+.cs-gate-trigger h4{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.cs-gate-trigger p{font-size:14px;color:#666;margin-bottom:22px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.6}
+.cs-gate-error{color:#c0392b;font-size:12px;margin-top:6px;display:none}
 </style>
 </head>
 <body>
@@ -1019,6 +1050,12 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         <div class="cs-col"><div class="cs-col-head">Approach</div><div class="cs-col-body">Built rep-level price opportunity capture sheets. Set rep-specific improvement targets. Wave-based rollout with individual coaching. Power BI impact tracking dashboard. Revised distribution price book.</div></div>
         <div class="cs-col"><div class="cs-col-head">Impact</div><div class="cs-col-body">2 to 3 percentage point gross margin improvement sustained after engagement close. Sales teams began using the tool voluntarily in client meetings. Resistant markets became the strongest advocates.</div></div>
       </div>
+      <div id="cs-gate-trigger-0" class="cs-gate-trigger">
+        <h4>Read the complete case study</h4>
+        <p>Full methodology, results visualisation, Power BI dashboard breakdown, and implementation learnings from all four deployment waves.</p>
+        <button class="btn-primary" onclick="openGateModal(0)">Access full case study →</button>
+      </div>
+      <div id="cs-locked-0" style="display:none">
       <div class="cs-chart-section">
         <div class="cs-chart-label">Results visualised</div>
         <div class="cs-chart-title">Gross margin recovery across four engagement waves</div>
@@ -1046,6 +1083,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
         </div>
       </div>
       <div class="cs-cta-block"><div><h3>Facing a pricing challenge in a portfolio company?</h3><p>We have delivered pricing transformations across manufacturing, distribution, and B2B services. References available on request.</p></div><button class="btn-primary" onclick="showPage('contact')">Get in touch</button></div>
+      </div><!-- /cs-locked-0 -->
       <footer>
         <div>
           <div class="footer-logo">
@@ -1855,6 +1893,7 @@ function showPage(id,_noPush){
   if(id==='insights'){document.getElementById('blog-index-view').style.display='block';document.getElementById('blog-post-view').style.display='none';}
   if(id==='home'){setTimeout(initEuropeMap,120);}
   if(!_noPush)history.pushState({page:id},'','#'+id);
+  if(typeof gtag!=='undefined')gtag('event','page_view',{page_title:id,page_location:location.href});
 }
 function goToSection(pageId,sectionId){
   showPage(pageId);
@@ -1923,7 +1962,9 @@ function showCS(i,_noPush){
   document.getElementById('cs-'+i).classList.add('active');
   window.scrollTo(0,0);
   initChart(i);
+  if(checkCSUnlock())unlockCS(i);
   if(!_noPush)history.pushState({page:'cases',cs:i},'','#case/'+i);
+  if(typeof gtag!=='undefined')gtag('event','case_study_view',{cs_index:i});
 }
 function backToCS(){
   showPage('cases');
@@ -1952,6 +1993,7 @@ function showBlog(i){
   var post=document.getElementById('bp-'+i);
   if(post)post.style.display='block';
   window.scrollTo(0,0);
+  if(typeof gtag!=='undefined')gtag('event','blog_view',{blog_index:i});
 }
 function backToBlog(){
   document.getElementById('blog-index-view').style.display='block';
@@ -1962,6 +2004,64 @@ function submitForm(){
   document.getElementById('form-confirm').style.display='block';
   document.querySelector('.form-submit').textContent='Sent';
   document.querySelector('.form-submit').disabled=true;
+}
+
+/* ══ CONTENT GATE ══
+   HubSpot credentials — replace placeholders before going live:
+   PORTAL_ID  → Settings › Account Defaults (7–8 digit number)
+   FORM_GUID  → Marketing › Lead Capture › Forms → your form → Embed tab
+*/
+var _gateCS=0;
+function checkCSUnlock(){return localStorage.getItem('hirondl_unlocked')==='true';}
+function unlockCS(i){
+  var t=document.getElementById('cs-gate-trigger-'+i);
+  var l=document.getElementById('cs-locked-'+i);
+  if(t)t.style.display='none';
+  if(l)l.style.display='block';
+}
+function openGateModal(i){
+  _gateCS=i;
+  document.getElementById('cs-gate-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  if(typeof gtag!=='undefined')gtag('event','gate_view',{cs_index:i});
+}
+function closeGateModal(){
+  document.getElementById('cs-gate-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function submitCSGate(){
+  var fn=document.getElementById('cg-fname').value.trim();
+  var ln=document.getElementById('cg-lname').value.trim();
+  var em=document.getElementById('cg-email').value.trim();
+  var co=document.getElementById('cg-company').value.trim();
+  var ti=document.getElementById('cg-title').value.trim();
+  var err=document.getElementById('cg-error');
+  if(!fn||!ln||!em||!co||!ti||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){
+    err.style.display='block';return;
+  }
+  err.style.display='none';
+  var btn=document.querySelector('.cs-gate-btn');
+  btn.textContent='Opening…';btn.disabled=true;
+  var portal='PORTAL_ID';
+  var form='FORM_GUID';
+  fetch('https://api.hsforms.com/submissions/v3/integration/submit/'+portal+'/'+form,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({fields:[
+      {name:'firstname',value:fn},
+      {name:'lastname',value:ln},
+      {name:'email',value:em},
+      {name:'company',value:co},
+      {name:'jobtitle',value:ti}
+    ],context:{pageUri:location.href,pageName:document.title}})
+  }).then(function(){done();}).catch(function(){done();});
+  function done(){
+    localStorage.setItem('hirondl_unlocked','true');
+    closeGateModal();
+    unlockCS(_gateCS);
+    btn.textContent='Read the full case study →';btn.disabled=false;
+    if(typeof gtag!=='undefined')gtag('event','gate_submit',{cs_index:_gateCS});
+  }
 }
 </script>
 
@@ -2230,5 +2330,25 @@ function initChart(i){
 
 }
 </script>
+
+<!-- CONTENT GATE MODAL (shared across all case studies) -->
+<div class="cs-gate-overlay" id="cs-gate-overlay" onclick="if(event.target===this)closeGateModal()">
+  <div class="cs-gate-modal">
+    <button class="cs-gate-close" onclick="closeGateModal()">&#215;</button>
+    <div class="cs-gate-modal-tag">Full Case Study</div>
+    <h3>Access the complete analysis</h3>
+    <p>Leave your details below to read the full methodology, results visualisation, and commercial tooling built on this engagement.</p>
+    <div class="cs-gate-row">
+      <input class="cs-gate-input" id="cg-fname" placeholder="First name" autocomplete="given-name">
+      <input class="cs-gate-input" id="cg-lname" placeholder="Last name" autocomplete="family-name">
+      <input class="cs-gate-input full" id="cg-email" type="email" placeholder="Work email" autocomplete="email">
+      <input class="cs-gate-input full" id="cg-company" placeholder="Company" autocomplete="organization">
+      <input class="cs-gate-input full" id="cg-title" placeholder="Job title" autocomplete="organization-title">
+    </div>
+    <div id="cg-error" class="cs-gate-error">Please complete all fields with a valid work email.</div>
+    <button class="cs-gate-btn" onclick="submitCSGate()">Read the full case study &#8594;</button>
+    <div class="cs-gate-privacy">No marketing emails. Your details help us understand who we are working with.</div>
+  </div>
+</div>
 </body>
 </html>
