@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Case Study Preview — Luca Pelamatti · Hirondl</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#101535;
+  --smalt:#1A3099;
+  --sky:#8AC5FF;
+  --text:#101535;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --bg:#f9fafb;
+}
+body{font-family:'Montserrat','Arial',sans-serif;background:var(--bg);color:var(--text)}
+
+/* ── PREVIEW BANNER ── */
+.preview-banner{background:var(--smalt);color:#fff;text-align:center;padding:10px 24px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+
+/* ── CS HERO ── */
+.cs-hero-block{min-height:420px;background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:flex-end;padding:48px;position:relative}
+.cs-hero-block::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(16,21,53,0.92) 0%,rgba(16,21,53,0.55) 60%,rgba(16,21,53,0.2) 100%)}
+.cs-hero-block>*{position:relative;z-index:1}
+.cs-back{font-size:11px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;cursor:pointer}
+.cs-h-tag{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sky);margin-bottom:10px}
+.cs-h-title{font-size:clamp(20px,3vw,32px);font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:-0.02em;line-height:1.1;margin-bottom:24px;max-width:780px}
+.cs-stat-row{display:flex;gap:24px;flex-wrap:wrap}
+.cs-stat-box{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:14px 20px;border-radius:2px;min-width:130px}
+.cs-stat-box .n{font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.cs-stat-box .l{font-size:10px;font-weight:600;color:rgba(255,255,255,0.65);margin-top:3px;line-height:1.4;text-transform:uppercase;letter-spacing:.05em}
+
+/* ── CS COLS ── */
+.cs-cols{display:grid;grid-template-columns:repeat(3,1fr);background:#fff}
+.cs-col{padding:36px 32px;border-right:1px solid var(--border)}
+.cs-col:last-child{border-right:none}
+.cs-col-head{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--smalt);margin-bottom:12px}
+.cs-col-body{font-size:13px;color:var(--muted);line-height:1.8}
+
+/* ── CS CHART ── */
+.cs-chart-section{background:var(--bg);padding:48px}
+.cs-chart-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--smalt);margin-bottom:8px}
+.cs-chart-title{font-size:20px;font-weight:800;color:var(--text);text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:8px}
+.cs-chart-sub{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:28px;max-width:640px}
+.cs-chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.cs-chart-half{height:200px;position:relative}
+.cs-chart-half-label{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:10px;letter-spacing:.05em;text-transform:uppercase}
+.cs-chart-wrap{height:240px;position:relative}
+
+/* ── CS NARRATIVE ── */
+.cs-narrative{background:#fff;padding:48px;border-top:1px solid var(--border)}
+.cs-sec-title{font-size:16px;font-weight:800;text-transform:uppercase;color:var(--text);letter-spacing:-0.01em;margin-bottom:20px}
+.cs-para{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:20px}
+.cs-pullquote{border-left:3px solid var(--smalt);padding:16px 24px;margin:28px 0;background:rgba(26,48,153,0.04)}
+.cs-pullquote p{font-size:15px;font-weight:600;color:var(--navy);line-height:1.6;font-style:italic}
+
+/* ── CS EXTRAS ── */
+.cs-extras{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.cs-extra-card{background:#fff;padding:36px 32px}
+.cs-extra-head{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--smalt);margin-bottom:8px}
+.cs-extra-title{font-size:15px;font-weight:800;text-transform:uppercase;color:var(--text);letter-spacing:-0.01em;margin-bottom:16px}
+.cs-extra-body ul{list-style:none;padding:0}
+.cs-extra-body li{font-size:13px;color:var(--muted);line-height:1.75;padding:6px 0;border-bottom:1px solid var(--border);padding-left:16px;position:relative}
+.cs-extra-body li::before{content:'—';position:absolute;left:0;color:var(--sky);font-weight:700}
+.cs-extra-body li:last-child{border-bottom:none}
+.cs-extra-ai{background:var(--navy)}
+.cs-extra-ai .cs-extra-head{color:var(--sky)}
+.cs-extra-ai .cs-extra-title{color:#fff}
+.cs-extra-ai .cs-extra-body li{color:rgba(255,255,255,0.75);border-color:rgba(255,255,255,0.1)}
+.cs-extra-ai .cs-extra-body li::before{color:var(--sky)}
+
+/* ── CTA ── */
+.cs-cta-block{background:var(--navy);padding:48px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.cs-cta-block h3{font-size:20px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:8px}
+.cs-cta-block p{font-size:13px;color:rgba(255,255,255,0.65);max-width:560px;line-height:1.75}
+.btn-primary{background:var(--sky);color:var(--navy);border:none;padding:13px 28px;font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:700;cursor:pointer;letter-spacing:.04em;white-space:nowrap;border-radius:2px}
+
+/* ── BADGE ── */
+.operator-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(138,197,255,0.4);padding:6px 14px;border-radius:2px;font-size:10px;font-weight:700;color:var(--sky);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+</style>
+</head>
+<body>
+
+<div class="preview-banner">⚠ Draft preview — for Luca's review only. Not live on site.</div>
+
+<!-- HERO -->
+<div class="cs-hero-block" style="background-image:url('https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=1600&q=80')">
+  <div class="cs-back">← All case studies</div>
+  <div class="operator-badge">Operator Track Record</div>
+  <div class="cs-h-tag">Southern Europe · Consumer Healthcare · Commercial Transformation</div>
+  <div class="cs-h-title">Gross-to-Net Optimisation — Consumer Healthcare Business</div>
+  <div class="cs-stat-row">
+    <div class="cs-stat-box"><div class="n">&gt;50%</div><div class="l">Revenue absorbed by trade investments pre-programme</div></div>
+    <div class="cs-stat-box"><div class="n">5–7pp</div><div class="l">Gross margin improvement delivered</div></div>
+    <div class="cs-stat-box"><div class="n">3</div><div class="l">Channel types restructured (pharmacy, wholesale, e-commerce)</div></div>
+    <div class="cs-stat-box"><div class="n">EU-wide</div><div class="l">Scalable model built for future rollout</div></div>
+  </div>
+</div>
+
+<!-- SITUATION / APPROACH / IMPACT -->
+<div class="cs-cols">
+  <div class="cs-col">
+    <div class="cs-col-head">Situation</div>
+    <div class="cs-col-body">A consumer healthcare business was facing declining profitability despite sustained top-line growth. The organisation lacked full transparency on its Gross-to-Net structure, with over half of gross revenues absorbed by discounts, bonuses, and trade investments before net revenue was recognised. Commercial conditions had grown highly complex and inconsistent across channels, brands, and customers, with incentives primarily tied to sell-in volumes rather than sell-out performance.</div>
+  </div>
+  <div class="cs-col">
+    <div class="cs-col-head">Approach</div>
+    <div class="cs-col-body">We delivered an end-to-end GtN transformation covering transparency creation, commercial model redesign, and implementation support. This included full price waterfall analysis across channels and customers, benchmarking against best-practice models, and identifying structural inefficiencies in discounting and bonus design. We redesigned the commercial model to shift from sell-in to sell-out performance metrics, and built a partnership framework linking trade investment to measurable outcomes for key customers.</div>
+  </div>
+  <div class="cs-col">
+    <div class="cs-col-head">Impact</div>
+    <div class="cs-col-body">5–7pp gross margin improvement through GtN optimisation and commercial model redesign. Reduction in misaligned trade spend across all major channels. Improved alignment between commercial investment and financial outcomes. A scalable governance model and commercial policy framework built to support future rollout across European markets.</div>
+  </div>
+</div>
+
+<!-- CHART SECTION -->
+<div class="cs-chart-section">
+  <div class="cs-chart-label">Results visualised</div>
+  <div class="cs-chart-title">Gross-to-Net structure before and after</div>
+  <div class="cs-chart-sub">Left: net revenue as a share of gross revenue, before and after the programme. Right: breakdown of trade investment components addressed through the redesign.</div>
+  <div class="cs-chart-grid">
+    <div>
+      <div class="cs-chart-half-label">Net revenue retention (% of gross)</div>
+      <div class="cs-chart-half"><canvas id="chart-6a"></canvas></div>
+    </div>
+    <div>
+      <div class="cs-chart-half-label">Trade investment components reduced (indexed)</div>
+      <div class="cs-chart-half"><canvas id="chart-6b"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- NARRATIVE -->
+<div class="cs-narrative">
+  <div class="cs-sec-title">Obstacles we overcame</div>
+  <div class="cs-para">Data on off-invoice investments was fragmented and incomplete. Before any analysis could begin, we needed to reconstruct a full view of the GtN waterfall — combining system exports, finance records, and commercial team inputs across multiple channels and brands.</div>
+  <div class="cs-pullquote"><p>The margin leakage was not the result of poor commercial intent — it was the result of complexity that had grown faster than the systems and governance designed to manage it.</p></div>
+  <div class="cs-para">IT system misalignment between CRM and order planning created significant gaps in the baseline picture. Established commercial practices carried deep organisational roots, making change management as important as the technical redesign. Managing conflicting incentive structures across pharmacies, wholesalers, and e-commerce simultaneously — without disrupting key customer relationships — required careful sequencing throughout the implementation.</div>
+  <div style="margin-top:32px;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">Delivered by</div>
+  <div style="font-size:13px;color:var(--muted);font-style:italic;line-height:1.7">Delivered by Luca Pelamatti during his engagement as lead commercial transformation consultant. Luca brings over ten years of commercial excellence and Revenue Growth Management experience across B2B2C environments in Europe.</div>
+</div>
+
+<!-- EXTRAS -->
+<div class="cs-extras">
+  <div class="cs-extra-card">
+    <div class="cs-extra-head">Custom Tooling Built</div>
+    <div class="cs-extra-title">Tools that stayed in use after we left</div>
+    <div class="cs-extra-body"><ul>
+      <li>Interactive GtN performance dashboard for ongoing margin monitoring across channels and brands</li>
+      <li>KPI framework tracking commercial effectiveness and implementation progress against the roadmap</li>
+      <li>Governance model for trade investment decisions — defining approval levels, review cadence, and accountability</li>
+      <li>Commercial policy guidelines covering discount corridors, bonus structures, and customer tiering logic</li>
+      <li>Implementation roadmap with customer migration sequencing and transition support materials</li>
+    </ul></div>
+  </div>
+  <div class="cs-extra-card cs-extra-ai">
+    <div class="cs-extra-head">AI Use Case</div>
+    <div class="cs-extra-title">How AI could accelerate this type of engagement</div>
+    <div class="cs-extra-body"><ul>
+      <li>AI-assisted trade spend analysis to identify discount and bonus structures that erode margin without driving incremental sell-out performance</li>
+      <li>Automated monitoring to detect off-invoice leakage and over-discounting patterns in real time — replacing manual periodic reviews</li>
+      <li>Predictive modelling of customer response to commercial condition changes, reducing implementation risk during GtN redesign</li>
+    </ul></div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cs-cta-block">
+  <div>
+    <h3>Facing margin pressure from trade spend complexity?</h3>
+    <p>We design and implement Gross-to-Net frameworks that close the gap between commercial investment and financial outcomes. References available on request.</p>
+  </div>
+  <button class="btn-primary">Get in touch</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+const smalt='#1A3099',sky='#8AC5FF',grey='#ADADAD';
+Chart.defaults.font.family="'Montserrat','Arial',sans-serif";
+Chart.defaults.font.size=11;
+Chart.defaults.color='#6b7280';
+
+// Chart A: Net revenue retention before/after
+new Chart(document.getElementById('chart-6a'),{
+  type:'bar',
+  data:{
+    labels:['Pre-programme','Post-programme'],
+    datasets:[{
+      label:'Net revenue as % of gross',
+      data:[49,55],
+      backgroundColor:['rgba(173,173,173,0.45)','rgba(26,48,153,0.85)'],
+      borderColor:[grey,smalt],borderWidth:1
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      tooltip:{callbacks:{label:c=>' Net revenue: '+c.parsed.y+'% of gross'}}
+    },
+    scales:{
+      y:{min:40,max:65,ticks:{callback:v=>v+'%'},grid:{color:'rgba(0,0,0,0.05)'}},
+      x:{grid:{display:false}}
+    }
+  }
+});
+
+// Chart B: Trade investment components (indexed reduction)
+new Chart(document.getElementById('chart-6b'),{
+  type:'bar',
+  data:{
+    labels:['Discounts','Bonuses','Trade investments'],
+    datasets:[
+      {label:'Before',data:[100,100,100],backgroundColor:'rgba(173,173,173,0.45)',borderColor:grey,borderWidth:1},
+      {label:'After', data:[78,72,65],backgroundColor:'rgba(26,48,153,0.75)',borderColor:smalt,borderWidth:1}
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{position:'top',labels:{boxWidth:12,padding:12}},
+      tooltip:{callbacks:{label:c=>' '+c.dataset.label+': '+c.parsed.y+' (indexed)'}}
+    },
+    scales:{
+      y:{min:0,max:120,ticks:{callback:v=>v},grid:{color:'rgba(0,0,0,0.05)'}},
+      x:{grid:{display:false}}
+    }
+  }
+});
+</script>
+</body>
+</html>
