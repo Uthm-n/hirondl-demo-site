@@ -1999,11 +1999,19 @@ function showCS(i,_noPush){
   window.scrollTo(0,0);
   if(checkCSUnlock()){unlockCS(i);}
   if(typeof initChart==='function')initChart(i);
-  if(!_noPush)history.pushState({page:'cases',cs:i},'','#case/'+i);
+  if(!_noPush){
+    /* Always ensure the cases index sits one step behind in history.
+       This makes both browser-back and the ← button reliably return to the list,
+       regardless of which page the user navigated from. */
+    if(location.hash!=='#cases')history.pushState({page:'cases'},'','#cases');
+    history.pushState({page:'cases',cs:i},'','#case/'+i);
+  }
   if(typeof gtag!=='undefined')gtag('event','case_study_view',{cs_index:i});
 }
 function backToCS(){
-  showPage('cases');
+  /* Go back one step — #cases is guaranteed to be there because showCS always
+     pushes it before the case detail. No duplicate entry created. */
+  history.back();
 }
 function applyCSFilter(cat){
   document.querySelectorAll('.cs-filter-btn').forEach(function(btn){
