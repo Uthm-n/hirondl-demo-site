@@ -1,0 +1,44 @@
+name: Add LinkedIn Post
+
+on:
+  repository_dispatch:
+    types: [new-linkedin-post]
+
+jobs:
+  add-post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepend new post to linkedin-posts.json
+        env:
+          TAG:     ${{ github.event.client_payload.tag }}
+          TITLE:   ${{ github.event.client_payload.title }}
+          AUTHOR:  ${{ github.event.client_payload.author }}
+          EXCERPT: ${{ github.event.client_payload.excerpt }}
+          URL:     ${{ github.event.client_payload.url }}
+        run: |
+          python3 - << 'EOF'
+          import json, os
+          new = {
+            "tag":     os.environ["TAG"],
+            "title":   os.environ["TITLE"],
+            "author":  os.environ["AUTHOR"],
+            "excerpt": os.environ["EXCERPT"],
+            "url":     os.environ["URL"]
+          }
+          with open("linkedin-posts.json") as f:
+            posts = json.load(f)
+          posts.insert(0, new)
+          with open("linkedin-posts.json", "w") as f:
+            json.dump(posts, f, indent=2, ensure_ascii=False)
+          print(f"Added: {new['title']}")
+          EOF
+
+      - name: Commit and push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add linkedin-posts.json
+          git commit -m "Add LinkedIn post: ${{ github.event.client_payload.title }}"
+          git push

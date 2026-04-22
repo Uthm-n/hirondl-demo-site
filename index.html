@@ -1553,8 +1553,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <div class="blog-grid">
       <div class="blog-card" onclick="showBlog(0)"><div class="blog-tag">Pricing · 3 min read</div><div class="blog-title">When the Margin Wasn't Where the Model Said It Was</div><div class="blog-meta">By Cécile George · Hirondl</div><div class="blog-excerpt">A Private Equity-backed welding manufacturer. Three years of transaction data. A structural pricing problem nobody had looked for. Here is what we found and how we fixed it.</div></div>
       <div class="blog-card" onclick="showBlog(1)" style="cursor:pointer"><div class="blog-tag">AI &amp; Commercial Transformation · 5 min read</div><div class="blog-title">AI in the commercial function: what we have learned, and what usually goes wrong</div><div class="blog-meta">By Cécile George · Hirondl</div><div class="blog-excerpt">Every PE-backed business is asking which AI tools to use in the commercial function. It is the wrong question — and answering it first tends to produce the same outcome. Here is what we do instead.</div></div>
-      <div class="blog-card" style="cursor:pointer" onclick="window.open('https://www.linkedin.com/posts/hirondl-co-ltd_portfoliogrowth-commercialtransformation-activity-7449745572279988225--gll','_blank')"><div class="blog-tag">Sales Execution · LinkedIn Post</div><div class="blog-title">Your Sales Reps Are Working Hard. Just Not in the Right Direction.</div><div class="blog-meta">By Uthman Mahmood · Hirondl</div><div class="blog-excerpt">We audited a PE-backed welding supply manufacturer and found reps spending most of their time on legacy accounts — not because those accounts had the highest value, but because the relationships were comfortable.</div><a onclick="event.stopPropagation();window.open('https://www.linkedin.com/posts/hirondl-co-ltd_portfoliogrowth-commercialtransformation-activity-7449745572279988225--gll','_blank')" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--smalt);text-decoration:none">Want to read more? →</a></div>
-      <div class="blog-card" style="cursor:pointer" onclick="window.open('https://www.linkedin.com/posts/hirondl-co-ltd_saasceo-ecosystemledgrowth-privateequity-activity-7450539631348977664-5eqX','_blank')"><div class="blog-tag">Ecosystem-Led Growth · LinkedIn Post</div><div class="blog-title">The CEO Checklist: Should We Invest in ELG?</div><div class="blog-meta">By Yabing Wu · Hirondl</div><div class="blog-excerpt">Five honest questions PE-backed SaaS CEOs should answer before committing to an ecosystem-led growth strategy — and the assumptions that usually trip them up.</div><a onclick="event.stopPropagation();window.open('https://www.linkedin.com/posts/hirondl-co-ltd_saasceo-ecosystemledgrowth-privateequity-activity-7450539631348977664-5eqX','_blank')" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--smalt);text-decoration:none">Read on LinkedIn →</a></div>
+      <div id="li-posts"></div>
       <div class="blog-card" style="background:var(--smalt);cursor:pointer" onclick="window.open('https://www.linkedin.com/company/hirondl-co-ltd/','_blank')">
         <div style="height:100%;display:flex;flex-direction:column;justify-content:center">
           <div class="blog-tag" style="color:rgba(255,255,255,0.65)">Follow us on LinkedIn</div>
@@ -2469,5 +2468,31 @@ function initChart(i){
     <div class="cs-gate-privacy">No marketing emails. Your details help us understand who we are working with.</div>
   </div>
 </div>
+<script>
+(function(){
+  var container = document.getElementById('li-posts');
+  if(!container) return;
+  fetch('linkedin-posts.json')
+    .then(function(r){ return r.json(); })
+    .then(function(posts){
+      posts.forEach(function(p){
+        var card = document.createElement('div');
+        card.className = 'blog-card';
+        card.style.cursor = 'pointer';
+        card.onclick = function(){ window.open(p.url,'_blank'); };
+        card.innerHTML =
+          '<div class="blog-tag">'+p.tag+'</div>'+
+          '<div class="blog-title">'+p.title+'</div>'+
+          '<div class="blog-meta">By '+p.author+' &middot; Hirondl</div>'+
+          '<div class="blog-excerpt">'+p.excerpt+'</div>'+
+          '<a onclick="event.stopPropagation();window.open(\''+p.url+'\',\'_blank\')" '+
+            'style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--smalt);text-decoration:none">'+
+            'Read on LinkedIn \u2192</a>';
+        container.appendChild(card);
+      });
+    })
+    .catch(function(){});
+})();
+</script>
 </body>
 </html>
