@@ -906,22 +906,23 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
 <!-- ═══════════════ CASE STUDIES ═══════════════ -->
 <div class="page" id="page-cases">
   <div id="cs-index-view">
-    <div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1460472178825-e5240623afd5?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center">
-      <div style="position:absolute;inset:0;background:rgba(16,21,53,0.80);z-index:0;pointer-events:none"></div>
-      <div style="position:relative;z-index:1">
+    <div style="position:relative;background-image:url('https://images.unsplash.com/photo-1460472178825-e5240623afd5?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;overflow:hidden">
+      <div style="position:absolute;inset:0;background:rgba(16,21,53,0.82);z-index:0;pointer-events:none"></div>
+
+      <div class="page-hero" style="background:transparent;position:relative;z-index:1">
         <div class="page-hero-tag">Proof of delivery</div>
         <div class="page-hero-h">Case studies</div>
         <p class="page-hero-sub">Real engagements across pricing, segmentation, and go-to-market strategy. Every number below is from a real project.</p>
       </div>
-    </div>
 
-    <!-- CATEGORY FILTER BUTTONS -->
-    <div style="background:var(--navy);padding:40px 48px 36px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
-      <div class="cs-filter-label">Filter by sector</div>
-      <span class="cs-filter-btn active" onclick="filterCS('all')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid var(--sky);padding:8px 20px;border-radius:2px;background:rgba(138,197,255,0.12);cursor:pointer;transition:border-color 0.15s,background 0.15s">All</span>
-      <span class="cs-filter-btn" onclick="filterCS('industry')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:2px;background:rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.15s,background 0.15s">Industry</span>
-      <span class="cs-filter-btn" onclick="filterCS('b2b')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:2px;background:rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.15s,background 0.15s">B2B Services</span>
-      <span class="cs-filter-btn" onclick="filterCS('saas')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:2px;background:rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.15s,background 0.15s">SaaS</span>
+      <!-- CATEGORY FILTER BUTTONS -->
+      <div style="padding:40px 48px 36px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;position:relative;z-index:1">
+        <div class="cs-filter-label">Filter by sector</div>
+        <span class="cs-filter-btn active" onclick="filterCS('all')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid var(--sky);padding:8px 20px;border-radius:2px;background:rgba(138,197,255,0.12);cursor:pointer;transition:border-color 0.15s,background 0.15s">All</span>
+        <span class="cs-filter-btn" onclick="filterCS('industry')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:2px;background:rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.15s,background 0.15s">Industry</span>
+        <span class="cs-filter-btn" onclick="filterCS('b2b')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:2px;background:rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.15s,background 0.15s">B2B Services</span>
+        <span class="cs-filter-btn" onclick="filterCS('saas')" style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.25);padding:8px 20px;border-radius:2px;background:rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.15s,background 0.15s">SaaS</span>
+      </div>
     </div>
 
     <div class="cs-index">
