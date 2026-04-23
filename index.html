@@ -543,6 +543,48 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     </div>
   </div>
 
+  <!-- PILLAR TEASER: outcome-led, two pillars -->
+  <section class="section" style="background:#fff">
+    <div style="border-left:4px solid var(--smalt);padding-left:24px;margin-bottom:40px">
+      <div class="section-tag" style="color:var(--smalt);margin-bottom:12px">What we do</div>
+      <h2 style="font-size:clamp(32px,4.5vw,52px);font-weight:900;text-transform:uppercase;color:var(--navy);letter-spacing:-0.03em;line-height:1;margin:8px 0 0 0">Faster growth. Higher margin.<br><span style="color:var(--smalt)">Delivered, not advised.</span></h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px">
+
+      <a onclick="goToSection('wwd','sales-detail')" style="display:block;background:var(--navy);color:#fff;padding:40px 32px;border-radius:4px;text-decoration:none;cursor:pointer;transition:transform 0.15s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sky);margin-bottom:14px">Sales &amp; GTM</div>
+        <h3 style="font-size:clamp(20px,2.4vw,26px);font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin:0 0 14px 0;color:#fff">Accelerate revenue growth — without scaling cost.</h3>
+        <div style="font-size:13px;color:var(--sky);margin-bottom:22px;font-weight:600;letter-spacing:0.02em">+€5–15M pipeline · 6 months · no new headcount</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px">
+          <span style="font-size:11px;padding:5px 10px;background:rgba(255,255,255,0.08);border-radius:2px;color:rgba(255,255,255,0.85)">Commercial plan</span>
+          <span style="font-size:11px;padding:5px 10px;background:rgba(255,255,255,0.08);border-radius:2px;color:rgba(255,255,255,0.85)">Direct sales</span>
+          <span style="font-size:11px;padding:5px 10px;background:rgba(255,255,255,0.08);border-radius:2px;color:rgba(255,255,255,0.85)">Partner &amp; ecosystem</span>
+          <span style="font-size:11px;padding:5px 10px;background:rgba(255,255,255,0.08);border-radius:2px;color:rgba(255,255,255,0.85)">International</span>
+          <span style="font-size:11px;padding:5px 10px;background:rgba(255,255,255,0.08);border-radius:2px;color:rgba(255,255,255,0.85)">Org design</span>
+          <span style="font-size:11px;padding:5px 10px;background:rgba(255,255,255,0.08);border-radius:2px;color:rgba(255,255,255,0.85)">Forecasting</span>
+        </div>
+        <div style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky)">Explore Sales →</div>
+      </a>
+
+      <a onclick="goToSection('wwd','pricing-detail')" style="display:block;background:var(--smalt);color:#fff;padding:40px 32px;border-radius:4px;text-decoration:none;cursor:pointer;transition:transform 0.15s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#fff;opacity:0.7;margin-bottom:14px">Pricing</div>
+        <h3 style="font-size:clamp(20px,2.4vw,26px);font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin:0 0 14px 0;color:#fff">Expand margin — and hold it after we leave.</h3>
+        <div style="font-size:13px;color:#fff;margin-bottom:22px;font-weight:600;letter-spacing:0.02em">+2–5pp margin · one quarter · sustained after handover</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px">
+          <span style="font-size:11px;padding:5px 10px;background:rgba(255,255,255,0.15);border-radius:2px;color:#fff">Transaction</span>
+          <span style="font-size:11px;padding:5px 10px;background:rgba(255,255,255,0.15);border-radius:2px;color:#fff">Value-based</span>
+          <span style="font-size:11px;padding:5px 10px;background:rgba(255,255,255,0.15);border-radius:2px;color:#fff">Architecture</span>
+          <span style="font-size:11px;padding:5px 10px;background:rgba(255,255,255,0.15);border-radius:2px;color:#fff">SaaS</span>
+          <span style="font-size:11px;padding:5px 10px;background:rgba(255,255,255,0.15);border-radius:2px;color:#fff">Tools</span>
+          <span style="font-size:11px;padding:5px 10px;background:rgba(255,255,255,0.15);border-radius:2px;color:#fff">Governance</span>
+        </div>
+        <div style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff">Explore Pricing →</div>
+      </a>
+
+    </div>
+  </section>
+
   <!-- BURNING PLATFORM -->
   <section class="section" style="background:var(--navy)">
     <div class="section-tag" style="color:var(--sky)">The PE context</div>
@@ -594,22 +636,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     </div>
   </section>
 
-  <!-- SERVICES CITYSCAPE TEASER -->
-  <section class="svc-cityscape" onclick="showPage('wwd')" style="cursor:pointer">
-    <div class="svc-city-overlay"></div>
-    <div class="svc-city-content">
-      <div class="section-tag" style="color:var(--sky);margin-bottom:14px">What we do</div>
-      <h2 class="svc-city-h">Ways we create<br>commercial value</h2>
-      <p class="svc-city-sub">Two practice areas. Twelve levers. One delivery model — built around implementation, not advice, inside Private Equity-backed and industrial businesses.</p>
-      <div class="svc-city-pills">
-        <span onclick="event.stopPropagation();goToSection('wwd','sales-detail')">Sales &amp; GTM · 6 levers →</span>
-        <span onclick="event.stopPropagation();goToSection('wwd','pricing-detail')">Pricing · 6 levers →</span>
-      </div>
-      <button class="btn-primary" onclick="event.stopPropagation();showPage('wwd')" style="pointer-events:auto">Explore what we do &rarr;</button>
-    </div>
-  </section>
-
-  <section class="team-preview">
+<section class="team-preview">
     <div class="tp-header">
       <div>
         <div class="section-tag" style="color:var(--sky)">Our team</div>
