@@ -559,7 +559,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       </div>
       <div style="background:rgba(255,255,255,0.04);padding:36px 28px">
         <div style="font-size:clamp(36px,5vw,60px);font-weight:300;color:var(--sky);letter-spacing:-0.03em;line-height:1;margin-bottom:12px">100</div>
-        <div style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.75">days. The commercial value creation plan must be agreed and moving in the first hundred days. By month six, the hold period is already a third spent.</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.65);line-height:1.75">days. The commercial value creation plan must be agreed and moving in the first 100 days. By month six, the hold period is already a third spent.</div>
       </div>
     </div>
     <div style="margin-top:28px;background:rgba(138,197,255,0.07);border-left:3px solid var(--sky);padding:18px 24px;border-radius:0 4px 4px 0">
@@ -576,7 +576,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       <div style="background:#fff;padding:32px">
         <div style="font-size:28px;font-weight:300;color:var(--sky);margin-bottom:12px;letter-spacing:-0.02em">01</div>
         <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px">Entry &amp; 100-day plan</div>
-        <p style="font-size:12px;color:var(--muted);line-height:1.75">We map the commercial value creation opportunity in the first 90 days. Quick wins identified, VCP agreed, programme structured around your hold period.</p>
+        <p style="font-size:12px;color:var(--muted);line-height:1.75">We map the commercial value creation opportunity in the first 100 days. Quick wins identified, VCP agreed, programme structured around your hold period.</p>
       </div>
       <div style="background:#fff;padding:32px">
         <div style="font-size:28px;font-weight:300;color:var(--sky);margin-bottom:12px;letter-spacing:-0.02em">02</div>
@@ -600,14 +600,10 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
     <div class="svc-city-content">
       <div class="section-tag" style="color:var(--sky);margin-bottom:14px">What we do</div>
       <h2 class="svc-city-h">Ways we create<br>commercial value</h2>
-      <p class="svc-city-sub">Commercial value creation strategy, GTM acceleration, sales operations, transaction pricing, price architecture, and custom pricing tools. Each built around delivery inside Private Equity-backed businesses.</p>
+      <p class="svc-city-sub">Two practice areas. Twelve levers. One delivery model — built around implementation, not advice, inside Private Equity-backed and industrial businesses.</p>
       <div class="svc-city-pills">
-        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-01')">Commercial Strategy</span>
-        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-02')">GTM Acceleration</span>
-        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-03')">Sales Operations</span>
-        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-04')">Transaction Pricing</span>
-        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-05')">Price Architecture</span>
-        <span onclick="event.stopPropagation();goToSection('wwd','wwd-svc-06')">Pricing Tools</span>
+        <span onclick="event.stopPropagation();goToSection('wwd','sales-detail')">Sales &amp; GTM · 6 levers →</span>
+        <span onclick="event.stopPropagation();goToSection('wwd','pricing-detail')">Pricing · 6 levers →</span>
       </div>
       <button class="btn-primary" onclick="event.stopPropagation();showPage('wwd')" style="pointer-events:auto">Explore what we do &rarr;</button>
     </div>
@@ -732,63 +728,123 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       </div>
     </div>
 
-    <!-- Column headers -->
-    <div class="wwd-col-header">
-      <div class="wwd-col-hd-sales">
-        <div class="wwd-col-title">Sales &amp; GTM</div>
+    <!-- LEVEL 1: DOORWAY TILES -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-bottom:64px">
+
+      <a href="#sales-detail" onclick="document.getElementById('sales-detail').scrollIntoView({behavior:'smooth'});return false;" style="display:block;background:var(--navy);color:#fff;padding:48px 40px;border-radius:4px;text-decoration:none;transition:transform 0.15s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sky);margin-bottom:16px">Sales &amp; GTM · 6 levers</div>
+        <h3 style="font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin:0 0 20px 0;color:#fff">Get more from the commercial engine you already have.</h3>
+        <p style="font-size:13px;color:rgba(255,255,255,0.75);line-height:1.7;margin:0 0 28px 0">From the 100-day commercial plan to sales org redesign and forecast discipline — six levers to turn the team and channels you have into measurable revenue, without adding headcount.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px">
+          <span style="font-size:11px;padding:6px 12px;background:rgba(255,255,255,0.08);border-radius:2px;color:rgba(255,255,255,0.85)">Commercial VCP · 100 days</span>
+          <span style="font-size:11px;padding:6px 12px;background:rgba(255,255,255,0.08);border-radius:2px;color:rgba(255,255,255,0.85)">Direct sales acceleration</span>
+          <span style="font-size:11px;padding:6px 12px;background:rgba(255,255,255,0.08);border-radius:2px;color:rgba(255,255,255,0.85)">Partner &amp; ecosystem</span>
+          <span style="font-size:11px;padding:6px 12px;background:rgba(255,255,255,0.08);border-radius:2px;color:rgba(255,255,255,0.85)">International expansion</span>
+          <span style="font-size:11px;padding:6px 12px;background:rgba(255,255,255,0.08);border-radius:2px;color:rgba(255,255,255,0.85)">Sales org &amp; incentives</span>
+          <span style="font-size:11px;padding:6px 12px;background:rgba(255,255,255,0.08);border-radius:2px;color:rgba(255,255,255,0.85)">Sales ops &amp; forecasting</span>
+        </div>
+        <div style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky)">Explore Sales →</div>
+      </a>
+
+      <a href="#pricing-detail" onclick="document.getElementById('pricing-detail').scrollIntoView({behavior:'smooth'});return false;" style="display:block;background:var(--smalt);color:#fff;padding:48px 40px;border-radius:4px;text-decoration:none;transition:transform 0.15s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#fff;opacity:0.7;margin-bottom:16px">Pricing · 6 levers</div>
+        <h3 style="font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin:0 0 20px 0;color:#fff">Stop the leaks. Reprice to value. Make it stick.</h3>
+        <p style="font-size:13px;color:rgba(255,255,255,0.85);line-height:1.7;margin:0 0 28px 0">From recovering 2–5pp of margin quickly to rebuilding the pricing architecture — six levers across transaction, value, SaaS, and the tools and governance that keep discipline after we leave.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px">
+          <span style="font-size:11px;padding:6px 12px;background:rgba(255,255,255,0.15);border-radius:2px;color:#fff">Transaction pricing</span>
+          <span style="font-size:11px;padding:6px 12px;background:rgba(255,255,255,0.15);border-radius:2px;color:#fff">Value-based pricing</span>
+          <span style="font-size:11px;padding:6px 12px;background:rgba(255,255,255,0.15);border-radius:2px;color:#fff">Price architecture</span>
+          <span style="font-size:11px;padding:6px 12px;background:rgba(255,255,255,0.15);border-radius:2px;color:#fff">SaaS pricing redesign</span>
+          <span style="font-size:11px;padding:6px 12px;background:rgba(255,255,255,0.15);border-radius:2px;color:#fff">Custom pricing tools</span>
+          <span style="font-size:11px;padding:6px 12px;background:rgba(255,255,255,0.15);border-radius:2px;color:#fff">Pricing governance</span>
+        </div>
+        <div style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff">Explore Pricing →</div>
+      </a>
+
+    </div>
+
+    <!-- LEVEL 2A: SALES DETAIL -->
+    <div id="sales-detail" style="margin-bottom:64px;scroll-margin-top:80px">
+      <div style="border-left:4px solid var(--navy);padding-left:24px;margin-bottom:28px">
+        <div class="section-tag" style="color:var(--navy);margin-bottom:10px">Sales &amp; GTM · Six levers</div>
+        <h2 style="font-size:clamp(24px,3vw,34px);font-weight:900;text-transform:uppercase;color:var(--navy);letter-spacing:-0.03em;line-height:1;margin:6px 0 0 0">Get more from the commercial<br>engine you already have</h2>
       </div>
-      <div class="wwd-col-hd-pricing">
-        <div class="wwd-col-title">Pricing</div>
+
+      <div class="wwd-services-grid">
+        <div class="wwd-svc-card">
+          <div class="wwd-svc-num">S1</div>
+          <div class="wwd-svc-name">Agree what to go after, and in what order — in 100 days</div>
+          <div class="wwd-svc-outcome">Commercial value creation plan · opportunity mapping · quick-win identification · board-signed roadmap by month three.</div>
+        </div>
+        <div class="wwd-svc-card">
+          <div class="wwd-svc-num">S2</div>
+          <div class="wwd-svc-name">Get more from the direct sales team you already have</div>
+          <div class="wwd-svc-outcome">Territory and coverage redesign · account prioritisation · rep coaching on their own data, not from a classroom.</div>
+        </div>
+        <div class="wwd-svc-card">
+          <div class="wwd-svc-num">S3</div>
+          <div class="wwd-svc-name">Open new pipeline through partners and the ecosystem</div>
+          <div class="wwd-svc-outcome">Channel strategy · partner-led and ecosystem-led growth · structured co-sell motion with clear partner economics.</div>
+        </div>
+        <div class="wwd-svc-card">
+          <div class="wwd-svc-num">S4</div>
+          <div class="wwd-svc-name">Enter new markets without betting the business</div>
+          <div class="wwd-svc-outcome">International expansion · market prioritisation · entry-mode choice · subsidiary vs distributor trade-off, tested before committing.</div>
+        </div>
+        <div class="wwd-svc-card">
+          <div class="wwd-svc-num">S5</div>
+          <div class="wwd-svc-name">Design a sales organisation that runs without heroics</div>
+          <div class="wwd-svc-outcome">Org structure · role design · incentives and commission plans aligned to the strategy — leaders can manage, not just escalate.</div>
+        </div>
+        <div class="wwd-svc-card">
+          <div class="wwd-svc-num">S6</div>
+          <div class="wwd-svc-name">Make the forecast trustworthy</div>
+          <div class="wwd-svc-outcome">Sales operations · CRM configuration · MIS and dashboards · forecast cadence leaders can rely on, month after month.</div>
+        </div>
       </div>
     </div>
 
-    <div class="wwd-services-grid">
-
-      <!-- SALES ROW -->
-      <div class="wwd-svc-card" id="wwd-svc-01">
-        <div class="wwd-svc-num">01</div>
-        <div class="wwd-svc-name">Commercial Value Creation Strategy &amp; Implementation</div>
-        <div class="wwd-svc-problem">Most businesses start a growth programme without a clear picture of where commercial value actually sits, or in what order to go after it.</div>
-        <div class="wwd-svc-outcome">We map it, prioritise it, build the plan, and stay to implement it. The overarching strategic foundation linking commercial opportunity to fund-level value creation — delivered, not just designed. Typical time-to-insight: 4–6 weeks.</div>
+    <!-- LEVEL 2B: PRICING DETAIL -->
+    <div id="pricing-detail" style="scroll-margin-top:80px">
+      <div style="border-left:4px solid var(--smalt);padding-left:24px;margin-bottom:28px">
+        <div class="section-tag" style="color:var(--smalt);margin-bottom:10px">Pricing · Six levers</div>
+        <h2 style="font-size:clamp(24px,3vw,34px);font-weight:900;text-transform:uppercase;color:var(--navy);letter-spacing:-0.03em;line-height:1;margin:6px 0 0 0">Stop the leaks. Reprice to value.<br>Make it stick.</h2>
       </div>
 
-      <div class="wwd-svc-card" id="wwd-svc-02">
-        <div class="wwd-svc-num">02</div>
-        <div class="wwd-svc-name">GTM Acceleration</div>
-        <div class="wwd-svc-problem">Growth rarely comes from direct sales alone. Most businesses haven't built the full GTM infrastructure — the right channels, partners, and markets — to capture available opportunity.</div>
-        <div class="wwd-svc-outcome">Direct sales acceleration, channel management, ecosystem-led and partner-led growth, and international expansion.</div>
+      <div class="wwd-services-grid">
+        <div class="wwd-svc-card pricing">
+          <div class="wwd-svc-num">P1</div>
+          <div class="wwd-svc-name">Stop the quiet discount leak</div>
+          <div class="wwd-svc-outcome">Transaction pricing diagnostic · deal-by-deal margin recovery · guardrails embedded in CRM. Typical recovery: +2–5pp within a quarter.</div>
+        </div>
+        <div class="wwd-svc-card pricing">
+          <div class="wwd-svc-num">P2</div>
+          <div class="wwd-svc-name">Price to the value you deliver, not to history</div>
+          <div class="wwd-svc-outcome">Value-based pricing · willingness-to-pay research · target price setting by segment, defensible under pressure.</div>
+        </div>
+        <div class="wwd-svc-card pricing">
+          <div class="wwd-svc-num">P3</div>
+          <div class="wwd-svc-name">Build a price architecture that holds under pressure</div>
+          <div class="wwd-svc-outcome">Good-better-best structure · bundling logic · segmented price bands sales can defend without escalation.</div>
+        </div>
+        <div class="wwd-svc-card pricing">
+          <div class="wwd-svc-num">P4</div>
+          <div class="wwd-svc-name">Redesign SaaS pricing for how customers actually grow</div>
+          <div class="wwd-svc-outcome">Shift from per-seat to volume or outcome-based models · packaging · expansion pricing that captures value as customers grow.</div>
+        </div>
+        <div class="wwd-svc-card pricing">
+          <div class="wwd-svc-num">P5</div>
+          <div class="wwd-svc-name">Put the pricing logic into tools your team owns</div>
+          <div class="wwd-svc-outcome">Custom pricing tools · Power BI dashboards · CRM and quoting integrations still in use 12 months after hand-over.</div>
+        </div>
+        <div class="wwd-svc-card pricing">
+          <div class="wwd-svc-num">P6</div>
+          <div class="wwd-svc-name">Build the pricing capability so it survives the hand-over</div>
+          <div class="wwd-svc-outcome">Pricing governance · approval workflows · coaching the commercial team through the change so discipline doesn't erode.</div>
+        </div>
       </div>
-
-      <div class="wwd-svc-card" id="wwd-svc-03">
-        <div class="wwd-svc-num">03</div>
-        <div class="wwd-svc-name">Sales Operations &amp; Org Design</div>
-        <div class="wwd-svc-problem">Leaders can't manage what they can't see. Structure, incentives, and KPIs that aren't built to sustain change mean gains don't stick.</div>
-        <div class="wwd-svc-outcome">Dashboards, CRM, MIS, salesforce structure, and incentive design — built to last after we leave.</div>
-      </div>
-
-      <!-- PRICING ROW -->
-      <div class="wwd-svc-card pricing" id="wwd-svc-04">
-        <div class="wwd-svc-num">04</div>
-        <div class="wwd-svc-name">Transaction &amp; Value Pricing</div>
-        <div class="wwd-svc-problem">Rep discounting erodes margins no one can see on a P&amp;L. Value pricing helps to identify underpriced products &amp; services.</div>
-        <div class="wwd-svc-outcome">We recover structural margin leakage — from quick wins to full transformation. Typical uplift: 2–5 percentage points, sustained after engagement close.</div>
-      </div>
-
-      <div class="wwd-svc-card pricing" id="wwd-svc-05">
-        <div class="wwd-svc-num">05</div>
-        <div class="wwd-svc-name">Price Setting &amp; Architecture</div>
-        <div class="wwd-svc-problem">Prices set by gut or history, not by value delivered. No clear logic linking product, customer, and price point — and for SaaS businesses, legacy per-seat models that leave significant revenue on the table as usage scales.</div>
-        <div class="wwd-svc-outcome">Target price setting, price architecture, and segmented pricing models that hold under commercial pressure. For SaaS, we design the shift from user-based to volume- or outcome-based models that capture value as customers grow.</div>
-      </div>
-
-      <div class="wwd-svc-card pricing" id="wwd-svc-06">
-        <div class="wwd-svc-num">06</div>
-        <div class="wwd-svc-name">Pricing Tools &amp; Custom Tooling</div>
-        <div class="wwd-svc-problem">Off-the-shelf solutions create workarounds. Price communication breaks down without the right infrastructure.</div>
-        <div class="wwd-svc-outcome">Custom pricing tools, Power BI dashboards, and CRM configurations that embed change permanently.</div>
-      </div>
-
     </div>
+
   </div>
 
   <div class="section-rule"></div>
@@ -1777,7 +1833,7 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       <div style="background:#fff;padding:32px">
         <div style="font-size:28px;font-weight:300;color:var(--sky);margin-bottom:12px;letter-spacing:-0.02em">01</div>
         <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px">Entry & 100-day plan</div>
-        <p style="font-size:12px;color:var(--muted);line-height:1.75">We map the commercial value creation opportunity in the first 90 days. AI-assisted data analysis helps us identify pricing and segmentation levers faster. Quick wins identified, VCP agreed, programme structured around your hold period.</p>
+        <p style="font-size:12px;color:var(--muted);line-height:1.75">We map the commercial value creation opportunity in the first 100 days. AI-assisted data analysis helps us identify pricing and segmentation levers faster. Quick wins identified, VCP agreed, programme structured around your hold period.</p>
       </div>
       <div style="background:#fff;padding:32px">
         <div style="font-size:28px;font-weight:300;color:var(--sky);margin-bottom:12px;letter-spacing:-0.02em">02</div>
