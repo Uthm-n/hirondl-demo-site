@@ -108,11 +108,11 @@ body{font-family:'Montserrat','Arial',sans-serif;background:var(--bg);color:var(
   </div>
   <div class="cs-col">
     <div class="cs-col-head">Approach</div>
-    <div class="cs-col-body">We delivered an end-to-end GtN transformation covering transparency creation, commercial model redesign, and implementation support. This included full price waterfall analysis across channels and customers, benchmarking against best-practice models, and identifying structural inefficiencies in discounting and bonus design. We redesigned the commercial model to shift from sell-in to sell-out performance metrics, and built a partnership framework linking trade investment to measurable outcomes for key customers.</div>
+    <div class="cs-col-body">We delivered an end-to-end GtN transformation covering transparency creation, commercial model redesign, and implementation support. This included full price waterfall analysis across channels and customers, benchmarking against best-practice models, and identifying structural inefficiencies in discounting and bonus design. We redesigned the commercial model to shift from sell-in to sell-out performance metrics, and built a partnership framework linking trade investment to measurable outcomes for key customers. A fundamental element of the redesign was rebalancing the weight of each channel: we recommended reducing dependence on wholesale in favour of direct and cooperative channels to improve margin retention and strengthen commercial control over pricing and investment allocation.</div>
   </div>
   <div class="cs-col">
     <div class="cs-col-head">Impact</div>
-    <div class="cs-col-body">5–7pp gross margin improvement through GtN optimisation and commercial model redesign. Reduction in misaligned trade spend across all major channels. Improved alignment between commercial investment and financial outcomes. A scalable governance model and commercial policy framework built to support future rollout across European markets.</div>
+    <div class="cs-col-body">5–7pp gross margin improvement through GtN optimisation and commercial model redesign. Reduction in misaligned trade spend across all major channels. Improved alignment between commercial investment and financial outcomes. A scalable governance model and commercial policy framework built for future European rollout — designed to be adapted for local market conditions rather than applied as a single template. Wholesale dynamics, for example, differ materially between Italy and the broader EU market, and the framework explicitly accounts for this variation at the market level.</div>
   </div>
 </div>
 
@@ -127,7 +127,7 @@ body{font-family:'Montserrat','Arial',sans-serif;background:var(--bg);color:var(
       <div class="cs-chart-half"><canvas id="chart-6a"></canvas></div>
     </div>
     <div>
-      <div class="cs-chart-half-label">Trade investment components reduced (indexed)</div>
+      <div class="cs-chart-half-label">Trade investment components reduced (indexed, achievable range)</div>
       <div class="cs-chart-half"><canvas id="chart-6b"></canvas></div>
     </div>
   </div>
@@ -149,11 +149,11 @@ body{font-family:'Montserrat','Arial',sans-serif;background:var(--bg);color:var(
     <div class="cs-extra-head">Custom Tooling Built</div>
     <div class="cs-extra-title">Tools that stayed in use after we left</div>
     <div class="cs-extra-body"><ul>
+      <li>RGM function blueprint — a structured playbook to establish a Revenue Growth Management capability, covering team design, governance structure, data requirements, and process integration</li>
       <li>Interactive GtN performance dashboard for ongoing margin monitoring across channels and brands</li>
       <li>KPI framework tracking commercial effectiveness and implementation progress against the roadmap</li>
       <li>Governance model for trade investment decisions — defining approval levels, review cadence, and accountability</li>
       <li>Commercial policy guidelines covering discount corridors, bonus structures, and customer tiering logic</li>
-      <li>Implementation roadmap with customer migration sequencing and transition support materials</li>
     </ul></div>
   </div>
   <div class="cs-extra-card cs-extra-ai">
@@ -208,21 +208,24 @@ new Chart(document.getElementById('chart-6a'),{
   }
 });
 
-// Chart B: Trade investment components (indexed reduction)
+// Chart B: Trade investment components (indexed range)
 new Chart(document.getElementById('chart-6b'),{
   type:'bar',
   data:{
     labels:['Discounts','Bonuses','Trade investments'],
     datasets:[
-      {label:'Before',data:[100,100,100],backgroundColor:'rgba(173,173,173,0.45)',borderColor:grey,borderWidth:1},
-      {label:'After', data:[78,72,65],backgroundColor:'rgba(26,48,153,0.75)',borderColor:smalt,borderWidth:1}
+      {label:'Before (baseline)',data:[100,100,100],backgroundColor:'rgba(173,173,173,0.45)',borderColor:grey,borderWidth:1},
+      {label:'After (achievable range)',data:[[73,83],[67,77],[60,72]],backgroundColor:'rgba(26,48,153,0.75)',borderColor:smalt,borderWidth:1}
     ]
   },
   options:{
     responsive:true,maintainAspectRatio:false,
     plugins:{
       legend:{position:'top',labels:{boxWidth:12,padding:12}},
-      tooltip:{callbacks:{label:c=>' '+c.dataset.label+': '+c.parsed.y+' (indexed)'}}
+      tooltip:{callbacks:{label:c=>{
+        if(Array.isArray(c.raw)) return ' After range: '+c.raw[0]+' – '+c.raw[1]+' (indexed)';
+        return ' Before: '+c.parsed.y+' (baseline = 100)';
+      }}}
     },
     scales:{
       y:{min:0,max:120,ticks:{callback:v=>v},grid:{color:'rgba(0,0,0,0.05)'}},
