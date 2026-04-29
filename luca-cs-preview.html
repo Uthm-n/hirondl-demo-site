@@ -126,9 +126,27 @@ body{font-family:'Montserrat','Arial',sans-serif;background:var(--bg);color:var(
       <div class="cs-chart-half-label">Net revenue retention (% of gross)</div>
       <div class="cs-chart-half"><canvas id="chart-6a"></canvas></div>
     </div>
-    <div>
-      <div class="cs-chart-half-label">Trade investment components reduced (indexed, achievable range)</div>
-      <div class="cs-chart-half"><canvas id="chart-6b"></canvas></div>
+    <div style="display:flex;flex-direction:column;justify-content:center">
+      <div class="cs-chart-half-label" style="margin-bottom:16px">Trade investment reduction (achievable range)</div>
+      <table style="width:100%;border-collapse:collapse;font-family:'Montserrat','Arial',sans-serif">
+        <thead>
+          <tr style="background:#f3f4f6">
+            <th style="text-align:left;padding:10px 14px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--smalt);border-bottom:2px solid var(--border)">Component</th>
+            <th style="text-align:right;padding:10px 14px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--smalt);border-bottom:2px solid var(--border)">Reduction range</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:12px 14px;font-size:13px;font-weight:600;color:var(--text)">Discounts</td>
+            <td style="padding:12px 14px;font-size:13px;font-weight:700;color:var(--smalt);text-align:right">20 – 25%</td>
+          </tr>
+          <tr>
+            <td style="padding:12px 14px;font-size:13px;font-weight:600;color:var(--text)">Bonuses</td>
+            <td style="padding:12px 14px;font-size:13px;font-weight:700;color:var(--smalt);text-align:right">10 – 15%</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="margin-top:10px;font-size:10px;color:var(--muted)">Ranges reflect outcomes across engagements. Actual results depend on baseline complexity and market conditions.</div>
     </div>
   </div>
 </div>
@@ -157,11 +175,11 @@ body{font-family:'Montserrat','Arial',sans-serif;background:var(--bg);color:var(
     </ul></div>
   </div>
   <div class="cs-extra-card cs-extra-ai">
-    <div class="cs-extra-head">AI Use Case</div>
-    <div class="cs-extra-title">How AI could accelerate this type of engagement</div>
+    <div class="cs-extra-head">Potential AI Use</div>
+    <div class="cs-extra-title">Where AI could support this type of engagement</div>
     <div class="cs-extra-body"><ul>
       <li>AI-assisted trade spend analysis to identify discount and bonus structures that erode margin without driving incremental sell-out performance</li>
-      <li>Automated monitoring to detect off-invoice leakage and over-discounting patterns in real time — replacing manual periodic reviews</li>
+      <li>AI-assisted invoice detection to identify off-invoice leakage patterns, reducing reliance on manual periodic reviews</li>
       <li>Predictive modelling of customer response to commercial condition changes, reducing implementation risk during GtN redesign</li>
     </ul></div>
   </div>
@@ -208,31 +226,7 @@ new Chart(document.getElementById('chart-6a'),{
   }
 });
 
-// Chart B: Trade investment components (indexed range)
-new Chart(document.getElementById('chart-6b'),{
-  type:'bar',
-  data:{
-    labels:['Discounts','Bonuses','Trade investments'],
-    datasets:[
-      {label:'Before (baseline)',data:[100,100,100],backgroundColor:'rgba(173,173,173,0.45)',borderColor:grey,borderWidth:1},
-      {label:'After (achievable range)',data:[[73,83],[67,77],[60,72]],backgroundColor:'rgba(26,48,153,0.75)',borderColor:smalt,borderWidth:1}
-    ]
-  },
-  options:{
-    responsive:true,maintainAspectRatio:false,
-    plugins:{
-      legend:{position:'top',labels:{boxWidth:12,padding:12}},
-      tooltip:{callbacks:{label:c=>{
-        if(Array.isArray(c.raw)) return ' After range: '+c.raw[0]+' – '+c.raw[1]+' (indexed)';
-        return ' Before: '+c.parsed.y+' (baseline = 100)';
-      }}}
-    },
-    scales:{
-      y:{min:0,max:120,ticks:{callback:v=>v},grid:{color:'rgba(0,0,0,0.05)'}},
-      x:{grid:{display:false}}
-    }
-  }
-});
+// Chart B replaced by table
 </script>
 </body>
 </html>
