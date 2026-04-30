@@ -988,6 +988,16 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
           <div class="cs-desc">Redesigned sales targeting and built nurse-level dashboards to stop customer losses and redirect effort to high-margin segments. Hit commercial target for the first time in two years.</div>
         </div>
       </div>
+      <div class="cs-card" data-category="b2b" onclick="showCS(6)" style="background-image:url('https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=1200&q=80')">
+        <div class="cs-cat-badge">B2B Services</div>
+        <div class="cs-card-body">
+          <div class="cs-city-tag">Southern Europe</div>
+          <div class="cs-tag">GtN Optimisation · Consumer Healthcare · Revenue Growth Management</div>
+          <div class="cs-title">Gross-to-Net Optimisation — Consumer Healthcare Business</div>
+          <div class="cs-stats"><div class="cs-stat"><div class="n">5–7pp</div><div class="l">Gross margin improvement</div></div><div class="cs-stat"><div class="n">&gt;50%</div><div class="l">Revenue absorbed by trade investments pre-programme</div></div></div>
+          <div class="cs-desc">Delivered a full Gross-to-Net transformation for a consumer healthcare business, restructuring commercial conditions across pharmacy, wholesale, and e-commerce to recover 5–7pp of gross margin.</div>
+        </div>
+      </div>
       <div class="cs-card" data-category="b2b" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80')">
         <div class="cs-cat-badge">B2B Services</div>
         <div class="cs-card-body">
@@ -1527,6 +1537,97 @@ footer{background:var(--navy);padding:32px 48px;display:flex;align-items:center;
       </footer>
     </div>
 
+    <div id="cs-6" class="cs-detail">
+      <div class="cs-hero-block" style="background-image:url('https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=1600&q=80')">
+        <div class="cs-back" onclick="backToCS()">← All case studies</div>
+        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(138,197,255,0.15);border:1px solid rgba(138,197,255,0.35);padding:5px 12px;border-radius:2px;margin-bottom:16px"><span style="font-size:8px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--sky)">Operator Track Record</span></div>
+        <div class="cs-h-tag">Southern Europe · Consumer Healthcare · Commercial Transformation</div>
+        <div class="cs-h-title">Gross-to-Net Optimisation — Consumer Healthcare Business</div>
+        <div class="cs-stat-row">
+          <div class="cs-stat-box"><div class="n">&gt;50%</div><div class="l">Revenue absorbed by trade investments pre-programme</div></div>
+          <div class="cs-stat-box"><div class="n">5–7pp</div><div class="l">Gross margin improvement delivered</div></div>
+          <div class="cs-stat-box"><div class="n">3</div><div class="l">Channel types restructured (pharmacy, wholesale, e-commerce)</div></div>
+          <div class="cs-stat-box"><div class="n">EU-wide</div><div class="l">Scalable model built for future rollout</div></div>
+        </div>
+      </div>
+      <div class="cs-cols">
+        <div class="cs-col"><div class="cs-col-head">Situation</div><div class="cs-col-body">A consumer healthcare business was facing declining profitability despite sustained top-line growth. The organisation lacked full transparency on its Gross-to-Net structure, with over half of gross revenues absorbed by discounts, bonuses, and trade investments before net revenue was recognised. Commercial conditions had grown highly complex and inconsistent across channels, brands, and customers, with incentives primarily tied to sell-in volumes rather than sell-out performance.</div></div>
+        <div class="cs-col"><div class="cs-col-head">Approach</div><div class="cs-col-body">We delivered an end-to-end GtN transformation covering transparency creation, commercial model redesign, and implementation support. This included full price waterfall analysis across channels and customers, benchmarking against best-practice models, and identifying structural inefficiencies in discounting and bonus design. We redesigned the commercial model to shift from sell-in to sell-out performance metrics, and built a partnership framework linking trade investment to measurable outcomes for key customers. A fundamental element of the redesign was rebalancing the weight of each channel: we recommended reducing dependence on wholesale in favour of direct and cooperative channels to improve margin retention and strengthen commercial control over pricing and investment allocation.</div></div>
+        <div class="cs-col"><div class="cs-col-head">Impact</div><div class="cs-col-body">5–7pp gross margin improvement through GtN optimisation and commercial model redesign. Reduction in misaligned trade spend across all major channels. Improved alignment between commercial investment and financial outcomes. A scalable governance model and commercial policy framework built to support future rollout across European markets.</div></div>
+      </div>
+      <div id="cs-gate-trigger-6" class="cs-gate-trigger">
+        <h4>Read the complete case study</h4>
+        <p>Full GtN waterfall analysis, commercial model redesign, channel rebalancing strategy, and implementation results.</p>
+        <button class="btn-primary" onclick="openGateModal(6)">Access full case study →</button>
+      </div>
+      <div id="cs-locked-6" style="display:none">
+      <div class="cs-chart-section">
+        <div class="cs-chart-label">Results visualised</div>
+        <div class="cs-chart-title">Gross-to-Net structure before and after</div>
+        <div class="cs-chart-sub">Left: net revenue as a share of gross revenue, before and after the programme. Right: breakdown of trade investment components addressed through the redesign.</div>
+        <div class="cs-chart-grid">
+          <div>
+            <div class="cs-chart-half-label">Net revenue retention (% of gross)</div>
+            <div class="cs-chart-half"><canvas id="chart-6a" role="img" aria-label="Bar chart showing net revenue retention before and after programme"></canvas></div>
+          </div>
+          <div style="display:flex;flex-direction:column;justify-content:center">
+            <div class="cs-chart-half-label" style="margin-bottom:16px">Trade investment reduction (achievable range)</div>
+            <table style="width:100%;border-collapse:collapse;font-family:'Montserrat','Arial',sans-serif">
+              <thead>
+                <tr style="background:#f3f4f6">
+                  <th style="text-align:left;padding:10px 14px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--smalt);border-bottom:2px solid var(--border)">Component</th>
+                  <th style="text-align:right;padding:10px 14px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--smalt);border-bottom:2px solid var(--border)">Reduction range</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid var(--border)">
+                  <td style="padding:12px 14px;font-size:13px;font-weight:600;color:var(--text)">Discounts</td>
+                  <td style="padding:12px 14px;font-size:13px;font-weight:700;color:var(--smalt);text-align:right">20 – 25%</td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 14px;font-size:13px;font-weight:600;color:var(--text)">Bonuses</td>
+                  <td style="padding:12px 14px;font-size:13px;font-weight:700;color:var(--smalt);text-align:right">10 – 15%</td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="margin-top:10px;font-size:10px;color:var(--muted)">Ranges reflect outcomes across engagements. Actual results depend on baseline complexity and market conditions.</div>
+          </div>
+        </div>
+      </div>
+      <div class="cs-narrative">
+        <div class="cs-sec-title">Obstacles we overcame</div>
+        <div class="cs-para">Data on off-invoice investments was fragmented and incomplete. Before any analysis could begin, we needed to reconstruct a full view of the GtN waterfall — combining system exports, finance records, and commercial team inputs across multiple channels and brands.</div>
+        <div class="cs-pullquote"><p>The margin leakage was not the result of poor commercial intent — it was the result of complexity that had grown faster than the systems and governance designed to manage it.</p></div>
+        <div class="cs-para">IT system misalignment between CRM and order planning created significant gaps in the baseline picture. Established commercial practices carried deep organisational roots, making change management as important as the technical redesign. Managing conflicting incentive structures across pharmacies, wholesalers, and e-commerce simultaneously — without disrupting key customer relationships — required careful sequencing throughout the implementation.</div>
+        <div style="margin-top:32px;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">Delivered by</div>
+        <div style="font-size:13px;color:var(--muted);font-style:italic;line-height:1.7">Delivered by Luca Pelamatti during his engagement as lead commercial transformation consultant. Luca brings over ten years of commercial excellence and Revenue Growth Management experience across B2B2C environments in Europe.</div>
+      </div>
+      <div class="cs-extras">
+        <div class="cs-extra-card">
+          <div class="cs-extra-head">Custom Tooling Built</div>
+          <div class="cs-extra-title">Tools that stayed in use after we left</div>
+          <div class="cs-extra-body"><ul><li>RGM function blueprint — a structured playbook to establish a Revenue Growth Management capability, covering team design, governance structure, data requirements, and process integration</li><li>Interactive GtN performance dashboard for ongoing margin monitoring across channels and brands</li><li>KPI framework tracking commercial effectiveness and implementation progress against the roadmap</li><li>Governance model for trade investment decisions — defining approval levels, review cadence, and accountability</li><li>Commercial policy guidelines covering discount corridors, bonus structures, and customer tiering logic</li></ul></div>
+        </div>
+        <div class="cs-extra-card cs-extra-ai">
+          <div class="cs-extra-head">Potential AI Use</div>
+          <div class="cs-extra-title">Where AI could support this type of engagement</div>
+          <div class="cs-extra-body"><ul><li>AI-assisted trade spend analysis to identify discount and bonus structures that erode margin without driving incremental sell-out performance</li><li>AI-assisted invoice detection to identify off-invoice leakage patterns, reducing reliance on manual periodic reviews</li></ul></div>
+        </div>
+      </div>
+      <div class="cs-cta-block"><div><h3>Facing margin pressure from trade spend complexity?</h3><p>We design and implement Gross-to-Net frameworks that close the gap between commercial investment and financial outcomes. References available on request.</p></div><button class="btn-primary" onclick="showPage('contact')">Get in touch</button></div>
+      </div><!-- /cs-locked-6 -->
+      <footer>
+        <div>
+          <div class="footer-logo">
+            <img src="logo.png" alt="Hirondl" height="28" style="filter:brightness(0) invert(1);display:block">
+            <div><div class="footer-logo-text">Hirondl</div><div class="footer-est">Est. 2014</div></div>
+          </div>
+        </div>
+        <div class="footer-links"><a onclick="backToCS()">All case studies</a></div>
+        <div class="footer-contact">contact@hirondl.com</div>
+      </footer>
+    </div>
+
   </div>
 </div>
 
@@ -2020,7 +2121,7 @@ const _offices=[
   {lat:41.9028,lng:12.4964,city:'Rome',role:'Partner Italy · Renata Vancini',cs:[],label:'Case studies coming soon',color:'#ffffff'},
   {lat:55.6761,lng:12.5683,city:'Copenhagen',role:'Senior Expert · Thomas Dahl',cs:[],label:'Case studies coming soon',color:'#ffffff'},
   {lat:45.8150,lng:15.9819,city:'Zagreb',role:'Head of AI & Analytics · Igor Milat',cs:[],label:'Case studies coming soon',color:'#ffffff'},
-  {lat:45.4642,lng:9.1900,city:'Milan',role:'Senior Expert · Luca Pelamatti',cs:[],label:'Case studies coming soon',color:'#ffffff'}
+  {lat:45.4642,lng:9.1900,city:'Milan',role:'Senior Expert · Luca Pelamatti',cs:[6],label:'GtN Optimisation · Consumer Healthcare',color:'#8AC5FF'}
 ];
 function initEuropeMap(){
   if(_mapDone||!document.getElementById('europe-map'))return;
@@ -2031,7 +2132,7 @@ function initEuropeMap(){
     const hasCS=o.cs.length>0;
     const icon=L.divIcon({className:'',html:`<div style="width:14px;height:14px;border-radius:50%;background:${hasCS?'#8AC5FF':'rgba(255,255,255,0.5)'};border:2px solid #fff;box-shadow:0 0 0 4px ${hasCS?'rgba(138,197,255,0.25)':'rgba(255,255,255,0.1)'}"></div>`,iconSize:[14,14],iconAnchor:[7,7]});
     const m=L.marker([o.lat,o.lng],{icon}).addTo(_euroMap);
-    const _csLabels=['Pricing Transformation · Industrial','Agent Segmentation · Industrial Manufacturing','Pricing Transformation · Specialty Films','GTM Strategy · Specialty Materials','Sales Transformation · Homecare','ELG Transformation · B2B SaaS'];
+    const _csLabels=['Pricing Transformation · Industrial','Agent Segmentation · Industrial Manufacturing','Pricing Transformation · Specialty Films','GTM Strategy · Specialty Materials','Sales Transformation · Homecare','ELG Transformation · B2B SaaS','GtN Optimisation · Consumer Healthcare'];
     const csLinks=hasCS?o.cs.map(c=>`<a onclick="showPage('cases');setTimeout(()=>showCS(${c}),50)" style="display:inline-block;margin-top:6px;font-size:11px;color:#8AC5FF;cursor:pointer;font-weight:700">${_csLabels[c]} →</a>`).join('<br>'):'<span style="font-size:11px;color:rgba(255,255,255,0.45)">Case studies coming soon</span>';
     m.bindPopup(`<div style="font-family:Montserrat,Arial,sans-serif;padding:4px 2px;min-width:180px"><div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:3px">${o.city}</div><div style="font-size:10px;color:rgba(255,255,255,0.55);margin-bottom:8px">${o.role}</div>${csLinks}</div>`,{className:'hirondl-popup',maxWidth:240});
     _markers.push(m);
@@ -2445,6 +2546,32 @@ function initChart(i){
         },
         scales:{
           y:{beginAtZero:true,max:65,ticks:{callback:v=>v+'%'},grid:{color:'rgba(0,0,0,0.05)'}},
+          x:{grid:{display:false}}
+        }
+      }
+    });
+  }
+
+  if(i===6){
+    new Chart(document.getElementById('chart-6a'),{
+      type:'bar',
+      data:{
+        labels:['Pre-programme','Post-programme'],
+        datasets:[{
+          label:'Net revenue as % of gross',
+          data:[49,55],
+          backgroundColor:['rgba(173,173,173,0.45)','rgba(26,48,153,0.85)'],
+          borderColor:[grey,smalt],borderWidth:1
+        }]
+      },
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        plugins:{
+          legend:{display:false},
+          tooltip:{callbacks:{label:c=>' Net revenue: '+c.parsed.y+'% of gross'}}
+        },
+        scales:{
+          y:{min:40,max:65,ticks:{callback:v=>v+'%'},grid:{color:'rgba(0,0,0,0.05)'}},
           x:{grid:{display:false}}
         }
       }
